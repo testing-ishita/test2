@@ -1,0 +1,7 @@
+/hal_api.c////*////
+/hal_cons.c////*////
+/hal_delay.c////*////
+/hal_io.c////*////
+/hal_mem.c////*////
+/hal_pci.c////*////
+/makefile////*////

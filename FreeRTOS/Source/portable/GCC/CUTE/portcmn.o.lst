@@ -1,0 +1,119 @@
+   1              		.file	"portcmn.c"
+   2              		.text
+   3              		.globl	_pxPortInitialiseStack
+   4              		.def	_pxPortInitialiseStack;	.scl	2;	.type	32;	.endef
+   5              	_pxPortInitialiseStack:
+   6              	LFB0:
+   7              		.cfi_startproc
+   8 0000 55       		pushl	%ebp
+   9              		.cfi_def_cfa_offset 8
+  10              		.cfi_offset 5, -8
+  11 0001 89E5     		movl	%esp, %ebp
+  12              		.cfi_def_cfa_register 5
+  13 0003 83EC10   		subl	$16, %esp
+  14 0006 8B4508   		movl	8(%ebp), %eax
+  15 0009 C7001111 		movl	$286331153, (%eax)
+  15      1111
+  16 000f 836D0804 		subl	$4, 8(%ebp)
+  17 0013 8B4508   		movl	8(%ebp), %eax
+  18 0016 C7002222 		movl	$572662306, (%eax)
+  18      2222
+  19 001c 836D0804 		subl	$4, 8(%ebp)
+  20 0020 8B4508   		movl	8(%ebp), %eax
+  21 0023 C7003333 		movl	$858993459, (%eax)
+  21      3333
+  22 0029 836D0804 		subl	$4, 8(%ebp)
+  23 002d 8B5510   		movl	16(%ebp), %edx
+  24 0030 8B4508   		movl	8(%ebp), %eax
+  25 0033 8910     		movl	%edx, (%eax)
+  26 0035 836D0804 		subl	$4, 8(%ebp)
+  27 0039 8B5510   		movl	16(%ebp), %edx
+  28 003c 8B4508   		movl	8(%ebp), %eax
+  29 003f 8910     		movl	%edx, (%eax)
+  30 0041 836D0804 		subl	$4, 8(%ebp)
+  31 0045 8B4508   		movl	8(%ebp), %eax
+  32 0048 C7000202 		movl	$66050, (%eax)
+  32      0100
+  33 004e 836D0804 		subl	$4, 8(%ebp)
+  34 0052 8B4508   		movl	8(%ebp), %eax
+  35 0055 C7000800 		movl	$8, (%eax)
+  35      0000
+  36 005b 836D0804 		subl	$4, 8(%ebp)
+  37 005f 8B550C   		movl	12(%ebp), %edx
+  38 0062 8B4508   		movl	8(%ebp), %eax
+  39 0065 8910     		movl	%edx, (%eax)
+  40 0067 836D0804 		subl	$4, 8(%ebp)
+  41 006b 8B4508   		movl	8(%ebp), %eax
+  42 006e 8945FC   		movl	%eax, -4(%ebp)
+  43 0071 8B5510   		movl	16(%ebp), %edx
+  44 0074 8B4508   		movl	8(%ebp), %eax
+  45 0077 8910     		movl	%edx, (%eax)
+  46 0079 836D0804 		subl	$4, 8(%ebp)
+  47 007d 8B4508   		movl	8(%ebp), %eax
+  48 0080 C700CCCC 		movl	$-858993460, (%eax)
+  48      CCCC
+  49 0086 836D0804 		subl	$4, 8(%ebp)
+  50 008a 8B5510   		movl	16(%ebp), %edx
+  51 008d 8B4508   		movl	8(%ebp), %eax
+  52 0090 8910     		movl	%edx, (%eax)
+  53 0092 836D0804 		subl	$4, 8(%ebp)
+  54 0096 8B4508   		movl	8(%ebp), %eax
+  55 0099 C700BBBB 		movl	$-1145324613, (%eax)
+  55      BBBB
+  56 009f 836D0804 		subl	$4, 8(%ebp)
+  57 00a3 8B55FC   		movl	-4(%ebp), %edx
+  58 00a6 8B4508   		movl	8(%ebp), %eax
+  59 00a9 8910     		movl	%edx, (%eax)
+  60 00ab 836D0804 		subl	$4, 8(%ebp)
+  61 00af 8B4508   		movl	8(%ebp), %eax
+  62 00b2 C700BBBB 		movl	$-1145324613, (%eax)
+  62      BBBB
+  63 00b8 836D0804 		subl	$4, 8(%ebp)
+  64 00bc 8B4508   		movl	8(%ebp), %eax
+  65 00bf C7006745 		movl	$19088743, (%eax)
+  65      2301
+  66 00c5 836D0804 		subl	$4, 8(%ebp)
+  67 00c9 8B4508   		movl	8(%ebp), %eax
+  68 00cc C700DDDD 		movl	$-572662307, (%eax)
+  68      DDDD
+  69 00d2 836D0804 		subl	$4, 8(%ebp)
+  70 00d6 8B4508   		movl	8(%ebp), %eax
+  71 00d9 C7001000 		movl	$16, (%eax)
+  71      0000
+  72 00df 836D0804 		subl	$4, 8(%ebp)
+  73 00e3 8B4508   		movl	8(%ebp), %eax
+  74 00e6 C7001000 		movl	$16, (%eax)
+  74      0000
+  75 00ec 836D0804 		subl	$4, 8(%ebp)
+  76 00f0 8B4508   		movl	8(%ebp), %eax
+  77 00f3 C7000000 		movl	$0, (%eax)
+  77      0000
+  78 00f9 836D0804 		subl	$4, 8(%ebp)
+  79 00fd 8B4508   		movl	8(%ebp), %eax
+  80 0100 C7000000 		movl	$0, (%eax)
+  80      0000
+  81 0106 836D0804 		subl	$4, 8(%ebp)
+  82 010a 8B4508   		movl	8(%ebp), %eax
+  83 010d C7000000 		movl	$0, (%eax)
+  83      0000
+  84 0113 836D0804 		subl	$4, 8(%ebp)
+  85 0117 8B4508   		movl	8(%ebp), %eax
+  86 011a C7001111 		movl	$286331153, (%eax)
+  86      1111
+  87 0120 836D0804 		subl	$4, 8(%ebp)
+  88 0124 8B4508   		movl	8(%ebp), %eax
+  89 0127 C7002222 		movl	$572662306, (%eax)
+  89      2222
+  90 012d 836D0804 		subl	$4, 8(%ebp)
+  91 0131 8B4508   		movl	8(%ebp), %eax
+  92 0134 C9       		leave
+  93              		.cfi_restore 5
+  94              		.cfi_def_cfa 4, 4
+  95 0135 C3       		ret
+  96              		.cfi_endproc
+  97 0136 9090     	LFE0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 portcmn.c
+     /tmp/cccTVguw.s:5      .text:00000000 _pxPortInitialiseStack
+
+NO UNDEFINED SYMBOLS

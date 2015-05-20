@@ -1,0 +1,8 @@
+The board directory can pull individual .o files from a common architecture
+directory, or use local versions of those.
+
+Files in this directory will implement board-specific functions and define
+data structures used by the common code.
+
+The common code must not contain 'board_type' runtime conditionals.
+

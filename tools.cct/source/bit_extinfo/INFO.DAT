@@ -1,0 +1,141 @@
+;##############################################################################
+;#																			  #
+;#					Concurrent Technologies, plc. 2011						  #
+;#																			  #
+;#						CUTE EXTENDED INFO DATA FILE						  #
+;#																			  #
+;##############################################################################
+;#																			  #
+;# Modification history:													  #
+;#																			  #
+;# V1.0 20/04/11		[Haroon]	First version of data file created   	  #
+;#																			  #
+;##############################################################################
+;#																			  #
+;# Guide for adding new data (MUST BE STRICTLY FOLLOWED):					  #
+;#																			  #
+;#	1:	All data items must be DWORD aligned								  #
+;#	2:  NULL bytes can be used to padd data items							  #
+;#  3:  Structure and info version must be correct							  #
+;#	3:  Field type and length must be correct								  #
+;#  4:  All DWORD data is BYTE-SWAPPED										  #
+;#  5:  All strings are not BYTE-SWAPPED									  #
+;#																			  #
+;##############################################################################
+;#																			  #
+;# FILED TYPE CODES:														  #
+;#																			  #
+;# EFIELD_TEMPERATURE_GRADE_STRING		0x00000001							  #
+;# EFIELD_TEMPERATURE_GRADE_DATA		0x00000002							  #
+;# EFIELD_FORCE_DEBUG_ON				0x00000004							  #
+;# EFIELD_FORCE_DEBUG_OFF				0x00000008							  #
+;# EFIELD_OVERRIDE_STH_TEST_LIST		0x00000010							  #
+;# EFIELD_LAST_FIELD					0x80000000							  #
+;#																			  #
+;##############################################################################
+
+
+
+# BOARD_VARIENT
+# N-GRADE 
+'C', 'U', 'T', 'E', '_', 'C', 'O', 'N', 'F', 'I', 'G', 'I', 'N', 'F', 'O', 0x00, 
+0x01, 0x00, 0x01, 0x00,						# structure version   0x00010001
+0x01, 0x00, 0x01, 0x00,						# Info version        0x00010001
+0x00, 0x00, 0x00, 0x00,						# Field count
+0x00, 0x00, 0x00, 0x00,						# Total Field data length
+0x00, 0x00, 0x00, 0x00,						# Fields checksum
+0x00, 0x00, 0x00, 0x00,						# Header checksum
+
+	# - EFIELD_TEMPERATURE_GRADE_STRING
+	0x01, 0x00, 0x00, 0x00,					# Field Type	0x00000001
+	0x08, 0x00, 0x00, 0x00,					# Field Length	8
+	'N', '-', 'G', 'R', 'A', 'D', 'E', 0x00,	
+
+	# - EFIELD_TEMPERATURE_GRADE_DATA
+	0x02, 0x00, 0x00, 0x00,					# Field Type	0x00000002
+	0x10, 0x00, 0x00, 0x00,					# Field Length	16
+	0x64, 0x00, 0x00, 0x00,					# CPU Upper critical     [sensor 0]
+	0x25, 0x00, 0x00, 0x00,					# CPU lower critical
+	0x64, 0x00, 0x00, 0x00,					# Ambient upper critical [sensor 1]
+	0x25, 0x00, 0x00, 0x00,					# Ambient lower critical
+
+	# - EFIELD_FORCE_DEBUG_OFF
+	#0x08, 0x00, 0x00, 0x00,					# Field Type	0x00000008
+	#0x00, 0x00, 0x00, 0x00,					# No data needed by this field
+
+	# - EFIELD_OVERRIDE_STH_TEST_LIST
+	0x10, 0x00, 0x00, 0x00,					# Field Type	0x00000010
+	0x0c, 0x00, 0x00, 0x00,					# Field Length	12
+	0x01, 0x00, 0x00, 0x00,					# test numbers to display in soak master
+	0x02, 0x00, 0x00, 0x00,				    # 
+	0x0A, 0x00, 0x00, 0x00,					# last test number to display in soak master
+
+	# - EFIELD_LAST_FIELD, this is the last field and is used to verify that all fields 
+	#   are properly programmed
+	0x00, 0x00, 0x00, 0x80,					# Field Type	0x80000000
+	0x0C, 0x00, 0x00, 0x00,					# Field Length	must be 12 always
+	'F', 'I', 'E', 'L', 'D', '-', 'E', 'N', 'D', 0x00, 0x00, 0x00
+# BOARD_VARIENT 
+
+
+
+
+
+
+
+
+
+
+# BOARD_VARIENT 
+# E-GRADE  
+'C', 'U', 'T', 'E', '_', 'C', 'O', 'N', 'F', 'I', 'G', 'I', 'N', 'F', 'O', 0x00, 
+0x01, 0x00, 0x01, 0x00,						# structure version   0x00010001
+0x01, 0x00, 0x01, 0x00,						# Info version        0x00010001
+0x00, 0x00, 0x00, 0x00,						# Field count
+0x00, 0x00, 0x00, 0x00,						# total Filed data length
+0x00, 0x00, 0x00, 0x00,						# Field checksum
+0x00, 0x00, 0x00, 0x00,						# Header checksum
+
+	# - EFIELD_TEMPERATURE_GRADE_STRING
+	0x01, 0x00, 0x00, 0x00,					# Field Type	0x00000001
+	0x08, 0x00, 0x00, 0x00,					# Field Length	8
+	'E', '-', 'G', 'R', 'A', 'D', 'E', 0x00,		
+
+	# - EFIELD_LAST_FIELD, this is the last field and is used to verify that all fields 
+	#   are properly programmed
+	0x00, 0x00, 0x00, 0x80,					# Field Type	0x80000000
+	0x0C, 0x00, 0x00, 0x00,					# Field Length	12
+	'F', 'I', 'E', 'L', 'D', '-', 'E', 'N', 'D', 0x00, 0x00, 0x00
+# BOARD_VARIENT 
+
+
+
+
+
+
+
+
+
+
+# BOARD_VARIENT 
+# K-GRADE
+'C', 'U', 'T', 'E', '_', 'C', 'O', 'N', 'F', 'I', 'G', 'I', 'N', 'F', 'O', 0x00, 
+0x01, 0x00, 0x01, 0x00,						# structure version   0x00010001
+0x01, 0x00, 0x01, 0x00,						# Info version        0x00010001
+0x00, 0x00, 0x00, 0x00,						# Field count
+0x00, 0x00, 0x00, 0x00,						# total Filed data length
+0x00, 0x00, 0x00, 0x00,						# Field checksum
+0x00, 0x00, 0x00, 0x00,						# Header checksum
+
+	# - EFIELD_TEMPERATURE_GRADE_STRING
+	0x01, 0x00, 0x00, 0x00,					# Field Type	0x00000001
+	0x08, 0x00, 0x00, 0x00,					# Field Length	8
+	'K', '-', 'G', 'R', 'A', 'D', 'E', 0x00		
+
+	# - EFIELD_LAST_FIELD, this is the last field and is used to verify that all fields 
+	#   are properly programmed
+	0x00, 0x00, 0x00, 0x80,					# Field Type	0x80000000
+	0x0C, 0x00, 0x00, 0x00,					# Field Length	12
+	'F', 'I', 'E', 'L', 'D', '-', 'E', 'N', 'D', 0x00, 0x00, 0x00
+# BOARD_VARIENT 
+

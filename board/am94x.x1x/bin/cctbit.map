@@ -1,0 +1,1983 @@
+Archive member included because of file (symbol)
+
+../../kernel/libkernel.a(main.o)
+                              ../../loader/loader.o (c_entry)
+../../kernel/libkernel.a(lapic.o)
+                              ../../loader/loader.o (lapicInit)
+../../kernel/libkernel.a(sys_delay.o)
+                              ../../kernel/libkernel.a(main.o) (sysGetCpuFrequency)
+../../kernel/libkernel.a(idt.o)
+                              ../../loader/loader.o (sysInstallIdt)
+../../kernel/libkernel.a(ioapic.o)
+                              ../../loader/loader.o (sysInitIoApic)
+../../kernel/libkernel.a(debug_cons.o)
+                              ../../kernel/libkernel.a(main.o) (sysDebugOpen)
+../../kernel/libkernel.a(mmu.o)
+                              ../../kernel/libkernel.a(main.o) (sysMmuInitialize)
+../../kernel/libkernel.a(scc.o)
+                              ../../kernel/libkernel.a(main.o) (sysSccInit)
+../../kernel/libkernel.a(pci_alloc.o)
+                              ../../kernel/libkernel.a(main.o) (sysPciInitialize)
+../../kernel/libkernel.a(port_io.o)
+                              ../../kernel/libkernel.a(debug_cons.o) (sysOutPort8)
+../../kernel/libkernel.a(semaphore.o)
+                              ../../kernel/libkernel.a(mmu.o) (sysSemaphoreLock)
+../../kernel/libkernel.a(cpu.o)
+                              ../../kernel/libkernel.a(mmu.o) (sysInvalidateTLB)
+../../kernel/libkernel.a(gdt.o)
+                              ../../kernel/libkernel.a(mmu.o) (sysGdtWriteSlot)
+../../blib/libblib.a(bit_support.o)
+                              ../../kernel/libkernel.a(main.o) (bStartupDebugMode)
+../../blib/libblib.a(delay.o)
+                              ../../kernel/libkernel.a(main.o) (vDelay)
+../../blib/libblib.a(pciInt.o)
+                              ../../kernel/libkernel.a(main.o) (pciIntInit)
+../../blib/libblib.a(pci.o)   ../../kernel/libkernel.a(pci_alloc.o) (dPciReadReg)
+../../blib/libblib.a(mem.o)   ../../blib/libblib.a(pci.o) (dGetPhysPtr)
+../../clib/libclib.a(string.o)
+                              ../../kernel/libkernel.a(main.o) (memcpy)
+../../clib/libclib.a(stdio.o)
+                              ../../kernel/libkernel.a(main.o) (puts)
+../../clib/libclib.a(string_a.o)
+                              ../../kernel/libkernel.a(main.o) (strcpy)
+../../clib/libclib.a(alloc.o)
+                              ../../kernel/libkernel.a(main.o) (sysInitMalloc)
+../../clib/libclib.a(vsprintf.o)
+                              ../../kernel/libkernel.a(debug_cons.o) (vsprintf)
+../../clib/libclib.a(bcopy.o)
+                              ../../blib/libblib.a(pciInt.o) (bcopy)
+../../sth/libsth.a(sth_router.o)
+                              ../../kernel/libkernel.a(main.o) (vSTHRouter)
+../../sth/libsth.a(sthCpci.o)
+                              ../../sth/libsth.a(sth_router.o) (cpciSthInit)
+../../tests/libbittest.a(ipmi.o)
+                              ../../sth/libsth.a(sthCpci.o) (dIpmiSendRequest)
+../../tests/libbittest.a(fpu.o)
+                              ../../tests/libbittest.a(ipmi.o) (fpuSetup)
+../../mth/libmth.a(cli.o)     ../../kernel/libkernel.a(main.o) (vMTHCli)
+../../mth/libmth.a(mth_utils.o)
+                              ../../sth/libsth.a(sthCpci.o) (dDoTest)
+../../mth/libmth.a(command.o)
+                              ../../mth/libmth.a(cli.o) (vMTHInitCmdHistory)
+../../mth/libmth.a(util.o)    ../../mth/libmth.a(command.o) (vMTHZeroCounters)
+../../mth/libmth.a(service.o)
+                              ../../mth/libmth.a(command.o) (vMTHExecuteTest)
+../../mth/libmth.a(help.o)    ../../mth/libmth.a(util.o) (iMTHHelpGetMaxPage)
+../../conslib/libconslib.a(command.o)
+                              ../../mth/libmth.a(command.o) (vRedrawPrompt)
+../../conslib/libconslib.a(util.o)
+                              ../../mth/libmth.a(command.o) (vReset)
+../../conslib/libconslib.a(support.o)
+                              ../../mth/libmth.a(mth_utils.o) (iCheckForEsc)
+../../conslib/libconslib.a(service.o)
+                              ../../mth/libmth.a(command.o) (vDisplayMemory)
+../../arch/srio/libsrioArch.a(srioArch.o)
+                              ../../kernel/libkernel.a(main.o) (srioPreInit)
+../../arch/srio/libsrioArch.a(tsi721.o)
+                              ../../kernel/libkernel.a(main.o) (tsi721_init)
+../../arch/srio/libsrioArch.a(rio.o)
+                              ../../kernel/libkernel.a(main.o) (rio_init_mports)
+../../arch/srio/libsrioArch.a(rio-driver.o)
+                              ../../arch/srio/libsrioArch.a(tsi721.o) (riohdid0)
+../../arch/srio/libsrioArch.a(rio-scan.o)
+                              ../../arch/srio/libsrioArch.a(rio.o) (rio_enum_mport)
+../../arch/srio/libsrioArch.a(rio-access.o)
+                              ../../arch/srio/libsrioArch.a(rio.o) (__rio_local_read_config_32)
+../../arch/srio/libsrioArch.a(idt_gen2.o)
+                              ../../arch/srio/libsrioArch.a(rio-scan.o) (idtg2_switch_init)
+../../xlib/sm3/libsm3.a(packet.o)
+                              ../../sth/libsth.a(sthCpci.o) (vCommInit)
+../../xlib/sm3/libsm3.a(testParameters.o)
+                              ../../sth/libsth.a(sthCpci.o) (vParseCommandTail)
+../../xlib/sm3/libsm3.a(serialPacket.o)
+                              ../../sth/libsth.a(sthCpci.o) (wPacketSend)
+../../xlib/sm3/libsm3.a(autoid.o)
+                              ../../sth/libsth.a(sthCpci.o) (wPerformAutoId)
+../../FreeRTOS/Demo/CUTE/libfreertos.a(tasks.o)
+                              ../../kernel/libkernel.a(main.o) (xTaskGenericCreate)
+../../FreeRTOS/Demo/CUTE/libfreertos.a(queue.o)
+                              ../../kernel/libkernel.a(debug_cons.o) (xQueueGenericSend)
+../../FreeRTOS/Demo/CUTE/libfreertos.a(croutine.o)
+                              ../../kernel/libkernel.a(main.o) (vCoRoutineSchedule)
+../../FreeRTOS/Demo/CUTE/libfreertos.a(heap_2.o)
+                              ../../blib/libblib.a(pciInt.o) (pvPortMalloc)
+../../FreeRTOS/Demo/CUTE/libfreertos.a(port.o)
+                              ../../sth/libsth.a(sthCpci.o) (sPortGetCurrentCPU)
+../../FreeRTOS/Demo/CUTE/libfreertos.a(portcmn.o)
+                              ../../FreeRTOS/Demo/CUTE/libfreertos.a(tasks.o) (pxPortInitialiseStack)
+../../FreeRTOS/Demo/CUTE/libfreertos.a(list.o)
+                              ../../FreeRTOS/Demo/CUTE/libfreertos.a(tasks.o) (vListInitialise)
+../../comm/serial/libserialComm.a(serial.o)
+                              ../../xlib/sm3/libsm3.a(packet.o) (wSerialMessageGet)
+../../xlib/interconnect/libinterconnect.a(cpci_Interconnect.o)
+                              ../../sth/libsth.a(sthCpci.o) (initializeInterconnect)
+../../lwip-1.4.0/liblwip.a(netif.o)
+                              ../../kernel/libkernel.a(main.o) (netif_find)
+../../lwip-1.4.0/liblwip.a(smClient.o)
+                              ../../xlib/sm3/libsm3.a(packet.o) (smcReady)
+../../lwip-1.4.0/liblwip.a(lwIP_Apps.o)
+                              ../../mth/libmth.a(util.o) (netStatsCommand)
+../../lwip-1.4.0/liblwip.a(gei_netif.o)
+                              board.o (geifGetMacAddr)
+../../lwip-1.4.0/liblwip.a(tcpip.o)
+                              ../../lwip-1.4.0/liblwip.a(lwIP_Apps.o) (tcpip_input)
+../../lwip-1.4.0/liblwip.a(tcp.o)
+                              ../../lwip-1.4.0/liblwip.a(netif.o) (tcp_abort)
+../../lwip-1.4.0/liblwip.a(etharp.o)
+                              ../../lwip-1.4.0/liblwip.a(gei_netif.o) (etharp_output)
+../../lwip-1.4.0/liblwip.a(dhcp.o)
+                              ../../lwip-1.4.0/liblwip.a(lwIP_Apps.o) (dhcp_start)
+../../lwip-1.4.0/liblwip.a(sockets.o)
+                              ../../lwip-1.4.0/liblwip.a(smClient.o) (lwip_close)
+../../lwip-1.4.0/liblwip.a(mem.o)
+                              ../../lwip-1.4.0/liblwip.a(smClient.o) (mem_free)
+../../lwip-1.4.0/liblwip.a(def.o)
+                              ../../lwip-1.4.0/liblwip.a(smClient.o) (lwip_htons)
+../../lwip-1.4.0/liblwip.a(ip_addr.o)
+                              ../../lwip-1.4.0/liblwip.a(etharp.o) (ip4_addr_isbroadcast)
+../../lwip-1.4.0/liblwip.a(stats.o)
+                              ../../lwip-1.4.0/liblwip.a(lwIP_Apps.o) (lwip_stats)
+../../lwip-1.4.0/liblwip.a(CommandServer.o)
+                              ../../lwip-1.4.0/liblwip.a(lwIP_Apps.o) (vBasicSocketsCommandInterpreterTask)
+../../lwip-1.4.0/liblwip.a(CommandInterpreter.o)
+                              ../../lwip-1.4.0/liblwip.a(lwIP_Apps.o) (xCmdIntRegisterCommand)
+../../lwip-1.4.0/liblwip.a(sys_arch.o)
+                              ../../lwip-1.4.0/liblwip.a(tcpip.o) (sys_mbox_new)
+../../lwip-1.4.0/liblwip.a(pbuf.o)
+                              ../../lwip-1.4.0/liblwip.a(gei_netif.o) (pbuf_alloc)
+../../lwip-1.4.0/liblwip.a(timers.o)
+                              ../../lwip-1.4.0/liblwip.a(tcp.o) (tcp_timer_needed)
+../../lwip-1.4.0/liblwip.a(ip.o)
+                              ../../lwip-1.4.0/liblwip.a(tcp.o) (ip_route)
+../../lwip-1.4.0/liblwip.a(memp.o)
+                              ../../lwip-1.4.0/liblwip.a(tcpip.o) (memp_malloc)
+../../lwip-1.4.0/liblwip.a(init.o)
+                              ../../lwip-1.4.0/liblwip.a(tcpip.o) (lwip_init)
+../../lwip-1.4.0/liblwip.a(tcp_out.o)
+                              ../../lwip-1.4.0/liblwip.a(tcp.o) (tcp_send_fin)
+../../lwip-1.4.0/liblwip.a(udp.o)
+                              ../../lwip-1.4.0/liblwip.a(ip.o) (udp_input)
+../../lwip-1.4.0/liblwip.a(netbuf.o)
+                              ../../lwip-1.4.0/liblwip.a(sockets.o) (netbuf_delete)
+../../lwip-1.4.0/liblwip.a(api_lib.o)
+                              ../../lwip-1.4.0/liblwip.a(sockets.o) (netconn_new_with_proto_and_callback)
+../../lwip-1.4.0/liblwip.a(ip_frag.o)
+                              ../../lwip-1.4.0/liblwip.a(timers.o) (ip_reass_tmr)
+../../lwip-1.4.0/liblwip.a(icmp.o)
+                              ../../lwip-1.4.0/liblwip.a(ip.o) (icmp_input)
+../../lwip-1.4.0/liblwip.a(inet_chksum.o)
+                              ../../lwip-1.4.0/liblwip.a(tcp_out.o) (inet_chksum_pseudo)
+../../lwip-1.4.0/liblwip.a(tcp_in.o)
+                              ../../lwip-1.4.0/liblwip.a(ip.o) (tcp_input)
+../../lwip-1.4.0/liblwip.a(api_msg.o)
+                              ../../lwip-1.4.0/liblwip.a(api_lib.o) (do_newconn)
+./bin/libbittest.a(serial.o)  board.o (dSerialExternalLoopback)
+./bin/libbittest.a(gpioTests.o)
+                              board.o (dGPIOTest)
+./bin/libbittest.a(usb.o)     board.o (dUsbRegTest)
+./bin/libbittest.a(eth.o)     board.o (vGetEthMacAddr)
+./bin/libbittest.a(fpuTests.o)
+                              board.o (dFPUTest)
+./bin/libbittest.a(RTCTests.o)
+                              board.o (dRTCTest)
+./bin/libbittest.a(ide.o)     board.o (dIdeRegaccessTest)
+./bin/libbittest.a(ram.o)     board.o (dMemDatalineTest)
+./bin/libbittest.a(SMBUS.o)   board.o (dSMBUSTest)
+./bin/libbittest.a(XMM_MMXtests.o)
+                              board.o (dMMXTest)
+./bin/libbittest.a(pass.o)    board.o (dPassingTest)
+./bin/libbittest.a(srioTests.o)
+                              board.o (dCCT_SrioRegisterAccessTest)
+./bin/libbittest.a(keybd.o)   board.o (dKbCInterconnect)
+./bin/libbittest.a(pcitests.o)
+                              board.o (dPciTest)
+./bin/libbittest.a(LDT-PITtests.o)
+                              board.o (dLdtBasicTest)
+./bin/libbittest.a(interrupt.o)
+                              board.o (dInterruptTest)
+./bin/libbittest.a(fail.o)    board.o (dFailingTest)
+./bin/libbittest.a(NVMemTest.o)
+                              board.o (dNVRAMTest)
+./bin/libbittest.a(SCRTests.o)
+                              board.o (dSCRTest)
+./bin/libbittest.a(smp.o)     board.o (dCPUExec)
+./bin/libbittest.a(SpeedSteptests.o)
+                              board.o (dSpeedStepTest)
+./bin/libbittest.a(spiFwh.o)  board.o (dbitSpiFwhTest)
+./bin/libbittest.a(xmmx.o)    ./bin/libbittest.a(XMM_MMXtests.o) (xmmWrite)
+./bin/libblib.a(io.o)         ../../tests/libbittest.a(ipmi.o) (dIoReadReg)
+./bin/libblib.a(console.o)    ../../tests/libbittest.a(ipmi.o) (vConsoleWrite)
+./bin/libblib.a(bit_exec.o)   ../../mth/libmth.a(mth_utils.o) (cctExecuteBit)
+./bin/libblib.a(msr.o)        board.o (vReadMsr)
+./bin/libclib.a(mem.o)        ./bin/libbittest.a(srioTests.o) (memcmp)
+./bin/libclib.a(error_msg.o)  ../../tests/libbittest.a(ipmi.o) (postErrorMsg)
+./bin/libclib.a(stdlib.o)     ../../mth/libmth.a(mth_utils.o) (atoi)
+./bin/libclib.a(ctype.o)      ../../conslib/libconslib.a(command.o) (_ctype)
+./bin/libkernel.a(spinlock.o)
+                              ../../blib/libblib.a(pciInt.o) (spinLockInit)
+./bin/libkernel.a(mem_io.o)   ../../conslib/libconslib.a(service.o) (sysWriteMem8)
+./bin/libkernel.a(atomic.o)   ../../FreeRTOS/Demo/CUTE/libfreertos.a(tasks.o) (atomic32Get)
+
+Allocating common symbols
+Common symbol       size              file
+
+ManufId             0x2               ./bin/libbittest.a(SMBUS.o)
+mport               0x4               ./bin/libbittest.a(srioTests.o)
+netif_list          0x4               ../../lwip-1.4.0/liblwip.a(netif.o)
+abSlaveDev          0x20              ../../xlib/sm3/libsm3.a(packet.o)
+bSlaves             0x1               ../../xlib/sm3/libsm3.a(packet.o)
+tcp_active_pcbs     0x4               ../../lwip-1.4.0/liblwip.a(tcp.o)
+pciStoredConfig     0x44              board.o
+asSlots             0xe0              ../../xlib/sm3/libsm3.a(packet.o)
+pxCurrentTCB        0x10              ../../FreeRTOS/Demo/CUTE/libfreertos.a(tasks.o)
+current_iphdr_dest  0x4               ../../lwip-1.4.0/liblwip.a(ip.o)
+dhcp_rx_options_val
+                    0x28              ../../lwip-1.4.0/liblwip.a(dhcp.o)
+tcp_tw_pcbs         0x4               ../../lwip-1.4.0/liblwip.a(tcp.o)
+arr_rio_dev         0xa0              ./bin/libbittest.a(srioTests.o)
+current_header      0x4               ../../lwip-1.4.0/liblwip.a(ip.o)
+current_netif       0x4               ../../lwip-1.4.0/liblwip.a(ip.o)
+bControllerType     0x1               ../../xlib/sm3/libsm3.a(packet.o)
+current_iphdr_src   0x4               ../../lwip-1.4.0/liblwip.a(ip.o)
+idleCount           0x10              ../../FreeRTOS/Demo/CUTE/libfreertos.a(tasks.o)
+udp_pcbs            0x4               ../../lwip-1.4.0/liblwip.a(udp.o)
+netif_default       0x4               ../../lwip-1.4.0/liblwip.a(netif.o)
+tcp_listen_pcbs     0x4               ../../lwip-1.4.0/liblwip.a(tcp.o)
+my_slot             0x2               ../../sth/libsth.a(sthCpci.o)
+globalMutexPool     0x1c              ../../kernel/libkernel.a(main.o)
+dhcp_rx_options_given
+                    0xa               ../../lwip-1.4.0/liblwip.a(dhcp.o)
+RevId               0x2               ./bin/libbittest.a(SMBUS.o)
+dParams             0x80              ../../xlib/sm3/libsm3.a(testParameters.o)
+pSerialBaudInfo     0x4               ./bin/libbittest.a(serial.o)
+tcp_tmp_pcb         0x4               ../../lwip-1.4.0/liblwip.a(tcp.o)
+lwip_stats          0x240             ../../lwip-1.4.0/liblwip.a(stats.o)
+tcp_ticks           0x4               ../../lwip-1.4.0/liblwip.a(tcp.o)
+tcp_input_pcb       0x4               ../../lwip-1.4.0/liblwip.a(tcp_in.o)
+ldtPit              0x4               ./bin/libbittest.a(LDT-PITtests.o)
+wNumParams          0x2               ../../xlib/sm3/libsm3.a(testParameters.o)
+asSlotsM            0x100             ../../xlib/sm3/libsm3.a(packet.o)
+tcp_bound_pcbs      0x4               ../../lwip-1.4.0/liblwip.a(tcp.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ram              0x00100000         0x00100000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00400000                __image_base__ = 0x400000
+                0x00000000                __dll__ = 0x0
+                0x00400000                ___ImageBase = 0x400000
+                0x00001000                __section_alignment__ = 0x1000
+                0x00000200                __file_alignment__ = 0x200
+                0x00000004                __major_os_version__ = 0x4
+                0x00000000                __minor_os_version__ = 0x0
+                0x00000001                __major_image_version__ = 0x1
+                0x00000000                __minor_image_version__ = 0x0
+                0x00000004                __major_subsystem_version__ = 0x4
+                0x00000000                __minor_subsystem_version__ = 0x0
+                0x00000003                __subsystem__ = 0x3
+                0x00200000                __size_of_stack_reserve__ = 0x200000
+                0x00001000                __size_of_stack_commit__ = 0x1000
+                0x00100000                __size_of_heap_reserve__ = 0x100000
+                0x00001000                __size_of_heap_commit__ = 0x1000
+                0x00000000                __loader_flags__ = 0x0
+                0x00000000                __dll_characteristics__ = 0x0
+                0x00100000                __text_start = 0x100000
+
+.text           0x00100000    0x59000
+ *(.text)
+ .text          0x00100000      0x39c ../../loader/loader.o
+                0x00100000                s2_signature
+                0x0010000c                prot_entry
+ .text          0x0010039c      0x820 ../../kernel/libkernel.a(main.o)
+                0x0010039c                vGetUSMIPAddrs
+                0x001007c1                c_entry
+                0x00100b01                sysGetTestHandler
+                0x00100b0b                vMainQueueSendPassed
+                0x00100b10                vApplicationIdleHook
+                0x00100b1d                secondStageSignon
+                0x00100b31                debugInit
+                0x00100b5a                smp_dispatch
+                0x00100b93                bsp_ident
+                0x00100ba7                bsp_wait
+ .text          0x00100bbc       0x68 ../../kernel/libkernel.a(lapic.o)
+                0x00100bbc                lapicInit
+                0x00100c11                lapicGetId
+ .text          0x00100c24       0x80 ../../kernel/libkernel.a(sys_delay.o)
+                0x00100c24                sysGetCpuFrequency
+                0x00100c2e                sysDelayMilliseconds
+                0x00100c3d                sysDelayMicroseconds
+                0x00100c4c                sysGetTimestamp
+                0x00100c53                calibrateDelay
+                0x00100c60                msDelay
+                0x00100c6f                usDelay
+ .text          0x00100ca4      0x900 ../../kernel/libkernel.a(idt.o)
+                0x00100f64                sysInstallIdt
+                0x00100f93                sysInstallUserHandler
+                0x00100fbe                sysDeleteUserHandlers
+                0x00101506                sysGenericCpu
+                0x00101574                sysGeneric
+ .text          0x001015a4      0x2b0 ../../kernel/libkernel.a(ioapic.o)
+                0x001015a4                sysInitIoApic
+                0x00101647                sysApicSendEoi
+                0x00101655                sysMaskPin
+                0x001016ba                sysUnmaskPin
+                0x0010171f                sysMaskAll
+                0x00101762                sysEnableInterrupts
+                0x00101764                sysDisableInterrupts
+                0x00101766                sysCpuIntLock
+                0x0010176e                sysCpuIntUnlock
+                0x0010177e                sysPinToVector
+                0x001017b7                sysSendIpi
+                0x0010181a                sysIpiTick
+ .text          0x00101854      0x500 ../../kernel/libkernel.a(debug_cons.o)
+                0x00101854                sysDebugOpen
+                0x00101a4c                sysDebugClose
+                0x00101a5b                sysIsDebugopen
+                0x00101a65                sysDebugPrintf
+                0x00101b48                sysDebugWriteString
+                0x00101be1                sysAPDebugWriteString
+                0x00101c2c                sysDebugWriteChar
+                0x00101cad                sysAPDebugWriteChar
+                0x00101ce4                sysDebugFlush
+ .text          0x00101d54      0x6e4 ../../kernel/libkernel.a(mmu.o)
+                0x00101d54                sysCreateDescriptor
+                0x00101ea7                sysMmuInitialize
+                0x0010200d                sysMmuFreeAll
+                0x00102076                sysMmuMapBlock
+                0x0010216c                sysMemGetPhysPtrLocked
+                0x00102238                sysMmuUnmapBlock
+                0x00102285                sysMmuUnmapAll
+                0x00102292                sysMallocBlock
+ .text          0x00102438      0x244 ../../kernel/libkernel.a(scc.o)
+                0x00102438                sysSccInit
+                0x00102565                sysSccTxChar
+                0x001025b2                sysSccRxChar
+                0x001025de                sysSccPollTx
+                0x00102615                sysSccFlushTx
+                0x00102644                sysSccPollRx
+ .text          0x0010267c      0xf0c ../../kernel/libkernel.a(pci_alloc.o)
+                0x0010267c                sysPciInitialize
+                0x001027cd                finddev
+                0x0010357b                dPciGetTopOfMem
+ .text          0x00103588       0x48 ../../kernel/libkernel.a(port_io.o)
+                0x00103588                sysOutPort8
+                0x00103595                sysOutPort16
+                0x001035a4                sysOutPort32
+                0x001035b1                sysInPort8
+                0x001035bb                sysInPort16
+                0x001035c6                sysInPort32
+ .text          0x001035d0       0x3c ../../kernel/libkernel.a(semaphore.o)
+                0x001035d0                sysSemaphoreLock
+                0x001035e6                sysSemaphoreRelease
+                0x001035f4                sysSemaphoreTest
+ .text          0x0010360c       0x58 ../../kernel/libkernel.a(cpu.o)
+                0x0010360c                sysCpuid
+                0x00103626                sysInvalidateTLB
+                0x00103631                sysCacheEnable
+                0x00103641                sysCacheDisable
+                0x00103653                sysHalt
+                0x00103657                _sysThrowGpf
+ .text          0x00103664       0xb8 ../../kernel/libkernel.a(gdt.o)
+                0x00103664                sysGdtWriteSlot
+                0x00103697                sysGdtDeleteAllSlots
+                0x001036b6                sysGdtFindFreeSlot
+                0x001036e8                sysGdtFindFreeSlotRes
+ .text          0x0010371c      0x130 ../../blib/libblib.a(bit_support.o)
+                0x0010371c                bStartupDebugMode
+                0x00103729                bForceStartupDebugMode
+                0x0010373b                bStartupTestHandler
+                0x0010374a                bStartupCUTEMode
+                0x0010375a                bStartupCpuMode
+                0x0010376a                bStartupPbitMode
+                0x0010377a                bStartupFailAction
+                0x0010378c                bGetTestHandler
+                0x00103799                bGetBiosInfoPresent
+                0x001037ab                bGetBaudRate
+                0x001037bd                dGetPbitSelectionMask
+                0x00103803                vDebugWrite
+ .text          0x0010384c       0x14 ../../blib/libblib.a(delay.o)
+                0x0010384c                vDelay
+ .text          0x00103860      0x4ec ../../blib/libblib.a(pciInt.o)
+                0x00103b57                pciIntConnect
+                0x00103cae                pciIntInit
+ .text          0x00103d4c      0x600 ../../blib/libblib.a(pci.o)
+                0x00103d4c                vPciSetHighestBus
+                0x00103d63                dPciReadReg
+                0x00103e13                vPciWriteReg
+                0x00103ecc                dPciReadRegExtd
+                0x00103fd5                vPciWriteRegExtd
+                0x001040cd                iPciFindDeviceById
+                0x00104214                iPciFindDeviceByClass
+ .text          0x0010434c      0x348 ../../blib/libblib.a(mem.o)
+                0x0010434c                dGetPhysPtr
+                0x0010443e                dGetPhysPtr64
+                0x00104535                dGetBufferPtr
+                0x00104660                vFreePtr
+ .text          0x00104694       0x50 ../../clib/libclib.a(string.o)
+                0x00104694                strpbrk
+                0x001046a5                strspn
+                0x001046af                strstr
+                0x001046c0                memcpy
+ .text          0x001046e4      0x2d0 ../../clib/libclib.a(stdio.o)
+                0x001046e4                getx
+                0x001046ee                putchar
+                0x001047e4                getchar
+                0x0010486d                puts
+                0x00104891                cputs
+                0x001048bf                gets
+                0x001048fc                sprintf
+                0x0010492c                kbhit
+ .text          0x001049b4      0x22c ../../clib/libclib.a(string_a.o)
+                0x001049b4                strlen
+                0x001049cd                strchr
+                0x001049eb                strrchr
+                0x00104a0b                strcat
+                0x00104a2e                strncat
+                0x00104a5c                strcmp
+                0x00104a7d                strncmp
+                0x00104aa8                strcpy
+                0x00104ac1                strncpy
+                0x00104aea                stricmp
+                0x00104b22                strnicmp
+                0x00104b64                strset
+                0x00104b7d                strnset
+                0x00104b9e                strlwr
+                0x00104bbf                strupr
+ .text          0x00104be0      0x608 ../../clib/libclib.a(alloc.o)
+                0x00104be0                sysInitMalloc
+                0x00104c45                malloc
+                0x00104cc1                free
+                0x00104d37                free_all
+                0x00104db1                k_malloc
+                0x00104e2d                k_free
+ .text          0x001051e8      0x828 ../../clib/libclib.a(vsprintf.o)
+                0x001051e8                vsprintf
+ .text          0x00105a10       0xa4 ../../clib/libclib.a(bcopy.o)
+                0x00105a10                bcopy
+ .text          0x00105ab4       0x18 ../../sth/libsth.a(sth_router.o)
+                0x00105ab4                vSTHRouter
+ .text          0x00105acc     0x112c ../../sth/libsth.a(sthCpci.o)
+                0x00105acc                cpciSthInit
+                0x00105b30                cpciSthLoop
+                0x00105cda                bAddrToMem
+                0x00105d1d                bMemToSlot
+                0x00106327                IDX_p3_bist_exit
+ .text          0x00106bf8     0x3ac0 ../../tests/libbittest.a(ipmi.o)
+                0x00107003                dIpmiSendRequest
+                0x0010707c                dIpmiInit
+                0x001070b6                dReadDeviceID
+                0x0010729a                dIpmiSelfTestStatus
+                0x00107352                dIpmiSDRformatTest
+                0x00107517                fRawToUnits
+                0x001077a0                dTestalarm
+                0x001079d4                dTestThresholds
+                0x00108c38                dIpmiSensorThresholdTest
+                0x00109205                dIpmiSensoralarmTest
+                0x0010943c                vIpmiDeinit
+                0x0010947c                dIpmiWatchdogPreTest
+                0x001097af                dIpmiWatchdogResetTest
+                0x00109a81                dIpmiReady
+                0x00109ace                dIpmiWDResetTest
+                0x00109ae1                dIpmiWDPreTest
+                0x00109af4                dIpmiAlarmIntTest
+                0x00109b15                dIpmiThresholdTest
+                0x00109bfe                dIpmiSDRFormatTest
+                0x00109c1f                dIpmiSelfTest
+                0x00109c40                dIpmiIntTest
+                0x00109c61                dIpmiSmicInterfaceTest
+                0x00109e56                dAMCTests
+                0x0010a5be                dIpmiAMCTest
+                0x0010a5df                bGetAMCIpmbAddrs
+                0x0010a63e                bGetSPSStatus
+ .text          0x0010a6b8       0xe8 ../../tests/libbittest.a(fpu.o)
+                0x0010a6b8                fpuExpTest
+                0x0010a6d4                fpuTest
+                0x0010a735                fpuSetup
+                0x0010a75d                fpuGetFlags
+                0x0010a76e                fpuClearFlags
+                0x0010a774                cpuSetNe
+ .text          0x0010a7a0      0x144 ../../mth/libmth.a(cli.o)
+                0x0010a7a0                vMTHCli
+ .text          0x0010a8e4      0x87c ../../mth/libmth.a(mth_utils.o)
+                0x0010a8e4                vMTHExecParseCmd
+                0x0010ac88                dDoTest
+                0x0010af14                dMTHInitTestCounters
+                0x0010b05d                vMTHGetTestStats
+                0x0010b0c8                vMTHZeroTestStats
+ .text          0x0010b160      0x5d0 ../../mth/libmth.a(command.o)
+                0x0010b160                vMTHInitCmdHistory
+                0x0010b193                iMTHGetUserCommand
+                0x0010b4c1                iMTHProcessCommandLine
+                0x0010b5fb                iMTHGetCommandType
+                0x0010b67d                vMTHCommandDispatcher
+ .text          0x0010b730      0x114 ../../mth/libmth.a(util.o)
+                0x0010b730                vMTHZeroCounters
+                0x0010b749                vMTHHelpScreen
+                0x0010b798                vMTHVersionInfo
+                0x0010b7c9                vMTHTaskList
+                0x0010b7e9                vMTHNetStats
+                0x0010b817                vMTHSmcStats
+ .text          0x0010b844      0x290 ../../mth/libmth.a(service.o)
+                0x0010b844                vMTHExecuteTest
+                0x0010b929                vMTHTestSummary
+ .text          0x0010bad4      0x358 ../../mth/libmth.a(help.o)
+                0x0010bad4                iMTHHelpGetMaxPage
+                0x0010bade                vMTHHelpDisplayHeader
+                0x0010bb23                vMTHHelpDisplayPage
+                0x0010bdea                iMTHHelpPromptNext
+ .text          0x0010be2c      0xf0c ../../conslib/libconslib.a(command.o)
+                0x0010be2c                vRedrawPrompt
+                0x0010be58                vWriteErrorString
+                0x0010be77                iExtractNumber
+                0x0010c3bf                vShowCommandLine
+                0x0010c44b                vSetDefaults
+                0x0010c4f0                iExtractArgs
+                0x0010c98a                vProcessUserCmd
+                0x0010ca76                vExecPostProc
+                0x0010cbdf                iExecTokenize
+                0x0010cc43                vShowExecutionTime
+ .text          0x0010cd38      0x1dc ../../conslib/libconslib.a(util.o)
+                0x0010cd38                vReset
+                0x0010cd74                vBIOS
+                0x0010cdd9                vRadix2
+                0x0010cdf7                vRadix10
+                0x0010ce15                vRadix16
+                0x0010ce33                iGetRadix
+                0x0010ce3d                vConfirmOn
+                0x0010ce5b                vConfirmOff
+                0x0010ce79                iGetConfirmFlag
+                0x0010ce83                vSetRepeatIndex
+                0x0010ce90                iGetRepeatIndex
+                0x0010ce9a                vCacheOn
+                0x0010ceb3                vCacheOff
+                0x0010cecc                vBeaHalt
+                0x0010ceea                vBeaContinue
+                0x0010cf08                iGetBeaFlag
+ .text          0x0010cf14      0x1b8 ../../conslib/libconslib.a(support.o)
+                0x0010cf14                iCheckForEsc
+                0x0010cf36                iGetExtdKeyPress
+                0x0010cfe7                iFilterWhitespace
+ .text          0x0010d0cc     0x3268 ../../conslib/libconslib.a(service.o)
+                0x0010d0cc                vDisplayMemory
+                0x0010d321                vDisplayAscii
+                0x0010d576                vSetMemory
+                0x0010d813                vPortInput
+                0x0010da00                vPortOutput
+                0x0010dc4e                vPciScan
+                0x0010df7a                vPciRead
+                0x0010e194                vPciWrite
+                0x0010e45a                vPciQuery
+                0x0010f55e                vPciBridgeScan
+                0x0010f7f5                vCpuid
+                0x0010fcbc                vTestMenu
+                0x00110010                vGpf
+                0x00110035                vNvRead
+                0x0011019d                vNvWrite
+ .text          0x00110334     0x3d58 board.o
+                0x00110334                brdGetConsolePort
+                0x00110352                brdGetDebugPort
+                0x0011037e                brdGetSccPortMap
+                0x0011045b                brdGetSokePort
+                0x00110472                brdGetSccParams
+                0x001104f1                brdGetMaxDramBelow4GB
+                0x00110504                brdFlashLed
+                0x0011056e                brdReset
+                0x001105af                brdCheckUserMthSwitch
+                0x001105ec                brdGetIPMINMI
+                0x00110629                brdclearIPMINMI
+                0x0011066c                brdSkipEthInterface
+                0x001106fa                brdMemfromGPIO
+                0x001107aa                brdGetCpciBrInstance
+                0x001107cd                brdCheckCpciIsSyscon
+                0x001107dd                brdSkipEthTest
+                0x001107e2                brdSetSpeedStep
+                0x001109c4                brdStoreConfigChanges
+                0x00110a4f                brdRestoreConfigChanges
+                0x00110af2                brdEnableSmicLpcIoWindow
+                0x00110b61                brdConfigSrioDevice
+                0x00110c37                brdDeConfigSrioDevice
+                0x0011109c                brdHwInit
+                0x00111511                brdPostScanInit
+                0x001116dc                brdNvWrite
+                0x0011186d                brdNvRead
+                0x00111ba0                brdPciGetParams
+                0x00111c05                brdPciCfgHbStart
+                0x00111c48                brdPciCfgHbEnd
+                0x00111d14                brdPciRoutePirqToIrq
+                0x00111e56                brdSkipIOResourceAllocation
+                0x00111f8c                brdDisplaySignon
+                0x00112049                brdGetVersionInfo
+                0x00112084                brdGetTestDirectory
+                0x0011226c                SIOEnable
+                0x00112290                SIODisable
+                0x001122b4                brdChkRtm
+                0x001122be                brdGetSuperIO
+                0x001122d1                brdGetSuperIONum
+                0x001122e4                brdGetPCIDB
+                0x001122f8                brdPostON
+                0x00112302                brdPostOFF
+                0x0011230c                brdGetSCR
+                0x00112320                brdEEPROMinfo
+                0x00112398                board_service
+                0x0011241c                dDispConfig
+                0x0011296d                brdCuteInfo
+                0x001129d8                brdGetNumCores
+                0x00112a15                brdGetFpuExceptionMap
+                0x00112a28                brdSMBUSinfo
+                0x00112b10                brdLEDinfo
+                0x00112b24                brdAppFlashGetParams
+                0x00112b37                brdAppFlashSelectPage
+                0x00112bbd                brdAppFlashEnable
+                0x00112bc8                brdGetTempinfo
+                0x00112bdc                boardCalibrateDelay
+                0x00112c08                brdInitIcr
+                0x00112f48                brdSerialBaudInfo
+                0x00112f5b                vEnRS485_hd
+                0x00112f65                vEnRS485_fd
+                0x00112f6f                vDisRS485
+                0x00112f7c                brdSpiEEPROMInfo
+                0x00112f90                brdLdtPitInfo
+                0x00112fe1                ldtClearInt
+                0x0011302c                brdGetExtendedInfo
+                0x001137f3                brdGetBiosInfo
+                0x00113d6f                brdGetForceDebugOn
+                0x00113d89                brdGetForceDebugOff
+                0x00113da3                brdGetSthTestList
+                0x00113dd0                brdGetBIOSVersion
+                0x00113e1d                brdGetNameString
+                0x00113e5e                brdGetTempGradeString
+                0x00113e9f                brdGetSlotId
+                0x00113ef0                brdWatchdogEnable
+                0x00113ef5                brdWatchdogEnableNmi
+                0x00113efa                brdWatchdogEnableReset
+                0x00113f04                brdWatchdogCheckSwitch
+                0x00113f0e                brdWatchdogDisable
+                0x00113f13                brdWatchdogPat
+                0x00113f18                brdGetWdogInfo
+                0x00113f24                brdGetGPIOInfo
+                0x00113f38                networkInit
+ .text          0x0011408c      0x714 ../../arch/srio/libsrioArch.a(srioArch.o)
+                0x0011408c                srioPreInit
+                0x001142a1                bReadIcByte
+                0x001142fe                vWriteIcByte
+                0x00114367                bReadIcReg
+                0x001143ca                vWriteIcReg
+                0x00114439                bIsPeripheral
+                0x0011446f                vCpciInit
+                0x001144e1                vDisableMemWindow
+                0x00114551                dSetMemWindow
+                0x00114671                vSetMemAccess
+                0x00114763                dPrimaryBusAddr
+ .text          0x001147a0     0x1b98 ../../arch/srio/libsrioArch.a(tsi721.o)
+                0x0011555c                tsi721_unmap_outb
+                0x00115d0e                tsi721_init
+ .text          0x00116338     0x1554 ../../arch/srio/libsrioArch.a(rio.o)
+                0x0011647c                rio_local_get_device_id
+                0x001164b8                rio_request_inb_pwrite
+                0x001164e6                rio_release_inb_pwrite
+                0x00116513                rio_map_inb_region
+                0x00116589                rio_unmap_inb_region
+                0x001165b9                rio_map_outb_window
+                0x00116659                rio_unmap_outb_window
+                0x00116690                rio_config_outb_zone
+                0x0011671f                rio_get_outb_pref_asinfo
+                0x00116756                rio_get_outb_npref_asinfo
+                0x0011678d                rio_mport_get_physefb
+                0x0011688a                rio_get_comptag
+                0x001168e4                rio_set_port_lockout
+                0x00116a0d                rio_mport_chk_dev_access
+                0x00116d94                rio_inb_pwrite_handler
+                0x001170ea                rio_mport_get_efb
+                0x001171ad                rio_mport_get_feature
+                0x00117294                rio_get_asm
+                0x00117351                rio_get_device
+                0x00117392                rio_std_route_add_entry
+                0x00117449                rio_std_route_get_entry
+                0x001174dd                rio_std_route_clr_table
+                0x0011768b                rio_init_mports
+                0x00117805                rio_register_mport
+                0x00117873                rio_unregister_mport
+ .text          0x0011788c       0xb8 ../../arch/srio/libsrioArch.a(rio-driver.o)
+ .text          0x00117944     0x27b0 ../../arch/srio/libsrioArch.a(rio-scan.o)
+                0x001182e7                rio_enable_rx_tx_port
+                0x00119c3e                rio_enum_mport
+                0x00119ebe                rio_disc_mport
+                0x0011a015                rio_free_devices
+ .text          0x0011a0f4      0x504 ../../arch/srio/libsrioArch.a(rio-access.o)
+                0x0011a0f4                __rio_local_read_config_8
+                0x0011a147                __rio_local_read_config_16
+                0x0011a1ac                __rio_local_read_config_32
+                0x0011a20e                __rio_local_write_config_8
+                0x0011a258                __rio_local_write_config_16
+                0x0011a2b4                __rio_local_write_config_32
+                0x0011a308                rio_mport_read_config_8
+                0x0011a380                rio_mport_read_config_16
+                0x0011a40a                rio_mport_read_config_32
+                0x0011a491                rio_mport_write_config_8
+                0x0011a4ff                rio_mport_write_config_16
+                0x0011a57f                rio_mport_write_config_32
+ .text          0x0011a5f8      0x808 ../../arch/srio/libsrioArch.a(idt_gen2.o)
+                0x0011ad74                idtg2_switch_init
+ .text          0x0011ae00      0xb9c ../../xlib/sm3/libsm3.a(packet.o)
+                0x0011ae00                vGetSlaveBoards
+                0x0011ae2f                vCommInit
+                0x0011ae3b                wMessageGet
+                0x0011af25                wMessagePut
+                0x0011afde                IDX_detect_message
+                0x0011b0a0                bSoakMasterReady
+                0x0011b0fa                vSetPacketWaiting
+ .text          0x0011b99c      0x2ec ../../xlib/sm3/libsm3.a(testParameters.o)
+                0x0011bbd7                vParseCommandTail
+ .text          0x0011bc88      0x64c ../../xlib/sm3/libsm3.a(serialPacket.o)
+                0x0011bccf                vSendAck
+                0x0011bd97                wPacketSend
+                0x0011beb4                wPacketReceive
+                0x0011c0a8                vFreeAllPackets
+                0x0011c111                wPacketAddQueue
+                0x0011c165                psPacketGetQueue
+                0x0011c20f                wPacketSendQueue
+ .text          0x0011c2d4      0x4a0 ../../xlib/sm3/libsm3.a(autoid.o)
+                0x0011c422                wPerformAutoId
+ .text          0x0011c774     0x2490 ../../FreeRTOS/Demo/CUTE/libfreertos.a(tasks.o)
+                0x0011c774                xTaskGenericCreate
+                0x0011ca4b                vTaskDelete
+                0x0011cb75                vTaskDelayUntil
+                0x0011cccd                vTaskDelay
+                0x0011cdb7                uxTaskPriorityGet
+                0x0011ce26                vTaskPrioritySet
+                0x0011cfe2                vTaskSuspend
+                0x0011d0ba                xTaskIsTaskSuspended
+                0x0011d13a                vTaskResume
+                0x0011d270                vTaskStartScheduler
+                0x0011d32d                vTaskEndScheduler
+                0x0011d3ea                vTaskSuspendCpu
+                0x0011d432                vTaskSuspendAll
+                0x0011d461                xTaskResumeCpu
+                0x0011d68a                xTaskResumeAll
+                0x0011d6df                xTaskGetTickCount
+                0x0011d728                uxTaskGetNumberOfTasks
+                0x0011d756                vTaskList
+                0x0011d9cb                vTaskLockTake
+                0x0011d9f8                vTaskLockGive
+                0x0011da25                vTaskStartSchedulerRunning
+                0x0011da93                vTaskSetContextSwitching
+                0x0011db0c                vTaskGetFirstExecute
+                0x0011db2a                vTaskSetFirstExecute
+                0x0011db44                uxTaskNumGet
+                0x0011db99                vTaskIncrementTick
+                0x0011dd75                vTaskSwitchContext
+                0x0011deb0                vTaskPlaceOnEventList
+                0x0011dfbb                xTaskRemoveFromEventList
+                0x0011e15e                vTaskSetTimeOutState
+                0x0011e1af                xTaskCheckForTimeOut
+                0x0011e2a6                vTaskMissedYield
+                0x0011e804                xTaskGetCurrentTaskHandle
+                0x0011e839                vTaskPriorityInherit
+                0x0011e99b                vTaskPriorityDisinherit
+                0x0011eaa3                vTaskDataInit
+ .text          0x0011ec04      0xdac ../../FreeRTOS/Demo/CUTE/libfreertos.a(queue.o)
+                0x0011ef34                xQueueGenericSend
+                0x0011f18f                xQueueGenericSendFromISR
+                0x0011f27a                xQueueGenericReceive
+                0x0011f558                xQueueReceiveFromISR
+                0x0011f62c                xQueueCreate
+                0x0011f733                xQueueCreateMutex
+                0x0011f808                xQueueGiveMutexRecursive
+                0x0011f873                xQueueTakeMutexRecursive
+                0x0011f8e4                xQueueCreateCountingSemaphore
+                0x0011f920                uxQueueMessagesWaiting
+                0x0011f936                uxQueueMessagesWaitingFromISR
+                0x0011f94c                xQueueIsQueueEmptyFromISR
+                0x0011f96a                xQueueIsQueueFullFromISR
+                0x0011f98e                vQueueDelete
+ .text          0x0011f9b0      0x534 ../../FreeRTOS/Demo/CUTE/libfreertos.a(croutine.o)
+                0x0011f9b0                xCoRoutineCreate
+                0x0011faa9                vCoRoutineAddToDelayedList
+                0x0011fd36                vCoRoutineSchedule
+                0x0011fe75                xCoRoutineRemoveFromEventList
+ .text          0x0011fee4      0x240 ../../FreeRTOS/Demo/CUTE/libfreertos.a(heap_2.o)
+                0x0011ff39                pvPortMalloc
+                0x00120093                vPortFree
+                0x00120112                xPortGetFreeHeapSize
+                0x0012011c                vPortInitialiseBlocks
+ .text          0x00120124      0x8c4 ../../FreeRTOS/Demo/CUTE/libfreertos.a(port.o)
+                0x00120124                sPortGetCurrentCPU
+                0x0012016a                vPortYieldCPU
+                0x001201e7                vPortSetContextSwitching
+                0x001204a8                vPortEndScheduler
+                0x00120865                xPortStartScheduler
+                0x00120996                vPortDataInit
+ .text          0x001209e8      0x138 ../../FreeRTOS/Demo/CUTE/libfreertos.a(portcmn.o)
+                0x001209e8                pxPortInitialiseStack
+ .text          0x00120b20      0x190 ../../FreeRTOS/Demo/CUTE/libfreertos.a(list.o)
+                0x00120b20                vListInitialise
+                0x00120b62                vListInitialiseItem
+                0x00120b71                vListInsertEnd
+                0x00120bce                vListInsert
+                0x00120c50                vListRemove
+ .text          0x00120cb0      0x5b8 ../../comm/serial/libserialComm.a(serial.o)
+                0x00120cb0                InitSerialComm
+                0x00120d49                wSerialMessageGet
+                0x00120f05                wSerialMessagePut
+                0x00121018                Serial_detect_message
+                0x00121035                serialSoakMasterReady
+                0x00121042                serialSetPacketWaiting
+ .text          0x00121268      0x60c ../../xlib/interconnect/libinterconnect.a(cpci_Interconnect.o)
+                0x00121268                initializeInterconnect
+                0x00121326                interconnect_extended_address
+                0x0012143e                interconnect_ProcessorReset
+                0x00121467                interconnect_ReadByte
+                0x0012149f                interconnect_WriteByte
+                0x001214e0                interconnect_WriteVerify
+                0x001215a0                interconnect_FindRecord
+                0x001216c7                interconnect_RegisterOffset
+                0x00121765                interconnect_ReadBit
+                0x001217ae                interconnect_SetBit
+                0x0012180c                interconnect_ClearBit
+ .text          0x00121874      0x47c ../../lwip-1.4.0/liblwip.a(netif.o)
+                0x00121874                netif_init
+                0x00121879                netif_add
+                0x0012192d                netif_set_addr
+                0x0012196b                netif_remove
+                0x001219fb                netif_find
+                0x00121a72                netif_set_ipaddr
+                0x00121b38                netif_set_gw
+                0x00121b55                netif_set_netmask
+                0x00121b72                netif_set_default
+                0x00121b7f                netif_set_up
+                0x00121bf9                netif_set_down
+                0x00121c3c                netif_set_status_callback
+                0x00121c50                netif_set_link_up
+                0x00121cc7                netif_set_link_down
+ .text          0x00121cf0     0x2024 ../../lwip-1.4.0/liblwip.a(smClient.o)
+                0x001233da                smcReady
+                0x00123401                smcDetectMsg
+                0x0012344a                smcSetMsgWaiting
+                0x0012344f                smcPostMsg
+                0x00123525                smcFetchMsg
+                0x001235d7                smcGetStats
+                0x00123bd1                startSmClient
+                0x00123cc0                stopSmClient
+ .text          0x00123d14      0x968 ../../lwip-1.4.0/liblwip.a(lwIP_Apps.o)
+                0x0012403f                netStatsCommand
+                0x001244c4                lwIPAppsInit
+ .text          0x0012467c     0x2d24 ../../lwip-1.4.0/liblwip.a(gei_netif.o)
+                0x00124bdd                geifValidateNvmChksumWithOffset
+                0x00126839                geifGetMacAddr
+                0x001268ac                geifGetStats
+                0x001270b9                geifGetMemInfo
+                0x001270dc                geifInit
+ .text          0x001273a0      0x484 ../../lwip-1.4.0/liblwip.a(tcpip.o)
+                0x00127517                tcpip_input
+                0x0012759c                tcpip_callback_with_block
+                0x00127646                tcpip_timeout
+                0x001276b6                tcpip_untimeout
+                0x0012771d                tcpip_apimsg
+                0x00127775                tcpip_init
+                0x001277de                pbuf_free_callback
+                0x00127801                mem_free_callback
+ .text          0x00127824     0x1880 ../../lwip-1.4.0/liblwip.a(tcp.o)
+                0x00127824                tcp_tmr
+                0x00127b24                tcp_close
+                0x00127b5c                tcp_shutdown
+                0x00127c06                tcp_abandon
+                0x00127d55                tcp_abort
+                0x00127d70                tcp_bind
+                0x00127e89                tcp_listen_with_backlog
+                0x0012800c                tcp_update_rcv_ann_wnd
+                0x001280bf                tcp_recved
+                0x001281a8                tcp_connect
+                0x001283d2                tcp_slowtmr
+                0x0012895f                tcp_fasttmr
+                0x00128a73                tcp_segs_free
+                0x00128a9c                tcp_seg_free
+                0x00128ad5                tcp_setprio
+                0x00128aed                tcp_seg_copy
+                0x00128b3c                tcp_recv_null
+                0x00128c9e                tcp_alloc
+                0x00128e19                tcp_new
+                0x00128e2d                tcp_arg
+                0x00128e3b                tcp_recv
+                0x00128e4c                tcp_sent
+                0x00128e5d                tcp_err
+                0x00128e6e                tcp_accept
+                0x00128e7c                tcp_poll
+                0x00128ea0                tcp_pcb_purge
+                0x00128f61                tcp_pcb_remove
+                0x00129024                tcp_next_iss
+                0x00129041                tcp_eff_send_mss
+                0x00129093                tcp_debug_state_str
+ .text          0x001290a4      0xf54 ../../lwip-1.4.0/liblwip.a(etharp.o)
+                0x00129131                etharp_tmr
+                0x0012957a                etharp_find_addr
+                0x001298a1                etharp_output
+                0x00129a5e                etharp_query
+                0x00129e92                etharp_request
+                0x00129ee9                ethernet_input
+ .text          0x00129ff8     0x209c ../../lwip-1.4.0/liblwip.a(dhcp.o)
+                0x0012a363                dhcp_coarse_tmr
+                0x0012a3dd                dhcp_fine_tmr
+                0x0012a6e4                dhcp_set_struct
+                0x0012a710                dhcp_cleanup
+                0x0012a73a                dhcp_start
+                0x0012a8e4                dhcp_inform
+                0x0012aa6e                dhcp_network_changed
+                0x0012aadc                dhcp_arp_reply
+                0x0012affa                dhcp_renew
+                0x0012b408                dhcp_release
+                0x0012b5ac                dhcp_stop
+ .text          0x0012c094     0x269c ../../lwip-1.4.0/liblwip.a(sockets.o)
+                0x0012c094                lwip_socket_init
+                0x0012c2df                lwip_accept
+                0x0012c531                lwip_bind
+                0x0012c642                lwip_close
+                0x0012c6b6                lwip_connect
+                0x0012c7e4                lwip_listen
+                0x0012c89b                lwip_recvfrom
+                0x0012cc91                lwip_read
+                0x0012ccca                lwip_recv
+                0x0012cd02                lwip_send
+                0x0012ce4e                lwip_sendto
+                0x0012cfe3                lwip_socket
+                0x0012d107                lwip_write
+                0x0012d367                lwip_select
+                0x0012da07                lwip_shutdown
+                0x0012dc04                lwip_getpeername
+                0x0012dc2d                lwip_getsockname
+                0x0012dc56                lwip_getsockopt
+                0x0012e12b                lwip_setsockopt
+                0x0012e5d7                lwip_ioctl
+                0x0012e684                lwip_fcntl
+ .text          0x0012e730      0x6c4 ../../lwip-1.4.0/liblwip.a(mem.o)
+                0x0012e80a                mem_init
+                0x0012e8aa                mem_free
+                0x0012e96e                mem_trim
+                0x0012eb98                mem_malloc
+                0x0012edb2                mem_calloc
+ .text          0x0012edf4       0x80 ../../lwip-1.4.0/liblwip.a(def.o)
+                0x0012edf4                lwip_htons
+                0x0012ee16                lwip_ntohs
+                0x0012ee31                lwip_htonl
+                0x0012ee60                lwip_ntohl
+ .text          0x0012ee74      0x494 ../../lwip-1.4.0/liblwip.a(ip_addr.o)
+                0x0012ee74                ip4_addr_isbroadcast
+                0x0012eefb                ip4_addr_netmask_valid
+                0x0012ef55                ipaddr_addr
+                0x0012ef7d                ipaddr_aton
+                0x0012f1cf                ipaddr_ntoa
+                0x0012f1f2                ipaddr_ntoa_r
+ .text          0x0012f308        0x8 ../../lwip-1.4.0/liblwip.a(stats.o)
+                0x0012f308                stats_init
+ .text          0x0012f310      0x2b8 ../../lwip-1.4.0/liblwip.a(CommandServer.o)
+                0x0012f310                vBasicSocketsCommandInterpreterTask
+ .text          0x0012f5c8      0x178 ../../lwip-1.4.0/liblwip.a(CommandInterpreter.o)
+                0x0012f5c8                xCmdIntRegisterCommand
+                0x0012f61b                xCmdIntProcessCommand
+                0x0012f6c8                pcCmdIntGetOutputBuffer
+                0x0012f6d2                uxCmdIntGetOutputBufferSizeBytes
+ .text          0x0012f740      0x5dc ../../lwip-1.4.0/liblwip.a(sys_arch.o)
+                0x0012f740                sys_mbox_new
+                0x0012f79b                sys_mbox_free
+                0x0012f7e9                sys_mbox_post
+                0x0012f81b                sys_mbox_trypost
+                0x0012f867                sys_arch_mbox_fetch
+                0x0012f94a                sys_arch_mbox_tryfetch
+                0x0012f99a                sys_sem_new
+                0x0012fa64                sys_arch_sem_wait
+                0x0012fb23                sys_mutex_new
+                0x0012fb7f                sys_mutex_lock
+                0x0012fbb2                sys_mutex_unlock
+                0x0012fbdf                sys_mutex_free
+                0x0012fc01                sys_sem_signal
+                0x0012fc2e                sys_sem_free
+                0x0012fc50                sys_init
+                0x0012fc64                sys_now
+                0x0012fc71                sys_thread_new
+                0x0012fcdc                sys_arch_protect
+                0x0012fcfd                sys_arch_unprotect
+ .text          0x0012fd1c      0xf60 ../../lwip-1.4.0/liblwip.a(pbuf.o)
+                0x0012fdf0                pbuf_alloc
+                0x001300a1                pbuf_alloced_custom
+                0x0013017a                pbuf_realloc
+                0x00130275                pbuf_header
+                0x001303ad                pbuf_free
+                0x001304b0                pbuf_clen
+                0x001304d4                pbuf_ref
+                0x00130506                pbuf_cat
+                0x0013057f                pbuf_chain
+                0x001305a4                pbuf_dechain
+                0x0013060b                pbuf_copy
+                0x001307ab                pbuf_copy_partial
+                0x001308e4                pbuf_take
+                0x001309de                pbuf_coalesce
+                0x00130a46                pbuf_get_at
+                0x00130ab7                pbuf_memcmp
+                0x00130b7b                pbuf_memfind
+                0x00130c0d                pbuf_strstr
+ .text          0x00130c7c      0x46c ../../lwip-1.4.0/liblwip.a(timers.o)
+                0x00130cc3                tcp_timer_needed
+                0x00130db0                sys_timeouts_init
+                0x00130e28                sys_timeout
+                0x00130f44                sys_untimeout
+                0x00130fea                sys_timeouts_mbox_fetch
+ .text          0x001310e8      0x84c ../../lwip-1.4.0/liblwip.a(ip.o)
+                0x001310e8                ip_route
+                0x00131262                ip_input
+                0x00131679                ip_output_if
+                0x001318b4                ip_output
+ .text          0x00131934      0x2c8 ../../lwip-1.4.0/liblwip.a(memp.o)
+                0x00131934                memp_init
+                0x00131a69                memp_malloc
+                0x00131b88                memp_free
+ .text          0x00131bfc       0x2c ../../lwip-1.4.0/liblwip.a(init.o)
+                0x00131bfc                lwip_init
+ .text          0x00131c28     0x199c ../../lwip-1.4.0/liblwip.a(tcp_out.o)
+                0x00131d34                tcp_send_fin
+                0x001320dc                tcp_write
+                0x00132711                tcp_enqueue_flags
+                0x0013293d                tcp_send_empty_ack
+                0x00132a32                tcp_output
+                0x00132ff6                tcp_rst
+                0x00133135                tcp_rexmit_rto
+                0x001331ac                tcp_rexmit
+                0x00133256                tcp_rexmit_fast
+                0x00133322                tcp_keepalive
+                0x001333fe                tcp_zero_window_probe
+ .text          0x001335c4      0xb80 ../../lwip-1.4.0/liblwip.a(udp.o)
+                0x001335c4                udp_input
+                0x00133abb                udp_send
+                0x00133aed                udp_sendto
+                0x00133b4c                udp_sendto_if
+                0x00133e7c                udp_bind
+                0x00133f91                udp_connect
+                0x00134051                udp_disconnect
+                0x0013407b                udp_recv
+                0x00134092                udp_remove
+                0x00134100                udp_new
+ .text          0x00134144      0x3d0 ../../lwip-1.4.0/liblwip.a(netbuf.o)
+                0x00134144                netbuf_new
+                0x00134191                netbuf_delete
+                0x001341dd                netbuf_alloc
+                0x00134267                netbuf_free
+                0x001342b6                netbuf_ref
+                0x0013436f                netbuf_chain
+                0x001343e3                netbuf_data
+                0x00134482                netbuf_next
+                0x001344e4                netbuf_first
+ .text          0x00134514      0xb10 ../../lwip-1.4.0/liblwip.a(api_lib.o)
+                0x00134514                netconn_new_with_proto_and_callback
+                0x00134599                netconn_delete
+                0x001345d6                netconn_getaddr
+                0x001346a4                netconn_bind
+                0x00134729                netconn_connect
+                0x001347ae                netconn_disconnect
+                0x0013481e                netconn_listen_with_backlog
+                0x00134894                netconn_accept
+                0x00134be1                netconn_recv_tcp_pbuf
+                0x00134c26                netconn_recv
+                0x00134d7d                netconn_recved
+                0x00134dc4                netconn_sendto
+                0x00134e15                netconn_send
+                0x00134e8b                netconn_write
+                0x00134fc6                netconn_close
+                0x00134fe1                netconn_shutdown
+ .text          0x00135024      0xc68 ../../lwip-1.4.0/liblwip.a(ip_frag.o)
+                0x00135024                ip_reass_tmr
+                0x001355d4                ip_reass
+                0x0013598f                ip_frag
+ .text          0x00135c8c      0x43c ../../lwip-1.4.0/liblwip.a(icmp.o)
+                0x00135c8c                icmp_input
+                0x00135f75                icmp_dest_unreach
+                0x00135f9a                icmp_time_exceeded
+ .text          0x001360c8      0x484 ../../lwip-1.4.0/liblwip.a(inet_chksum.o)
+                0x00136199                inet_chksum_pseudo
+                0x001362e8                inet_chksum_pseudo_partial
+                0x0013646b                inet_chksum
+                0x0013648f                inet_chksum_pbuf
+ .text          0x0013654c     0x29ac ../../lwip-1.4.0/liblwip.a(tcp_in.o)
+                0x0013654c                tcp_input
+ .text          0x00138ef8     0x1850 ../../lwip-1.4.0/liblwip.a(api_msg.o)
+                0x001395e1                do_newconn
+                0x00139617                netconn_alloc
+                0x00139743                netconn_free
+                0x00139b00                do_delconn
+                0x00139c3f                do_bind
+                0x00139e02                do_connect
+                0x00139f76                do_disconnect
+                0x00139fbf                do_listen
+                0x0013a121                do_send
+                0x0013a20c                do_recv
+                0x0013a4d7                do_write
+                0x0013a57c                do_getaddr
+                0x0013a684                do_close
+ .text          0x0013a748     0x2c04 ./bin/libbittest.a(serial.o)
+                0x0013a846                drs485Loopback
+                0x0013ac7a                dLoopbackTest
+                0x0013b047                drs422Loopback
+                0x0013b102                drs485ExtLoopback
+                0x0013cabb                dGetNops
+                0x0013cc5a                dGetNopsrs485
+                0x0013cd57                dGetNumPortRS485
+                0x0013cfd9                dSerialRS485ExtLoopback
+                0x0013d058                dSerialRS485Loopback
+                0x0013d138                dSerialRS422Loopback
+                0x0013d1b7                dSerialExternalLoopback
+                0x0013d204                dSerialLocalloopback
+                0x0013d251                dSerialBaudRateTest
+                0x0013d29e                dSerialInterruptTest
+                0x0013d2eb                dSerialRegAccessTest
+                0x0013d338                serialIntHandler
+ .text          0x0013d34c      0x364 ./bin/libbittest.a(gpioTests.o)
+                0x0013d34c                dGPIOTest
+                0x0013d3b1                dGPIOLoopBackTest
+                0x0013d544                dGPIOReadTest
+ .text          0x0013d6b0      0xfa4 ./bin/libbittest.a(usb.o)
+                0x0013e2fe                dUsbRegTest
+                0x0013e418                dUsbDeviceCheck
+                0x0013e539                dUsbOCCheck
+ .text          0x0013e654     0xa784 ./bin/libbittest.a(eth.o)
+                0x00140a4e                vGetEthMacAddr
+                0x00142f0b                dCheckTestData
+                0x0014485c                dFind825xx
+                0x00144cf6                dGetNumberOfEthInstances
+                0x00144e2c                dEthRegAccessTest
+                0x00144f97                dEthEepromTest
+                0x001451a6                dEthPhyRegReadTest
+                0x001454fb                dEthIntLoopBackTest
+                0x001456e0                dEthInterruptTest
+                0x00145859                dEthExtLoopBackTest
+                0x00145b5c                dEthExtDevLoopbackTest
+                0x001460e6                dEthEepromWriteTest
+                0x00146eac                ReadPhyRegister_BM2
+                0x00146f40                WritePhyRegister_BM2
+                0x00146fe0                copper_link_setup_82577
+                0x001473d1                vPhyWorkAround1
+                0x0014741c                dEthInterfaceSelect
+                0x00147468                vDoWorkarounds
+                0x001475a9                vDoK1Workaround
+                0x00147774                sw_lcd_config_ich8lan
+                0x001479d5                oem_bits_config_ich8lan
+                0x00147caa                config_collision_dist
+                0x00147e0d                phy_force_speed_duplex_setup
+                0x00147f63                power_up_phy_copper
+ .text          0x00148dd8      0x554 ./bin/libbittest.a(fpuTests.o)
+                0x00148dd8                dFPUTest
+                0x00149146                dFPUExpTest
+ .text          0x0014932c      0xcc0 ./bin/libbittest.a(RTCTests.o)
+                0x0014932c                bcdToDecimal
+                0x0014937c                uip
+                0x0014941e                dRTCTest
+                0x0014999a                dRTCIntTest
+                0x00149ce6                dRTCIrqIntTest
+ .text          0x00149fec     0x195c ./bin/libbittest.a(ide.o)
+                0x0014b049                dIdeRegaccessTest
+                0x0014b2f9                dIdeIntTest
+                0x0014b5a5                dIdeRdSectTest
+                0x0014b85b                dIdeFlashDriveTest
+ .text          0x0014b948     0x1e18 ./bin/libbittest.a(ram.o)
+                0x0014b96e                get_testable_ram
+                0x0014d3c0                dMemDatalineTest
+                0x0014d3dd                dMemAddrlineTest
+                0x0014d3fa                dMemSPDEEPROMTest
+                0x0014d446                dMemEccTest
+ .text          0x0014d760     0x18a4 ./bin/libbittest.a(SMBUS.o)
+                0x0014d760                wReg8BitSMBUSTest
+                0x0014d8fb                dSMBUSTest
+                0x0014d9b3                dCKSI52143Test
+                0x0014db4a                dCK505Test
+                0x0014dd47                dCK409Test
+                0x0014ded8                dDB800Test
+                0x0014e069                dDB400Test
+                0x0014e1fa                readReg
+                0x0014e3e2                dDS3905Test
+                0x0014ea10                wSMBusHRead
+                0x0014ebcd                wSMBusExec
+                0x0014edfb                dLM95245Test
+ .text          0x0014f004      0x5e4 ./bin/libbittest.a(XMM_MMXtests.o)
+                0x0014f004                wReg64BitTest
+                0x0014f13b                wReg128BitTest
+                0x0014f2bb                dMMXTest
+                0x0014f40c                dXMMTest
+ .text          0x0014f5e8        0xc ./bin/libbittest.a(pass.o)
+                0x0014f5e8                dPassingTest
+ .text          0x0014f5f4     0x128c ./bin/libbittest.a(srioTests.o)
+                0x0014f689                rio_test_init
+                0x0014f7e2                rio_remote_init
+                0x0014f98d                SrioScanBackPlaneDevs
+                0x0014fcba                SrioRegisterLinkSpeedTest
+                0x001500ca                SrioRegisterAccessTest
+                0x00150194                SrioExternalLoopBackTest
+                0x0015078f                rio_test_de_init
+                0x001507b3                dSrioGetErrCode
+                0x001507eb                dCCT_SrioRegisterAccessTest
+                0x00150810                dCCT_SrioRegisterLinkSpeedTest
+                0x00150835                dCCT_SrioExternalLoopBackTest
+                0x0015085a                dCCT_SrioScanBackPlaneDevs
+ .text          0x00150880      0xfac ./bin/libbittest.a(keybd.o)
+                0x001517a4                dKbCInterconnect
+                0x001517b7                dKbCSelfTest
+                0x001517ca                dKbCInterrupt
+                0x001517dd                dKbdInterconnect
+                0x001517f0                dKbCAuxTest
+                0x00151803                dMouseInterconnect
+                0x00151816                dMouseActionTest
+ .text          0x0015182c     0x4480 ./bin/libbittest.a(pcitests.o)
+                0x0015182c                wReg8BitPCITest
+                0x00151a31                PciTetsDevice
+                0x00151abb                PciFindDevice
+                0x00151db3                PciFindDeviceL
+                0x00151fca                PciTestWrapper
+                0x001529fd                setPtrs
+                0x00152a23                scanInit
+                0x00152ace                scanPXMC
+                0x00152d8c                scanPCIEwidth
+                0x00153ab3                pciBIST
+                0x00153d02                CpciBr
+                0x00153e5b                scanCPCI
+                0x00154046                dPciTest
+                0x001540f2                dPciPXMCTest
+                0x001542f1                dPciPW
+                0x0015447d                dPciBist
+                0x00154539                dCPciBridge
+                0x0015464e                dPciCPCITest
+                0x00154782                dVPXBridge
+                0x0015483e                dPcieVPXTest
+                0x00154933                scanADCR2
+                0x00154b03                dPciADCR2Test
+                0x00154c3a                dPciADCRXTest
+                0x00154d71                dVpxCarrierTest
+                0x00154fc0                dtrXmcPciPW
+                0x001552e3                dtrXmcPXMCTest
+                0x001555a5                dVxsPcieConnectivity
+                0x0015576b                dVxsPcieLoopBackA
+                0x00155a0a                dVxsPcieLoopBackB
+ .text          0x00155cac      0x720 ./bin/libbittest.a(LDT-PITtests.o)
+                0x001562d9                dLdtBasicTest
+                0x00156318                dLdtIntTest
+ .text          0x001563cc       0x74 ./bin/libbittest.a(interrupt.o)
+                0x001563cc                dInterruptTest
+ .text          0x00156440        0xc ./bin/libbittest.a(fail.o)
+                0x00156440                dFailingTest
+ .text          0x0015644c      0xfb0 ./bin/libbittest.a(NVMemTest.o)
+                0x0015644c                wReg8BitTestx
+                0x001565e7                dNVRAMTest
+                0x001566e1                dEEPROMTest
+                0x001569e1                makeInput
+                0x00156a50                makeOutput
+                0x00156ac1                clk_High
+                0x00156b30                clk_Low
+                0x00156ba1                data_High
+                0x00156c10                data_Low
+                0x00156c81                get_data
+                0x00156cd9                I2C_Generate_Start
+                0x00156d19                I2C_Generate_Stop
+                0x00156da5                I2C_Send_Byte
+                0x00156e6f                I2C_Get_Byte
+                0x00156eee                MC24LC64_bNVReadByte
+                0x00156ff5                MC24LC64_NVWriteByte
+                0x00157176                MC24LC16_bNVReadByte
+                0x00157281                MC24LC16_NVWriteByte
+ .text          0x001573fc      0x388 ./bin/libbittest.a(SCRTests.o)
+                0x00157640                dSCRTest
+ .text          0x00157784      0x224 ./bin/libbittest.a(smp.o)
+                0x00157784                dCPUExec
+                0x0015798c                vApTask
+ .text          0x001579a8      0x5cc ./bin/libbittest.a(SpeedSteptests.o)
+                0x001579a8                perfNehalemSpeedStp
+                0x00157b28                dSpeedStepTest
+ .text          0x00157f74      0x324 ./bin/libbittest.a(spiFwh.o)
+                0x001581f5                dbitSpiFwhTest
+ .text          0x00158298      0x24c ./bin/libbittest.a(xmmx.o)
+                0x00158298                xmmWrite
+                0x00158308                xmmRead
+                0x00158378                xmmTest
+                0x001583dc                mmxWrite
+                0x00158439                mmxRead
+                0x00158496                mmxTest
+ .text          0x001584e4      0x1dc ./bin/libblib.a(io.o)
+                0x001584e4                dIoReadReg
+                0x00158593                vIoWriteReg
+                0x00158644                dIoMaskReadReg
+                0x00158671                dIoRmwReg
+ .text          0x001586c0       0x60 ./bin/libblib.a(console.o)
+                0x001586c0                vConsoleWrite
+ .text          0x00158720       0xf8 ./bin/libblib.a(bit_exec.o)
+                0x00158720                cctExecuteBit
+                0x00158804                vResourceCleanup
+ .text          0x00158818       0x28 ./bin/libblib.a(msr.o)
+                0x00158818                vReadMsr
+                0x0015882e                vWriteMsr
+ .text          0x00158840      0x11c ./bin/libclib.a(mem.o)
+                0x00158840                memchr
+                0x00158869                memcmp
+                0x0015888f                memicmp
+                0x001588ce                memccpy
+                0x00158901                memmove
+                0x00158924                memset
+ .text          0x0015895c       0xc4 ./bin/libclib.a(error_msg.o)
+                0x0015895c                postErrorMsg
+                0x001589c3                getErrorMsg
+ .text          0x00158a20       0xcc ./bin/libclib.a(stdlib.o)
+                0x00158a20                atoi
+                0x00158a33                atol
+ .text          0x00158aec       0x48 ./bin/libclib.a(ctype.o)
+                0x00158aec                tolower
+                0x00158b0f                toupper
+ .text          0x00158b34      0x310 ./bin/libkernel.a(spinlock.o)
+                0x00158b34                spinLockInit
+                0x00158b84                spinLockTake
+                0x00158d1f                spinLockGive
+ .text          0x00158e44       0x54 ./bin/libkernel.a(mem_io.o)
+                0x00158e44                sysWriteMem8
+                0x00158e53                sysWriteMem16
+                0x00158e64                sysWriteMem32
+                0x00158e73                sysReadMem8
+                0x00158e7f                sysReadMem16
+                0x00158e8c                sysReadMem32
+ .text          0x00158e98       0xd4 ./bin/libkernel.a(atomic.o)
+                0x00158e98                atomic32Get
+                0x00158ea2                atomic32Set
+                0x00158eaf                atomic32Add
+                0x00158ebe                atomic32Sub
+                0x00158ecf                atomic32Inc
+                0x00158ee0                atomic32Dec
+                0x00158ef3                atomic32And
+                0x00158f08                atomic32Nand
+                0x00158f1f                atomic32Or
+                0x00158f34                atomic32Xor
+                0x00158f49                atomic32Cas
+                0x00158f6c                __text_stop = .
+
+.rdata          0x00158f80     0x7600
+ *(.rdata)
+ .rdata         0x00158f80      0x300 ../../kernel/libkernel.a(main.o)
+ .rdata         0x00159280       0x14 ../../kernel/libkernel.a(debug_cons.o)
+ .rdata         0x00159294       0x18 ../../kernel/libkernel.a(mmu.o)
+ .rdata         0x001592ac       0x14 ../../kernel/libkernel.a(scc.o)
+ .rdata         0x001592c0       0x20 ../../kernel/libkernel.a(pci_alloc.o)
+ .rdata         0x001592e0       0x24 ../../blib/libblib.a(pci.o)
+ .rdata         0x00159304      0x1b8 ../../clib/libclib.a(vsprintf.o)
+                0x00159304                achDigits
+ .rdata         0x001594bc       0x2c ../../sth/libsth.a(sthCpci.o)
+ .rdata         0x001594e8      0x458 ../../tests/libbittest.a(ipmi.o)
+                0x00159751                achIpmiWDResetTest
+                0x0015976a                achIpmiWDPreTest
+                0x00159781                achIpmiAlarmIntTest
+                0x0015979b                achIpmiThresholdTest
+                0x001597b6                achIpmiSDRFormatTest
+                0x001597cb                achIpmiSelfTest
+                0x001597e1                achIpmiIntTest
+                0x001597f5                achIpmiSmicInterfaceTest
+                0x001598fc                achIpmiAMCTest
+ .rdata         0x00159940       0x34 ../../mth/libmth.a(cli.o)
+ .rdata         0x00159974       0xfc ../../mth/libmth.a(mth_utils.o)
+ *fill*         0x00159a70       0x10 
+ .rdata         0x00159a80      0x320 ../../mth/libmth.a(command.o)
+ .rdata         0x00159da0       0x2c ../../mth/libmth.a(util.o)
+ .rdata         0x00159dcc       0x88 ../../mth/libmth.a(service.o)
+ .rdata         0x00159e54      0xb34 ../../mth/libmth.a(help.o)
+ .rdata         0x0015a988      0x204 ../../conslib/libconslib.a(command.o)
+ .rdata         0x0015ab8c      0x124 ../../conslib/libconslib.a(util.o)
+ *fill*         0x0015acb0       0x10 
+ .rdata         0x0015acc0      0xae0 ../../conslib/libconslib.a(service.o)
+ .rdata         0x0015b7a0      0xda0 board.o
+                0x0015b7a0                bDebugPort
+                0x0015b7c0                asSccParams
+                0x0015bd80                serviceCommands
+                0x0015bf80                achDispConfig
+                0x0015c200                asFlashTypes
+                0x0015c240                abInterconnectTemplate
+                0x0015c2dc                IC_TEMPLATE_SIZE
+ .rdata         0x0015c540      0x1a0 ../../arch/srio/libsrioArch.a(tsi721.o)
+ .rdata         0x0015c6e0      0x160 ../../arch/srio/libsrioArch.a(rio.o)
+ .rdata         0x0015c840      0x140 ../../arch/srio/libsrioArch.a(rio-scan.o)
+ .rdata         0x0015c980      0x120 ../../arch/srio/libsrioArch.a(idt_gen2.o)
+ .rdata         0x0015caa0       0x9c ../../xlib/sm3/libsm3.a(testParameters.o)
+ .rdata         0x0015cb3c       0x58 ../../FreeRTOS/Demo/CUTE/libfreertos.a(tasks.o)
+ .rdata         0x0015cb94        0x4 ../../FreeRTOS/Demo/CUTE/libfreertos.a(heap_2.o)
+ .rdata         0x0015cb98       0x34 ../../comm/serial/libserialComm.a(serial.o)
+ .rdata         0x0015cbcc      0x294 ../../lwip-1.4.0/liblwip.a(smClient.o)
+ .rdata         0x0015ce60      0x460 ../../lwip-1.4.0/liblwip.a(lwIP_Apps.o)
+ .rdata         0x0015d2c0      0x198 ../../lwip-1.4.0/liblwip.a(gei_netif.o)
+ .rdata         0x0015d458       0x1c ../../lwip-1.4.0/liblwip.a(tcpip.o)
+ *fill*         0x0015d474        0xc 
+ .rdata         0x0015d480      0x180 ../../lwip-1.4.0/liblwip.a(tcp.o)
+                0x0015d500                tcp_state_str
+                0x0015d52c                tcp_backoff
+                0x0015d539                tcp_persist_backoff
+                0x0015d540                tcp_pcb_lists
+ .rdata         0x0015d600       0x28 ../../lwip-1.4.0/liblwip.a(etharp.o)
+                0x0015d600                ethbroadcast
+                0x0015d606                ethzero
+ .rdata         0x0015d628      0x1d4 ../../lwip-1.4.0/liblwip.a(dhcp.o)
+ *fill*         0x0015d7fc        0x4 
+ .rdata         0x0015d800       0xc0 ../../lwip-1.4.0/liblwip.a(sockets.o)
+ .rdata         0x0015d8c0       0x1c ../../lwip-1.4.0/liblwip.a(ip_addr.o)
+                0x0015d8c0                ip_addr_any
+                0x0015d8c4                ip_addr_broadcast
+ .rdata         0x0015d8dc       0x78 ../../lwip-1.4.0/liblwip.a(CommandServer.o)
+ .rdata         0x0015d954       0x90 ../../lwip-1.4.0/liblwip.a(CommandInterpreter.o)
+ .rdata         0x0015d9e4      0x138 ../../lwip-1.4.0/liblwip.a(pbuf.o)
+ .rdata         0x0015db1c       0x64 ../../lwip-1.4.0/liblwip.a(memp.o)
+ .rdata         0x0015db80       0x40 ../../lwip-1.4.0/liblwip.a(tcp_out.o)
+ .rdata         0x0015dbc0       0xdc ../../lwip-1.4.0/liblwip.a(netbuf.o)
+ .rdata         0x0015dc9c      0x214 ../../lwip-1.4.0/liblwip.a(api_lib.o)
+ .rdata         0x0015deb0       0x28 ../../lwip-1.4.0/liblwip.a(tcp_in.o)
+ .rdata         0x0015ded8       0x24 ../../lwip-1.4.0/liblwip.a(api_msg.o)
+ .rdata         0x0015defc       0xe4 ./bin/libbittest.a(serial.o)
+                0x0015df0e                achSerialRS485ExtLoopback
+                0x0015df29                achSerialRS485Loopback
+                0x0015df44                achSerialRS422Loopback
+                0x0015df5f                achSerialExternalLoopback
+                0x0015df7d                achSerialLocalloopback
+                0x0015df98                achSerialBaudRateTest
+                0x0015dfae                achSerialInterruptTest
+                0x0015dfc4                achSerialRegAccessTest
+ .rdata         0x0015dfe0       0xb0 ./bin/libbittest.a(gpioTests.o)
+                0x0015dfe0                achGPIOTest
+ *fill*         0x0015e090       0x10 
+ .rdata         0x0015e0a0      0x120 ./bin/libbittest.a(usb.o)
+                0x0015e15b                achUsbRegTest
+                0x0015e180                achUsbDeviceCheck
+                0x0015e1a1                achUsbOCCheck
+ .rdata         0x0015e1c0      0xc20 ./bin/libbittest.a(eth.o)
+                0x0015e1c0                test_data
+                0x0015e3a9                achEthRegAccessTest
+                0x0015e3c7                achEthEepromTest
+                0x0015e3dc                achEthPhyRegReadTest
+                0x0015e420                achEthIntLoopBackTest
+                0x0015e472                achEthInterruptTest
+                0x0015e4a0                achEthExtLoopBackTest
+                0x0015e4c0                achEthExtDevLoopbackTest
+                0x0015e580                achEthEepromWriteTest
+                0x0015e6fa                achEthInterfaceSelect
+ .rdata         0x0015ede0       0x68 ./bin/libbittest.a(fpuTests.o)
+                0x0015ede0                achFPUTest
+                0x0015edef                achFPUExpTest
+ .rdata         0x0015ee48      0x19c ./bin/libbittest.a(RTCTests.o)
+                0x0015ee48                achRTCTest
+                0x0015ef17                achRTCIntTest
+                0x0015ef2a                achRTCIrqIntTest
+ .rdata         0x0015efe4       0xe0 ./bin/libbittest.a(ide.o)
+                0x0015efe4                sPortInfo
+                0x0015eff0                sTestData
+                0x0015f000                achIdeRegaccessTest
+                0x0015f080                achIdeIntTest
+                0x0015f093                achIdeRdSectTest
+                0x0015f0ae                achIdeFlashDriveTest
+ *fill*         0x0015f0c4       0x1c 
+ .rdata         0x0015f0e0       0xa0 ./bin/libbittest.a(ram.o)
+                0x0015f0e0                abRamTestTypes
+                0x0015f0f0                achMemDatalineTest
+                0x0015f120                achMemAddrlineTest
+                0x0015f141                achMemSPDEEPROMTest
+                0x0015f155                achMemEccTest
+ .rdata         0x0015f180      0x24c ./bin/libbittest.a(SMBUS.o)
+                0x0015f180                achSMBUSTest
+                0x0015f192                achCKSI52143Test
+                0x0015f1a9                achCK505Test
+                0x0015f1ec                achCK409Test
+                0x0015f1fe                achDB800Test
+                0x0015f210                achDB400Test
+                0x0015f222                achDS3905Test
+                0x0015f2ed                achLM95245Test
+ .rdata         0x0015f3cc       0x20 ./bin/libbittest.a(XMM_MMXtests.o)
+                0x0015f3cc                achMMXTest
+                0x0015f3db                achXMMTest
+ .rdata         0x0015f3ec       0x10 ./bin/libbittest.a(pass.o)
+                0x0015f3ec                achPassingTest
+ *fill*         0x0015f3fc        0x4 
+ .rdata         0x0015f400      0x6e0 ./bin/libbittest.a(srioTests.o)
+                0x0015fa72                achCCT_SrioRegisterAccessTest
+                0x0015fa8c                achCCT_SrioRegisterLinkSpeedTest
+                0x0015faa1                achCCT_SrioExternalLoopBackTest
+                0x0015fabd                achCCT_SrioScanBackPlaneDevs
+ .rdata         0x0015fae0      0x160 ./bin/libbittest.a(keybd.o)
+                0x0015fb60                achKbCInterconnect
+                0x0015fb80                achKbCSelfTest
+                0x0015fb9e                achKbCInterrupt
+                0x0015fbc0                achKbdInterconnect
+                0x0015fbe4                achKbCAuxTest
+                0x0015fc03                achMouseInterconnect
+                0x0015fc20                achMouseActionTest
+ .rdata         0x0015fc40      0x600 ./bin/libbittest.a(pcitests.o)
+                0x0015ff20                achPciTest
+                0x0015ff3a                achPciPXMCTest
+                0x0015ff50                achPciPW
+                0x0015ff6c                achPciBist
+                0x0015ff7d                achCPciBridge
+                0x0015ffc3                achPciCPCITest
+                0x0015ffd8                achVPXBridge
+                0x0015ffec                achPcieVPXTest
+                0x00160001                achPciADCR2Test
+                0x0016002f                achPciADCRXTest
+                0x00160040                achVpxCarrierTest
+                0x00160060                achtrXmcPciPW
+                0x00160080                achtrXmcPXMCTest
+                0x001600c0                achVxsPcieConnectivity
+                0x001600e2                achVxsPcieLoopBackA
+                0x00160184                achVxsPcieLoopBackB
+ .rdata         0x00160240       0xc0 ./bin/libbittest.a(LDT-PITtests.o)
+                0x00160240                asModes
+                0x001602c0                achLdtBasicTest
+                0x001602d3                achLdtIntTest
+ .rdata         0x00160300       0x14 ./bin/libbittest.a(interrupt.o)
+                0x00160300                achInterruptTest
+ .rdata         0x00160314       0x10 ./bin/libbittest.a(fail.o)
+                0x00160314                achFailingTest
+ .rdata         0x00160324       0xec ./bin/libbittest.a(NVMemTest.o)
+                0x00160324                achNVRAMTest
+                0x0016032f                achEEPROMTest
+ .rdata         0x00160410       0x20 ./bin/libbittest.a(SCRTests.o)
+                0x00160410                achSCRTest
+ .rdata         0x00160430      0x100 ./bin/libbittest.a(smp.o)
+                0x00160430                achCPUExec
+ .rdata         0x00160530       0x30 ./bin/libbittest.a(SpeedSteptests.o)
+                0x00160530                achSpeedStepTest
+ .rdata         0x00160560       0x18 ./bin/libbittest.a(spiFwh.o)
+                0x00160560                achbitSpiFwhTest
+
+.data           0x00160580     0x1800
+ *(.data)
+ .data          0x00160580       0x70 ../../loader/loader.o
+                0x00160580                dStartupFlags
+                0x00160584                dApEntry
+                0x00160588                dBiosInfo_addr
+                0x0016058c                bCpuCount
+                0x0016058d                abApicId
+                0x0016059d                dSmpInitSemaphore
+                0x001605b0                stack_start
+ .data          0x001605f0        0x4 ../../kernel/libkernel.a(main.o)
+ .data          0x001605f4        0x0 ../../kernel/libkernel.a(lapic.o)
+ .data          0x001605f4        0x4 ../../kernel/libkernel.a(sys_delay.o)
+ *fill*         0x001605f8        0x8 
+ .data          0x00160600      0x400 ../../kernel/libkernel.a(idt.o)
+ .data          0x00160a00        0x0 ../../kernel/libkernel.a(ioapic.o)
+ .data          0x00160a00        0x0 ../../kernel/libkernel.a(debug_cons.o)
+ .data          0x00160a00        0x0 ../../kernel/libkernel.a(mmu.o)
+ .data          0x00160a00        0x0 ../../kernel/libkernel.a(scc.o)
+ .data          0x00160a00        0x0 ../../kernel/libkernel.a(pci_alloc.o)
+ .data          0x00160a00        0x0 ../../kernel/libkernel.a(port_io.o)
+ .data          0x00160a00        0x0 ../../kernel/libkernel.a(semaphore.o)
+ .data          0x00160a00        0x0 ../../kernel/libkernel.a(cpu.o)
+ .data          0x00160a00        0x0 ../../kernel/libkernel.a(gdt.o)
+ .data          0x00160a00        0x0 ../../blib/libblib.a(bit_support.o)
+ .data          0x00160a00        0x0 ../../blib/libblib.a(delay.o)
+ .data          0x00160a00       0x18 ../../blib/libblib.a(pciInt.o)
+ .data          0x00160a18        0x4 ../../blib/libblib.a(pci.o)
+ .data          0x00160a1c        0x0 ../../blib/libblib.a(mem.o)
+ .data          0x00160a1c        0x0 ../../clib/libclib.a(string.o)
+ .data          0x00160a1c        0x0 ../../clib/libclib.a(stdio.o)
+ .data          0x00160a1c        0x0 ../../clib/libclib.a(string_a.o)
+ .data          0x00160a1c        0x0 ../../clib/libclib.a(alloc.o)
+ .data          0x00160a1c        0x0 ../../clib/libclib.a(vsprintf.o)
+ .data          0x00160a1c        0x0 ../../clib/libclib.a(bcopy.o)
+ .data          0x00160a1c        0x0 ../../sth/libsth.a(sth_router.o)
+ .data          0x00160a1c        0x0 ../../sth/libsth.a(sthCpci.o)
+ .data          0x00160a1c        0x0 ../../tests/libbittest.a(ipmi.o)
+ .data          0x00160a1c        0x0 ../../tests/libbittest.a(fpu.o)
+ .data          0x00160a1c        0x0 ../../mth/libmth.a(cli.o)
+ .data          0x00160a1c        0x0 ../../mth/libmth.a(mth_utils.o)
+ .data          0x00160a1c        0x0 ../../mth/libmth.a(command.o)
+ .data          0x00160a1c        0x0 ../../mth/libmth.a(util.o)
+ .data          0x00160a1c        0x0 ../../mth/libmth.a(service.o)
+ .data          0x00160a1c        0x0 ../../mth/libmth.a(help.o)
+ .data          0x00160a1c        0x0 ../../conslib/libconslib.a(command.o)
+ .data          0x00160a1c        0x0 ../../conslib/libconslib.a(util.o)
+ .data          0x00160a1c        0x0 ../../conslib/libconslib.a(support.o)
+ .data          0x00160a1c        0x0 ../../conslib/libconslib.a(service.o)
+ *fill*         0x00160a1c        0x4 
+ .data          0x00160a20     0x10e0 board.o
+                0x00160db0                pTestDirectory
+                0x00160dc0                Global_Regs
+                0x00160de0                Floppy_Regs
+                0x00160e20                SER1_Regs
+                0x00160e60                SER2_Regs
+                0x00160ea0                SER3_Regs
+                0x00160ee0                SIO_Devices
+                0x00160f40                SIOInfo
+                0x00160f80                IDTRegs
+                0x00160f90                IntrRegs
+                0x00160fa0                I825801Regs
+                0x00160fc0                MDevices_2_0_0
+                0x00161080                BDevices_0_1_2
+                0x001610e0                BDevices_8_0_0
+                0x00161140                BDevices_4_1_0
+                0x001611e0                BDevices_3_0_0
+                0x00161300                BDevices_0_1C_0
+                0x00161360                MDevices_A_0_0
+                0x001613c0                BDevices_0_1C_4
+                0x00161420                MDevices_0_1C_0
+                0x001614c0                PCIE0BDevices
+                0x00161520                PCIE0B1Devices
+                0x00161580                MDevices_0_1F_0
+                0x001616a0                MDevices_0_16_0
+                0x00161760                MDevices_0_1_0
+                0x00161800                pciDevices0
+                0x001619b8                brdPCIDB
+                0x001619e0                SACRegs
+                0x00161a20                localEEPROM
+                0x00161a60                localSMBUS
+                0x00161a74                localLEDs
+                0x00161a78                localTemperature
+                0x00161a80                localSerialBaudInfo
+                0x00161ae0                localSpiEEPROM
+                0x00161ae4                localLDTPIT
+                0x00161af0                localGpio
+ .data          0x00161b00        0x0 ../../arch/srio/libsrioArch.a(srioArch.o)
+ .data          0x00161b00        0x0 ../../arch/srio/libsrioArch.a(tsi721.o)
+ .data          0x00161b00        0x8 ../../arch/srio/libsrioArch.a(rio.o)
+                0x00161b00                rio_mports
+ .data          0x00161b08        0x8 ../../arch/srio/libsrioArch.a(rio-driver.o)
+                0x00161b08                riohdid0
+                0x00161b0c                riohdid1
+ *fill*         0x00161b10       0x10 
+ .data          0x00161b20       0x60 ../../arch/srio/libsrioArch.a(rio-scan.o)
+                0x00161b50                rio_devices
+                0x00161b58                rio_netd
+ .data          0x00161b80        0x0 ../../arch/srio/libsrioArch.a(rio-access.o)
+ .data          0x00161b80        0x0 ../../arch/srio/libsrioArch.a(idt_gen2.o)
+ .data          0x00161b80        0x0 ../../xlib/sm3/libsm3.a(packet.o)
+ .data          0x00161b80        0x0 ../../xlib/sm3/libsm3.a(testParameters.o)
+ .data          0x00161b80        0x0 ../../xlib/sm3/libsm3.a(serialPacket.o)
+ .data          0x00161b80        0x0 ../../xlib/sm3/libsm3.a(autoid.o)
+ .data          0x00161b80        0x4 ../../FreeRTOS/Demo/CUTE/libfreertos.a(tasks.o)
+                0x00161b80                bCpuConfigured
+ .data          0x00161b84        0x0 ../../FreeRTOS/Demo/CUTE/libfreertos.a(queue.o)
+ .data          0x00161b84        0x0 ../../FreeRTOS/Demo/CUTE/libfreertos.a(croutine.o)
+ .data          0x00161b84        0x4 ../../FreeRTOS/Demo/CUTE/libfreertos.a(heap_2.o)
+ .data          0x00161b88        0x4 ../../FreeRTOS/Demo/CUTE/libfreertos.a(port.o)
+ .data          0x00161b8c        0x0 ../../FreeRTOS/Demo/CUTE/libfreertos.a(portcmn.o)
+ .data          0x00161b8c        0x0 ../../FreeRTOS/Demo/CUTE/libfreertos.a(list.o)
+ .data          0x00161b8c        0x0 ../../comm/serial/libserialComm.a(serial.o)
+ .data          0x00161b8c        0x0 ../../xlib/interconnect/libinterconnect.a(cpci_Interconnect.o)
+ .data          0x00161b8c        0x0 ../../lwip-1.4.0/liblwip.a(netif.o)
+ .data          0x00161b8c        0x4 ../../lwip-1.4.0/liblwip.a(smClient.o)
+ .data          0x00161b90        0x0 ../../lwip-1.4.0/liblwip.a(lwIP_Apps.o)
+ .data          0x00161b90        0x0 ../../lwip-1.4.0/liblwip.a(gei_netif.o)
+ .data          0x00161b90        0x0 ../../lwip-1.4.0/liblwip.a(tcpip.o)
+ .data          0x00161b90        0x8 ../../lwip-1.4.0/liblwip.a(tcp.o)
+ .data          0x00161b98        0x0 ../../lwip-1.4.0/liblwip.a(etharp.o)
+ .data          0x00161b98        0x4 ../../lwip-1.4.0/liblwip.a(dhcp.o)
+ .data          0x00161b9c        0x0 ../../lwip-1.4.0/liblwip.a(sockets.o)
+ .data          0x00161b9c        0x0 ../../lwip-1.4.0/liblwip.a(mem.o)
+ .data          0x00161b9c        0x0 ../../lwip-1.4.0/liblwip.a(def.o)
+ .data          0x00161b9c        0x0 ../../lwip-1.4.0/liblwip.a(ip_addr.o)
+ .data          0x00161b9c        0x0 ../../lwip-1.4.0/liblwip.a(stats.o)
+ .data          0x00161b9c        0x4 ../../lwip-1.4.0/liblwip.a(CommandServer.o)
+ .data          0x00161ba0        0xc ../../lwip-1.4.0/liblwip.a(CommandInterpreter.o)
+ .data          0x00161bac        0x0 ../../lwip-1.4.0/liblwip.a(sys_arch.o)
+ .data          0x00161bac        0x0 ../../lwip-1.4.0/liblwip.a(pbuf.o)
+ .data          0x00161bac        0x0 ../../lwip-1.4.0/liblwip.a(timers.o)
+ .data          0x00161bac        0x0 ../../lwip-1.4.0/liblwip.a(ip.o)
+ .data          0x00161bac        0x4 ../../lwip-1.4.0/liblwip.a(memp.o)
+ .data          0x00161bb0        0x0 ../../lwip-1.4.0/liblwip.a(init.o)
+ .data          0x00161bb0        0x0 ../../lwip-1.4.0/liblwip.a(tcp_out.o)
+ .data          0x00161bb0        0x0 ../../lwip-1.4.0/liblwip.a(udp.o)
+ .data          0x00161bb0        0x0 ../../lwip-1.4.0/liblwip.a(netbuf.o)
+ .data          0x00161bb0        0x0 ../../lwip-1.4.0/liblwip.a(api_lib.o)
+ .data          0x00161bb0        0x0 ../../lwip-1.4.0/liblwip.a(ip_frag.o)
+ .data          0x00161bb0        0x0 ../../lwip-1.4.0/liblwip.a(icmp.o)
+ .data          0x00161bb0        0x0 ../../lwip-1.4.0/liblwip.a(inet_chksum.o)
+ .data          0x00161bb0        0x0 ../../lwip-1.4.0/liblwip.a(tcp_in.o)
+ .data          0x00161bb0        0x0 ../../lwip-1.4.0/liblwip.a(api_msg.o)
+ .data          0x00161bb0        0x4 ./bin/libbittest.a(serial.o)
+ .data          0x00161bb4        0x0 ./bin/libbittest.a(gpioTests.o)
+ .data          0x00161bb4        0x0 ./bin/libbittest.a(usb.o)
+ .data          0x00161bb4       0x10 ./bin/libbittest.a(eth.o)
+ .data          0x00161bc4        0x0 ./bin/libbittest.a(fpuTests.o)
+ .data          0x00161bc4        0x0 ./bin/libbittest.a(RTCTests.o)
+ .data          0x00161bc4        0x0 ./bin/libbittest.a(ide.o)
+ .data          0x00161bc4        0x0 ./bin/libbittest.a(ram.o)
+ .data          0x00161bc4        0x0 ./bin/libbittest.a(SMBUS.o)
+ .data          0x00161bc4        0x0 ./bin/libbittest.a(XMM_MMXtests.o)
+ .data          0x00161bc4        0x0 ./bin/libbittest.a(pass.o)
+ .data          0x00161bc4        0x8 ./bin/libbittest.a(srioTests.o)
+                0x00161bc4                ib_phys
+ .data          0x00161bcc        0x0 ./bin/libbittest.a(keybd.o)
+ .data          0x00161bcc        0x0 ./bin/libbittest.a(pcitests.o)
+ .data          0x00161bcc        0x4 ./bin/libbittest.a(LDT-PITtests.o)
+ .data          0x00161bd0        0x0 ./bin/libbittest.a(interrupt.o)
+ .data          0x00161bd0        0x0 ./bin/libbittest.a(fail.o)
+ .data          0x00161bd0        0x0 ./bin/libbittest.a(NVMemTest.o)
+ .data          0x00161bd0        0x0 ./bin/libbittest.a(SCRTests.o)
+ .data          0x00161bd0        0x0 ./bin/libbittest.a(smp.o)
+ .data          0x00161bd0        0x0 ./bin/libbittest.a(SpeedSteptests.o)
+ *fill*         0x00161bd0       0x10 
+ .data          0x00161be0       0x60 ./bin/libbittest.a(spiFwh.o)
+ .data          0x00161c40        0x0 ./bin/libbittest.a(xmmx.o)
+ .data          0x00161c40        0x0 ./bin/libblib.a(io.o)
+ .data          0x00161c40        0x0 ./bin/libblib.a(console.o)
+ .data          0x00161c40        0x0 ./bin/libblib.a(bit_exec.o)
+ .data          0x00161c40        0x0 ./bin/libblib.a(msr.o)
+ .data          0x00161c40        0x0 ./bin/libclib.a(mem.o)
+ .data          0x00161c40        0x0 ./bin/libclib.a(error_msg.o)
+ .data          0x00161c40        0x0 ./bin/libclib.a(stdlib.o)
+ .data          0x00161c40      0x100 ./bin/libclib.a(ctype.o)
+                0x00161c40                _ctype
+ .data          0x00161d40        0x0 ./bin/libkernel.a(spinlock.o)
+ .data          0x00161d40        0x0 ./bin/libkernel.a(mem_io.o)
+ .data          0x00161d40        0x0 ./bin/libkernel.a(atomic.o)
+                0x00161d40                __bss_start = .
+
+.drectve        0x00162000      0x400
+ .drectve       0x00162000       0x20 ../../kernel/libkernel.a(main.o)
+ .drectve       0x00162020       0x18 ../../sth/libsth.a(sthCpci.o)
+ .drectve       0x00162038       0x4c ../../xlib/sm3/libsm3.a(packet.o)
+ .drectve       0x00162084       0x34 ../../xlib/sm3/libsm3.a(testParameters.o)
+ .drectve       0x001620b8       0x38 ../../FreeRTOS/Demo/CUTE/libfreertos.a(tasks.o)
+ .drectve       0x001620f0       0x3c ../../lwip-1.4.0/liblwip.a(netif.o)
+ .drectve       0x0016212c       0xb4 ../../lwip-1.4.0/liblwip.a(tcp.o)
+ .drectve       0x001621e0       0x24 ../../lwip-1.4.0/liblwip.a(dhcp.o)
+ .drectve       0x00162204       0x1c ../../lwip-1.4.0/liblwip.a(stats.o)
+ .drectve       0x00162220       0x84 ../../lwip-1.4.0/liblwip.a(ip.o)
+ .drectve       0x001622a4       0x1c ../../lwip-1.4.0/liblwip.a(udp.o)
+ .drectve       0x001622c0       0x20 ../../lwip-1.4.0/liblwip.a(tcp_in.o)
+ .drectve       0x001622e0       0x20 ./bin/libbittest.a(serial.o)
+ .drectve       0x00162300       0x30 ./bin/libbittest.a(SMBUS.o)
+ .drectve       0x00162330       0x34 ./bin/libbittest.a(srioTests.o)
+ .drectve       0x00162364       0x18 ./bin/libbittest.a(LDT-PITtests.o)
+
+.bss            0x00162380    0x18fe4
+ *(.bss)
+ .bss           0x00162380        0x0 ../../loader/loader.o
+ .bss           0x00162380       0x18 ../../kernel/libkernel.a(main.o)
+ .bss           0x00162398        0x0 ../../kernel/libkernel.a(lapic.o)
+ .bss           0x00162398        0x0 ../../kernel/libkernel.a(sys_delay.o)
+ .bss           0x00162398        0x0 ../../kernel/libkernel.a(idt.o)
+ .bss           0x00162398        0x0 ../../kernel/libkernel.a(ioapic.o)
+ .bss           0x00162398        0x8 ../../kernel/libkernel.a(debug_cons.o)
+ .bss           0x001623a0      0x840 ../../kernel/libkernel.a(mmu.o)
+ .bss           0x00162be0        0x0 ../../kernel/libkernel.a(scc.o)
+ .bss           0x00162be0       0x10 ../../kernel/libkernel.a(pci_alloc.o)
+ .bss           0x00162bf0        0x0 ../../kernel/libkernel.a(port_io.o)
+ .bss           0x00162bf0        0x0 ../../kernel/libkernel.a(semaphore.o)
+ .bss           0x00162bf0        0x0 ../../kernel/libkernel.a(cpu.o)
+ .bss           0x00162bf0        0x0 ../../kernel/libkernel.a(gdt.o)
+ .bss           0x00162bf0        0x4 ../../blib/libblib.a(bit_support.o)
+ .bss           0x00162bf4        0x0 ../../blib/libblib.a(delay.o)
+ *fill*         0x00162bf4        0xc 
+ .bss           0x00162c00      0x720 ../../blib/libblib.a(pciInt.o)
+ .bss           0x00163320       0x28 ../../blib/libblib.a(pci.o)
+ .bss           0x00163348        0x0 ../../blib/libblib.a(mem.o)
+ .bss           0x00163348        0x0 ../../clib/libclib.a(string.o)
+ .bss           0x00163348        0x4 ../../clib/libclib.a(stdio.o)
+ .bss           0x0016334c        0x0 ../../clib/libclib.a(string_a.o)
+ .bss           0x0016334c       0x28 ../../clib/libclib.a(alloc.o)
+ .bss           0x00163374        0x0 ../../clib/libclib.a(vsprintf.o)
+ .bss           0x00163374        0x0 ../../clib/libclib.a(bcopy.o)
+ .bss           0x00163374        0x0 ../../sth/libsth.a(sth_router.o)
+ *fill*         0x00163374        0xc 
+ .bss           0x00163380     0x1040 ../../sth/libsth.a(sthCpci.o)
+ .bss           0x001643c0       0x80 ../../tests/libbittest.a(ipmi.o)
+ .bss           0x00164440        0x0 ../../tests/libbittest.a(fpu.o)
+ .bss           0x00164440        0x0 ../../mth/libmth.a(cli.o)
+ .bss           0x00164440      0xc00 ../../mth/libmth.a(mth_utils.o)
+ .bss           0x00165040      0x500 ../../mth/libmth.a(command.o)
+ .bss           0x00165540     0x1f40 ../../mth/libmth.a(util.o)
+ .bss           0x00167480        0x0 ../../mth/libmth.a(service.o)
+ .bss           0x00167480        0x0 ../../mth/libmth.a(help.o)
+ .bss           0x00167480        0x0 ../../conslib/libconslib.a(command.o)
+ .bss           0x00167480       0x10 ../../conslib/libconslib.a(util.o)
+ .bss           0x00167490        0x0 ../../conslib/libconslib.a(support.o)
+ .bss           0x00167490        0x0 ../../conslib/libconslib.a(service.o)
+ *fill*         0x00167490       0x10 
+ .bss           0x001674a0      0x1e0 board.o
+                0x001674c0                KBD_Regs
+                0x001674e0                PlaneRegs
+                0x001674e8                DRAMCRegs
+                0x00167500                MDevices
+                0x00167540                BDevices
+ .bss           0x00167680       0x10 ../../arch/srio/libsrioArch.a(srioArch.o)
+ .bss           0x00167690        0x4 ../../arch/srio/libsrioArch.a(tsi721.o)
+                0x00167690                amcSlotId
+ *fill*         0x00167694        0xc 
+ .bss           0x001676a0       0x60 ../../arch/srio/libsrioArch.a(rio.o)
+ .bss           0x00167700        0x0 ../../arch/srio/libsrioArch.a(rio-driver.o)
+ .bss           0x00167700        0x4 ../../arch/srio/libsrioArch.a(rio-scan.o)
+ .bss           0x00167704        0x0 ../../arch/srio/libsrioArch.a(rio-access.o)
+ .bss           0x00167704        0x0 ../../arch/srio/libsrioArch.a(idt_gen2.o)
+ *fill*         0x00167704       0x1c 
+ .bss           0x00167720      0x100 ../../xlib/sm3/libsm3.a(packet.o)
+ .bss           0x00167820       0xa0 ../../xlib/sm3/libsm3.a(testParameters.o)
+ .bss           0x001678c0    0x10820 ../../xlib/sm3/libsm3.a(serialPacket.o)
+ .bss           0x001780e0     0x1000 ../../xlib/sm3/libsm3.a(autoid.o)
+ .bss           0x001790e0      0x6a0 ../../FreeRTOS/Demo/CUTE/libfreertos.a(tasks.o)
+                0x001790e0                uxTotalTaskNumber
+ .bss           0x00179780        0x0 ../../FreeRTOS/Demo/CUTE/libfreertos.a(queue.o)
+ .bss           0x00179780       0xa0 ../../FreeRTOS/Demo/CUTE/libfreertos.a(croutine.o)
+                0x00179780                pxCurrentCoRoutine
+ .bss           0x00179820       0x18 ../../FreeRTOS/Demo/CUTE/libfreertos.a(heap_2.o)
+ *fill*         0x00179838        0x8 
+ .bss           0x00179840       0x80 ../../FreeRTOS/Demo/CUTE/libfreertos.a(port.o)
+ .bss           0x001798c0        0x0 ../../FreeRTOS/Demo/CUTE/libfreertos.a(portcmn.o)
+ .bss           0x001798c0        0x0 ../../FreeRTOS/Demo/CUTE/libfreertos.a(list.o)
+ .bss           0x001798c0        0x4 ../../comm/serial/libserialComm.a(serial.o)
+ *fill*         0x001798c4       0x1c 
+ .bss           0x001798e0      0x400 ../../xlib/interconnect/libinterconnect.a(cpci_Interconnect.o)
+ .bss           0x00179ce0        0x4 ../../lwip-1.4.0/liblwip.a(netif.o)
+ .bss           0x00179ce4       0x60 ../../lwip-1.4.0/liblwip.a(smClient.o)
+ *fill*         0x00179d44       0x1c 
+ .bss           0x00179d60      0x100 ../../lwip-1.4.0/liblwip.a(lwIP_Apps.o)
+ .bss           0x00179e60        0x0 ../../lwip-1.4.0/liblwip.a(gei_netif.o)
+ .bss           0x00179e60        0xc ../../lwip-1.4.0/liblwip.a(tcpip.o)
+ .bss           0x00179e6c        0x4 ../../lwip-1.4.0/liblwip.a(tcp.o)
+ *fill*         0x00179e70       0x10 
+ .bss           0x00179e80       0xc0 ../../lwip-1.4.0/liblwip.a(etharp.o)
+ .bss           0x00179f40        0x0 ../../lwip-1.4.0/liblwip.a(dhcp.o)
+ .bss           0x00179f40      0x120 ../../lwip-1.4.0/liblwip.a(sockets.o)
+                0x00179f40                errno
+ .bss           0x0017a060       0x10 ../../lwip-1.4.0/liblwip.a(mem.o)
+ .bss           0x0017a070        0x0 ../../lwip-1.4.0/liblwip.a(def.o)
+ .bss           0x0017a070       0x10 ../../lwip-1.4.0/liblwip.a(ip_addr.o)
+ .bss           0x0017a080        0x0 ../../lwip-1.4.0/liblwip.a(stats.o)
+ .bss           0x0017a080      0x420 ../../lwip-1.4.0/liblwip.a(CommandServer.o)
+ .bss           0x0017a4a0        0xc ../../lwip-1.4.0/liblwip.a(CommandInterpreter.o)
+ *fill*         0x0017a4ac       0x14 
+ .bss           0x0017a4c0       0x40 ../../lwip-1.4.0/liblwip.a(sys_arch.o)
+ .bss           0x0017a500        0x4 ../../lwip-1.4.0/liblwip.a(pbuf.o)
+ .bss           0x0017a504        0x8 ../../lwip-1.4.0/liblwip.a(timers.o)
+ .bss           0x0017a50c        0x4 ../../lwip-1.4.0/liblwip.a(ip.o)
+ *fill*         0x0017a510       0x10 
+ .bss           0x0017a520       0x40 ../../lwip-1.4.0/liblwip.a(memp.o)
+ .bss           0x0017a560        0x0 ../../lwip-1.4.0/liblwip.a(init.o)
+ .bss           0x0017a560        0x0 ../../lwip-1.4.0/liblwip.a(tcp_out.o)
+ .bss           0x0017a560        0x0 ../../lwip-1.4.0/liblwip.a(udp.o)
+ .bss           0x0017a560        0x0 ../../lwip-1.4.0/liblwip.a(netbuf.o)
+ .bss           0x0017a560        0x0 ../../lwip-1.4.0/liblwip.a(api_lib.o)
+ .bss           0x0017a560        0x8 ../../lwip-1.4.0/liblwip.a(ip_frag.o)
+ .bss           0x0017a568        0x0 ../../lwip-1.4.0/liblwip.a(icmp.o)
+ .bss           0x0017a568        0x0 ../../lwip-1.4.0/liblwip.a(inet_chksum.o)
+ .bss           0x0017a568       0x2c ../../lwip-1.4.0/liblwip.a(tcp_in.o)
+ .bss           0x0017a594        0x0 ../../lwip-1.4.0/liblwip.a(api_msg.o)
+ *fill*         0x0017a594        0xc 
+ .bss           0x0017a5a0      0x320 ./bin/libbittest.a(serial.o)
+ .bss           0x0017a8c0        0x0 ./bin/libbittest.a(gpioTests.o)
+ .bss           0x0017a8c0       0x18 ./bin/libbittest.a(usb.o)
+ .bss           0x0017a8d8       0x60 ./bin/libbittest.a(eth.o)
+ .bss           0x0017a938        0x4 ./bin/libbittest.a(fpuTests.o)
+ .bss           0x0017a93c        0x8 ./bin/libbittest.a(RTCTests.o)
+ *fill*         0x0017a944       0x1c 
+ .bss           0x0017a960       0x80 ./bin/libbittest.a(ide.o)
+ .bss           0x0017a9e0      0x100 ./bin/libbittest.a(ram.o)
+ .bss           0x0017aae0        0xc ./bin/libbittest.a(SMBUS.o)
+ .bss           0x0017aaec        0x0 ./bin/libbittest.a(XMM_MMXtests.o)
+ .bss           0x0017aaec        0x0 ./bin/libbittest.a(pass.o)
+ *fill*         0x0017aaec       0x14 
+ .bss           0x0017ab00       0xc0 ./bin/libbittest.a(srioTests.o)
+                0x0017ab00                net
+ .bss           0x0017abc0        0x0 ./bin/libbittest.a(keybd.o)
+ .bss           0x0017abc0       0x1c ./bin/libbittest.a(pcitests.o)
+ .bss           0x0017abdc        0x0 ./bin/libbittest.a(LDT-PITtests.o)
+ .bss           0x0017abdc        0x0 ./bin/libbittest.a(interrupt.o)
+ .bss           0x0017abdc        0x0 ./bin/libbittest.a(fail.o)
+ .bss           0x0017abdc        0x4 ./bin/libbittest.a(NVMemTest.o)
+ .bss           0x0017abe0        0x0 ./bin/libbittest.a(SCRTests.o)
+ .bss           0x0017abe0        0x8 ./bin/libbittest.a(smp.o)
+ .bss           0x0017abe8        0x0 ./bin/libbittest.a(SpeedSteptests.o)
+ .bss           0x0017abe8        0x0 ./bin/libbittest.a(spiFwh.o)
+ .bss           0x0017abe8        0x0 ./bin/libbittest.a(xmmx.o)
+ .bss           0x0017abe8        0x0 ./bin/libblib.a(io.o)
+ .bss           0x0017abe8        0x0 ./bin/libblib.a(console.o)
+ .bss           0x0017abe8        0x0 ./bin/libblib.a(bit_exec.o)
+ .bss           0x0017abe8        0x0 ./bin/libblib.a(msr.o)
+ .bss           0x0017abe8        0x0 ./bin/libclib.a(mem.o)
+ *fill*         0x0017abe8       0x18 
+ .bss           0x0017ac00       0x60 ./bin/libclib.a(error_msg.o)
+ .bss           0x0017ac60        0x0 ./bin/libclib.a(stdlib.o)
+ .bss           0x0017ac60        0x0 ./bin/libclib.a(ctype.o)
+ .bss           0x0017ac60        0x0 ./bin/libkernel.a(spinlock.o)
+ .bss           0x0017ac60        0x0 ./bin/libkernel.a(mem_io.o)
+ .bss           0x0017ac60        0x0 ./bin/libkernel.a(atomic.o)
+ COMMON         0x0017ac60       0x1c ../../kernel/libkernel.a(main.o)
+                0x0017ac60                globalMutexPool
+ COMMON         0x0017ac7c        0x2 ../../sth/libsth.a(sthCpci.o)
+                0x0017ac7c                my_slot
+ *fill*         0x0017ac7e        0x2 
+ COMMON         0x0017ac80       0x44 board.o
+                0x0017ac80                pciStoredConfig
+ *fill*         0x0017acc4       0x1c 
+ COMMON         0x0017ace0      0x240 ../../xlib/sm3/libsm3.a(packet.o)
+                0x0017ace0                abSlaveDev
+                0x0017ad00                bSlaves
+                0x0017ad20                asSlots
+                0x0017ae00                bControllerType
+                0x0017ae20                asSlotsM
+ COMMON         0x0017af20       0x82 ../../xlib/sm3/libsm3.a(testParameters.o)
+                0x0017af20                dParams
+                0x0017afa0                wNumParams
+ *fill*         0x0017afa2        0x2 
+ COMMON         0x0017afa4       0x20 ../../FreeRTOS/Demo/CUTE/libfreertos.a(tasks.o)
+                0x0017afa4                pxCurrentTCB
+                0x0017afb4                idleCount
+ COMMON         0x0017afc4        0x8 ../../lwip-1.4.0/liblwip.a(netif.o)
+                0x0017afc4                netif_list
+                0x0017afc8                netif_default
+ COMMON         0x0017afcc       0x18 ../../lwip-1.4.0/liblwip.a(tcp.o)
+                0x0017afcc                tcp_active_pcbs
+                0x0017afd0                tcp_tw_pcbs
+                0x0017afd4                tcp_listen_pcbs
+                0x0017afd8                tcp_tmp_pcb
+                0x0017afdc                tcp_ticks
+                0x0017afe0                tcp_bound_pcbs
+ *fill*         0x0017afe4       0x1c 
+ COMMON         0x0017b000       0x32 ../../lwip-1.4.0/liblwip.a(dhcp.o)
+                0x0017b000                dhcp_rx_options_val
+                0x0017b028                dhcp_rx_options_given
+ *fill*         0x0017b032        0xe 
+ COMMON         0x0017b040      0x240 ../../lwip-1.4.0/liblwip.a(stats.o)
+                0x0017b040                lwip_stats
+ COMMON         0x0017b280       0x10 ../../lwip-1.4.0/liblwip.a(ip.o)
+                0x0017b280                current_iphdr_dest
+                0x0017b284                current_header
+                0x0017b288                current_netif
+                0x0017b28c                current_iphdr_src
+ COMMON         0x0017b290        0x4 ../../lwip-1.4.0/liblwip.a(udp.o)
+                0x0017b290                udp_pcbs
+ COMMON         0x0017b294        0x4 ../../lwip-1.4.0/liblwip.a(tcp_in.o)
+                0x0017b294                tcp_input_pcb
+ COMMON         0x0017b298        0x4 ./bin/libbittest.a(serial.o)
+                0x0017b298                pSerialBaudInfo
+ COMMON         0x0017b29c        0x4 ./bin/libbittest.a(SMBUS.o)
+                0x0017b29c                ManufId
+                0x0017b29e                RevId
+ COMMON         0x0017b2a0       0xc0 ./bin/libbittest.a(srioTests.o)
+                0x0017b2a0                mport
+                0x0017b2c0                arr_rio_dev
+ COMMON         0x0017b360        0x4 ./bin/libbittest.a(LDT-PITtests.o)
+                0x0017b360                ldtPit
+                0x0017b364                __bss_stop = .
+LOAD ../../loader/loader.o
+LOAD ../../kernel/libkernel.a
+LOAD ../../blib/libblib.a
+LOAD ../../clib/libclib.a
+LOAD ../../sth/libsth.a
+LOAD ../../tests/libbittest.a
+LOAD ../../mth/libmth.a
+LOAD ../../conslib/libconslib.a
+LOAD board.o
+LOAD ../../arch/srio/libsrioArch.a
+LOAD ../../xlib/sm3/libsm3.a
+LOAD ../../FreeRTOS/Demo/CUTE/libfreertos.a
+LOAD ../../comm/serial/libserialComm.a
+LOAD ../../xlib/interconnect/libinterconnect.a
+LOAD ../../vgalib/libvga.a
+LOAD ../../debug/libdebug.a
+LOAD ../../lwip-1.4.0/liblwip.a
+LOAD ./bin/libbittest.a
+LOAD ./bin/libblib.a
+LOAD ./bin/libclib.a
+LOAD ./bin/libconslib.a
+LOAD ./bin/libfreertos.a
+LOAD ./bin/libkernel.a
+LOAD ./bin/libmth.a
+LOAD ./bin/libsth.a
+LOAD ./bin/libsrioArch.a
+LOAD ./bin/libsm3.a
+LOAD ./bin/libserialComm.a
+LOAD ./bin/libinterconnect.a
+OUTPUT(./bin/package.out pei-i386)

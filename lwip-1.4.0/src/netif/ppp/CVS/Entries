@@ -1,0 +1,27 @@
+/auth.c/1.1/Wed Sep  4 12:20:04 2013//
+/auth.h/1.1/Wed Sep  4 12:20:04 2013//
+/chap.c/1.1/Wed Sep  4 12:20:04 2013//
+/chap.h/1.1/Wed Sep  4 12:20:04 2013//
+/chpms.c/1.1/Wed Sep  4 12:20:04 2013//
+/chpms.h/1.1/Wed Sep  4 12:20:04 2013//
+/fsm.c/1.1/Wed Sep  4 12:20:04 2013//
+/fsm.h/1.1/Wed Sep  4 12:20:04 2013//
+/ipcp.c/1.1/Wed Sep  4 12:20:04 2013//
+/ipcp.h/1.1/Wed Sep  4 12:20:04 2013//
+/lcp.c/1.1/Wed Sep  4 12:20:04 2013//
+/lcp.h/1.1/Wed Sep  4 12:20:04 2013//
+/magic.c/1.1/Wed Sep  4 12:20:05 2013//
+/magic.h/1.1/Wed Sep  4 12:20:05 2013//
+/md5.c/1.1/Wed Sep  4 12:20:05 2013//
+/md5.h/1.1/Wed Sep  4 12:20:05 2013//
+/pap.c/1.1/Wed Sep  4 12:20:05 2013//
+/pap.h/1.1/Wed Sep  4 12:20:05 2013//
+/ppp.c/1.1/Wed Sep  4 12:20:05 2013//
+/ppp.h/1.1/Wed Sep  4 12:20:05 2013//
+/ppp_oe.c/1.1/Wed Sep  4 12:20:05 2013//
+/pppdebug.h/1.1/Wed Sep  4 12:20:05 2013//
+/randm.c/1.1/Wed Sep  4 12:20:05 2013//
+/randm.h/1.1/Wed Sep  4 12:20:05 2013//
+/vj.c/1.1/Wed Sep  4 12:20:05 2013//
+/vj.h/1.1/Wed Sep  4 12:20:05 2013//
+D

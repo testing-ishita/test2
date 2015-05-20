@@ -1,0 +1,22 @@
+!define BLANK ""
+C:\Projects\wc\symtbl\main.obj : C:\Projects\wc\symtbl\main.c .AUTODEPEND
+ @C:
+ cd C:\Projects\wc\symtbl
+ *wcc386 main.c -i=C:\WATCOM\h;C:\WATCOM\h\nt -w4 -e25 -zq -od -d2 -6r -bt=n&
+t -mf
+
+C:\Projects\wc\symtbl\symtbl.exe : C:\Projects\wc\symtbl\main.obj .AUTODEPEN&
+D
+ @C:
+ cd C:\Projects\wc\symtbl
+ @%write symtbl.lk1 FIL main.obj
+ @%append symtbl.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b symtbl.imp 
+ @%append symtbl.lk1 LIBR symtbl.imp
+!endif
+!ifneq BLANK ""
+ @%append symtbl.lk1 op resource=
+!endif
+ *wlink name symtbl d all SYS nt op m op maxe=25 op q op symf @symtbl.lk1
+

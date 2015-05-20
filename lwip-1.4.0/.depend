@@ -1,0 +1,632 @@
+mem.o: src/core/mem.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/def.h src/include/lwip/mem.h src/include/lwip/sys.h \
+ src/include/lwip/err.h ports/include/arch/sys_arch.h \
+ ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h src/include/lwip/stats.h \
+ src/include/lwip/memp.h src/include/lwip/memp_std.h
+memp.o: src/core/memp.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/memp.h src/include/lwip/memp_std.h \
+ src/include/lwip/pbuf.h src/include/lwip/err.h src/include/lwip/udp.h \
+ src/include/lwip/netif.h src/include/ipv4/lwip/ip_addr.h \
+ src/include/lwip/def.h src/include/ipv4/lwip/ip.h src/include/lwip/raw.h \
+ src/include/lwip/tcp_impl.h src/include/lwip/tcp.h \
+ src/include/lwip/sys.h ports/include/arch/sys_arch.h \
+ ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h src/include/lwip/mem.h \
+ src/include/ipv4/lwip/icmp.h src/include/ipv4/lwip/igmp.h \
+ src/include/lwip/api.h src/include/lwip/netbuf.h \
+ src/include/lwip/api_msg.h src/include/lwip/tcpip.h \
+ src/include/lwip/netifapi.h src/include/lwip/timers.h \
+ src/include/lwip/stats.h src/include/netif/etharp.h \
+ src/include/ipv4/lwip/ip_frag.h src/include/lwip/snmp_structs.h \
+ src/include/lwip/snmp_msg.h src/include/lwip/snmp.h \
+ src/include/lwip/dns.h src/include/netif/ppp_oe.h
+netif.o: src/core/netif.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/def.h src/include/ipv4/lwip/ip_addr.h \
+ src/include/lwip/netif.h src/include/lwip/err.h src/include/lwip/pbuf.h \
+ src/include/lwip/tcp_impl.h src/include/lwip/tcp.h \
+ src/include/lwip/sys.h ports/include/arch/sys_arch.h \
+ ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h src/include/lwip/mem.h \
+ src/include/ipv4/lwip/ip.h src/include/ipv4/lwip/icmp.h \
+ src/include/lwip/snmp.h src/include/ipv4/lwip/igmp.h \
+ src/include/netif/etharp.h src/include/lwip/stats.h \
+ src/include/lwip/memp.h src/include/lwip/memp_std.h \
+ src/include/lwip/dhcp.h src/include/lwip/udp.h
+pbuf.o: src/core/pbuf.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/stats.h src/include/lwip/mem.h src/include/lwip/memp.h \
+ src/include/lwip/memp_std.h src/include/lwip/def.h \
+ src/include/lwip/pbuf.h src/include/lwip/err.h src/include/lwip/sys.h \
+ ports/include/arch/sys_arch.h ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h ports/include/arch/perf.h \
+ src/include/lwip/tcp_impl.h src/include/lwip/tcp.h \
+ src/include/ipv4/lwip/ip.h src/include/ipv4/lwip/ip_addr.h \
+ src/include/lwip/netif.h src/include/ipv4/lwip/icmp.h \
+ src/include/lwip/tcpip.h src/include/lwip/api_msg.h \
+ src/include/ipv4/lwip/igmp.h src/include/lwip/api.h \
+ src/include/lwip/netbuf.h src/include/lwip/netifapi.h \
+ src/include/lwip/timers.h
+stats.o: src/core/stats.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/def.h src/include/lwip/stats.h src/include/lwip/mem.h \
+ src/include/lwip/memp.h src/include/lwip/memp_std.h
+sys.o: src/core/sys.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/sys.h src/include/lwip/err.h \
+ ports/include/arch/sys_arch.h ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h
+tcp.o: src/core/tcp.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/def.h src/include/lwip/mem.h src/include/lwip/memp.h \
+ src/include/lwip/memp_std.h src/include/lwip/snmp.h \
+ src/include/ipv4/lwip/ip_addr.h src/include/lwip/tcp.h \
+ src/include/lwip/sys.h src/include/lwip/err.h \
+ ports/include/arch/sys_arch.h ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h src/include/lwip/pbuf.h \
+ src/include/ipv4/lwip/ip.h src/include/lwip/netif.h \
+ src/include/ipv4/lwip/icmp.h src/include/lwip/tcp_impl.h \
+ src/include/lwip/stats.h
+tcp_in.o: src/core/tcp_in.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/tcp_impl.h src/include/lwip/tcp.h \
+ src/include/lwip/sys.h src/include/lwip/err.h \
+ ports/include/arch/sys_arch.h ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h src/include/lwip/mem.h \
+ src/include/lwip/pbuf.h src/include/ipv4/lwip/ip.h \
+ src/include/lwip/def.h src/include/ipv4/lwip/ip_addr.h \
+ src/include/lwip/netif.h src/include/ipv4/lwip/icmp.h \
+ src/include/lwip/memp.h src/include/lwip/memp_std.h \
+ src/include/ipv4/lwip/inet_chksum.h src/include/lwip/stats.h \
+ src/include/lwip/snmp.h ports/include/arch/perf.h
+raw.o: src/core/raw.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h
+tcp_out.o: src/core/tcp_out.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/tcp_impl.h src/include/lwip/tcp.h \
+ src/include/lwip/sys.h src/include/lwip/err.h \
+ ports/include/arch/sys_arch.h ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h src/include/lwip/mem.h \
+ src/include/lwip/pbuf.h src/include/ipv4/lwip/ip.h \
+ src/include/lwip/def.h src/include/ipv4/lwip/ip_addr.h \
+ src/include/lwip/netif.h src/include/ipv4/lwip/icmp.h \
+ src/include/lwip/memp.h src/include/lwip/memp_std.h \
+ src/include/ipv4/lwip/inet_chksum.h src/include/lwip/stats.h \
+ src/include/lwip/snmp.h
+udp.o: src/core/udp.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/udp.h src/include/lwip/pbuf.h src/include/lwip/err.h \
+ src/include/lwip/netif.h src/include/ipv4/lwip/ip_addr.h \
+ src/include/lwip/def.h src/include/ipv4/lwip/ip.h \
+ src/include/lwip/memp.h src/include/lwip/memp_std.h \
+ src/include/ipv4/lwip/inet_chksum.h src/include/ipv4/lwip/icmp.h \
+ src/include/lwip/stats.h src/include/lwip/mem.h src/include/lwip/snmp.h \
+ ports/include/arch/perf.h src/include/lwip/dhcp.h
+init.o: src/core/init.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/init.h src/include/lwip/stats.h src/include/lwip/mem.h \
+ src/include/lwip/memp.h src/include/lwip/memp_std.h \
+ src/include/lwip/sys.h src/include/lwip/err.h \
+ ports/include/arch/sys_arch.h ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h src/include/lwip/pbuf.h \
+ src/include/lwip/netif.h src/include/ipv4/lwip/ip_addr.h \
+ src/include/lwip/def.h src/include/lwip/sockets.h \
+ src/include/ipv4/lwip/inet.h src/include/ipv4/lwip/ip.h \
+ src/include/lwip/raw.h src/include/lwip/udp.h \
+ src/include/lwip/tcp_impl.h src/include/lwip/tcp.h \
+ src/include/ipv4/lwip/icmp.h src/include/lwip/snmp_msg.h \
+ src/include/lwip/snmp.h src/include/lwip/snmp_structs.h \
+ src/include/ipv4/lwip/autoip.h src/include/ipv4/lwip/igmp.h \
+ src/include/lwip/dns.h src/include/lwip/timers.h \
+ src/include/netif/etharp.h
+def.o: src/core/def.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/def.h
+timers.o: src/core/timers.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/timers.h src/include/lwip/err.h src/include/lwip/sys.h \
+ ports/include/arch/sys_arch.h ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h src/include/lwip/tcp_impl.h \
+ src/include/lwip/tcp.h src/include/lwip/mem.h src/include/lwip/pbuf.h \
+ src/include/ipv4/lwip/ip.h src/include/lwip/def.h \
+ src/include/ipv4/lwip/ip_addr.h src/include/lwip/netif.h \
+ src/include/ipv4/lwip/icmp.h src/include/lwip/memp.h \
+ src/include/lwip/memp_std.h src/include/lwip/tcpip.h \
+ src/include/lwip/api_msg.h src/include/ipv4/lwip/igmp.h \
+ src/include/lwip/api.h src/include/lwip/netbuf.h \
+ src/include/lwip/netifapi.h src/include/ipv4/lwip/ip_frag.h \
+ src/include/netif/etharp.h src/include/lwip/dhcp.h \
+ src/include/lwip/udp.h src/include/ipv4/lwip/autoip.h \
+ src/include/lwip/dns.h
+dhcp.o: src/core/dhcp.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/stats.h src/include/lwip/mem.h src/include/lwip/memp.h \
+ src/include/lwip/memp_std.h src/include/lwip/udp.h \
+ src/include/lwip/pbuf.h src/include/lwip/err.h src/include/lwip/netif.h \
+ src/include/ipv4/lwip/ip_addr.h src/include/lwip/def.h \
+ src/include/ipv4/lwip/ip.h src/include/lwip/sys.h \
+ ports/include/arch/sys_arch.h ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h src/include/lwip/dhcp.h \
+ src/include/ipv4/lwip/autoip.h src/include/lwip/dns.h \
+ src/include/netif/etharp.h
+icmp.o: src/core/ipv4/icmp.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/ipv4/lwip/icmp.h src/include/lwip/pbuf.h \
+ src/include/lwip/err.h src/include/ipv4/lwip/ip_addr.h \
+ src/include/lwip/def.h src/include/lwip/netif.h \
+ src/include/ipv4/lwip/inet_chksum.h src/include/ipv4/lwip/ip.h \
+ src/include/lwip/stats.h src/include/lwip/mem.h src/include/lwip/memp.h \
+ src/include/lwip/memp_std.h src/include/lwip/snmp.h
+ip.o: src/core/ipv4/ip.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/ipv4/lwip/ip.h src/include/lwip/def.h \
+ src/include/lwip/pbuf.h src/include/lwip/err.h \
+ src/include/ipv4/lwip/ip_addr.h src/include/lwip/netif.h \
+ src/include/lwip/mem.h src/include/ipv4/lwip/ip_frag.h \
+ src/include/ipv4/lwip/inet_chksum.h src/include/ipv4/lwip/icmp.h \
+ src/include/ipv4/lwip/igmp.h src/include/lwip/raw.h \
+ src/include/lwip/udp.h src/include/lwip/tcp_impl.h \
+ src/include/lwip/tcp.h src/include/lwip/sys.h \
+ ports/include/arch/sys_arch.h ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h src/include/lwip/snmp.h \
+ src/include/lwip/dhcp.h src/include/ipv4/lwip/autoip.h \
+ src/include/lwip/stats.h src/include/lwip/memp.h \
+ src/include/lwip/memp_std.h ports/include/arch/perf.h
+inet.o: src/core/ipv4/inet.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/ipv4/lwip/inet.h src/include/lwip/def.h \
+ src/include/ipv4/lwip/ip_addr.h
+ip_addr.o: src/core/ipv4/ip_addr.c src/include/lwip/opt.h \
+ lwIP_Apps/lwipopts.h src/include/lwip/debug.h src/include/lwip/arch.h \
+ ports/include/arch/cc.h ../include/string.h ../include/stdtypes.h \
+ ../include/private/debug.h ../include/../debug/dbgLog.h \
+ ../board/TPB1x.msd/config.h src/include/ipv4/lwip/ip_addr.h \
+ src/include/lwip/def.h src/include/lwip/netif.h src/include/lwip/err.h \
+ src/include/lwip/pbuf.h
+inet_chksum.o: src/core/ipv4/inet_chksum.c src/include/lwip/opt.h \
+ lwIP_Apps/lwipopts.h src/include/lwip/debug.h src/include/lwip/arch.h \
+ ports/include/arch/cc.h ../include/string.h ../include/stdtypes.h \
+ ../include/private/debug.h ../include/../debug/dbgLog.h \
+ ../board/TPB1x.msd/config.h src/include/ipv4/lwip/inet_chksum.h \
+ src/include/lwip/pbuf.h src/include/lwip/err.h \
+ src/include/ipv4/lwip/ip_addr.h src/include/lwip/def.h
+ip_frag.o: src/core/ipv4/ip_frag.c src/include/lwip/opt.h \
+ lwIP_Apps/lwipopts.h src/include/lwip/debug.h src/include/lwip/arch.h \
+ ports/include/arch/cc.h ../include/string.h ../include/stdtypes.h \
+ ../include/private/debug.h ../include/../debug/dbgLog.h \
+ ../board/TPB1x.msd/config.h src/include/ipv4/lwip/ip_frag.h \
+ src/include/lwip/err.h src/include/lwip/pbuf.h src/include/lwip/netif.h \
+ src/include/ipv4/lwip/ip_addr.h src/include/lwip/def.h \
+ src/include/ipv4/lwip/ip.h src/include/ipv4/lwip/inet_chksum.h \
+ src/include/lwip/snmp.h src/include/lwip/stats.h src/include/lwip/mem.h \
+ src/include/lwip/memp.h src/include/lwip/memp_std.h \
+ src/include/ipv4/lwip/icmp.h
+api_lib.o: src/api/api_lib.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/api.h src/include/lwip/netbuf.h src/include/lwip/pbuf.h \
+ src/include/lwip/err.h src/include/ipv4/lwip/ip_addr.h \
+ src/include/lwip/def.h src/include/lwip/sys.h \
+ ports/include/arch/sys_arch.h ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h src/include/lwip/tcpip.h \
+ src/include/lwip/api_msg.h src/include/ipv4/lwip/igmp.h \
+ src/include/lwip/netif.h src/include/lwip/netifapi.h \
+ src/include/lwip/timers.h src/include/lwip/memp.h \
+ src/include/lwip/memp_std.h src/include/ipv4/lwip/ip.h \
+ src/include/lwip/raw.h src/include/lwip/udp.h src/include/lwip/tcp.h \
+ src/include/lwip/mem.h src/include/ipv4/lwip/icmp.h
+api_msg.o: src/api/api_msg.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/api_msg.h src/include/ipv4/lwip/ip_addr.h \
+ src/include/lwip/def.h src/include/lwip/err.h src/include/lwip/sys.h \
+ ports/include/arch/sys_arch.h ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h src/include/ipv4/lwip/igmp.h \
+ src/include/lwip/netif.h src/include/lwip/pbuf.h src/include/lwip/api.h \
+ src/include/lwip/netbuf.h src/include/ipv4/lwip/ip.h \
+ src/include/lwip/udp.h src/include/lwip/tcp.h src/include/lwip/mem.h \
+ src/include/ipv4/lwip/icmp.h src/include/lwip/raw.h \
+ src/include/lwip/memp.h src/include/lwip/memp_std.h \
+ src/include/lwip/tcpip.h src/include/lwip/netifapi.h \
+ src/include/lwip/timers.h src/include/lwip/dns.h
+tcpip.o: src/api/tcpip.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/sys.h src/include/lwip/err.h \
+ ports/include/arch/sys_arch.h ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h src/include/lwip/memp.h \
+ src/include/lwip/memp_std.h src/include/lwip/mem.h \
+ src/include/lwip/pbuf.h src/include/lwip/tcpip.h \
+ src/include/lwip/api_msg.h src/include/ipv4/lwip/ip_addr.h \
+ src/include/lwip/def.h src/include/ipv4/lwip/igmp.h \
+ src/include/lwip/netif.h src/include/lwip/api.h \
+ src/include/lwip/netbuf.h src/include/lwip/netifapi.h \
+ src/include/lwip/timers.h src/include/lwip/init.h \
+ src/include/netif/etharp.h src/include/ipv4/lwip/ip.h \
+ src/include/netif/ppp_oe.h
+err.o: src/api/err.c src/include/lwip/err.h src/include/lwip/opt.h \
+ lwIP_Apps/lwipopts.h src/include/lwip/debug.h src/include/lwip/arch.h \
+ ports/include/arch/cc.h ../include/string.h ../include/stdtypes.h \
+ ../include/private/debug.h ../include/../debug/dbgLog.h \
+ ../board/TPB1x.msd/config.h
+sockets.o: src/api/sockets.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/sockets.h src/include/ipv4/lwip/ip_addr.h \
+ src/include/lwip/def.h src/include/ipv4/lwip/inet.h \
+ src/include/lwip/api.h src/include/lwip/netbuf.h src/include/lwip/pbuf.h \
+ src/include/lwip/err.h src/include/lwip/sys.h \
+ ports/include/arch/sys_arch.h ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h src/include/ipv4/lwip/igmp.h \
+ src/include/lwip/netif.h src/include/lwip/tcp.h src/include/lwip/mem.h \
+ src/include/ipv4/lwip/ip.h src/include/ipv4/lwip/icmp.h \
+ src/include/lwip/raw.h src/include/lwip/udp.h src/include/lwip/tcpip.h \
+ src/include/lwip/api_msg.h src/include/lwip/netifapi.h \
+ src/include/lwip/timers.h
+netbuf.o: src/api/netbuf.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/netbuf.h src/include/lwip/pbuf.h src/include/lwip/err.h \
+ src/include/ipv4/lwip/ip_addr.h src/include/lwip/def.h \
+ src/include/lwip/memp.h src/include/lwip/memp_std.h
+netdb.o: src/api/netdb.c src/include/lwip/netdb.h src/include/lwip/opt.h \
+ lwIP_Apps/lwipopts.h src/include/lwip/debug.h src/include/lwip/arch.h \
+ ports/include/arch/cc.h ../include/string.h ../include/stdtypes.h \
+ ../include/private/debug.h ../include/../debug/dbgLog.h \
+ ../board/TPB1x.msd/config.h
+etharp.o: src/netif/etharp.c src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/ipv4/lwip/ip_addr.h src/include/lwip/def.h \
+ src/include/ipv4/lwip/ip.h src/include/lwip/pbuf.h \
+ src/include/lwip/err.h src/include/lwip/netif.h src/include/lwip/stats.h \
+ src/include/lwip/mem.h src/include/lwip/memp.h \
+ src/include/lwip/memp_std.h src/include/lwip/snmp.h \
+ src/include/lwip/dhcp.h src/include/lwip/udp.h \
+ src/include/ipv4/lwip/autoip.h src/include/netif/etharp.h
+sys_arch.o: ports/sys_arch.c ports/include/arch/sys_arch.h \
+ ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdtypes.h ../include/stdio.h ../include/errors.h \
+ ../include/bit/console.h ../include/string.h ../include/bit/bit.h \
+ ../include/bit/hal.h ../include/bit/pci.h ../include/bit/io.h \
+ ../include/bit/delay.h ../include/bit/mem.h ../include/bit/interrupt.h \
+ ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h src/include/lwip/opt.h \
+ lwIP_Apps/lwipopts.h src/include/lwip/debug.h src/include/lwip/arch.h \
+ ports/include/arch/cc.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/def.h src/include/lwip/sys.h src/include/lwip/err.h \
+ src/include/lwip/mem.h src/include/lwip/stats.h src/include/lwip/memp.h \
+ src/include/lwip/memp_std.h ../include/private/spinlock.h
+gei_netif.o: ports/netif/gei_netif.c src/include/lwip/opt.h \
+ lwIP_Apps/lwipopts.h src/include/lwip/debug.h src/include/lwip/arch.h \
+ ports/include/arch/cc.h ../include/string.h ../include/stdtypes.h \
+ ../include/private/debug.h ../include/../debug/dbgLog.h \
+ ../board/TPB1x.msd/config.h src/include/lwip/def.h \
+ src/include/lwip/mem.h src/include/lwip/pbuf.h src/include/lwip/err.h \
+ src/include/lwip/sys.h ports/include/arch/sys_arch.h \
+ ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../FreeRTOS/Source/include/semphr.h \
+ ../FreeRTOS/Source/include/queue.h src/include/lwip/stats.h \
+ src/include/lwip/memp.h src/include/lwip/memp_std.h \
+ src/include/lwip/snmp.h src/include/ipv4/lwip/ip_addr.h \
+ src/include/netif/etharp.h src/include/lwip/netif.h \
+ src/include/ipv4/lwip/ip.h src/include/netif/ppp_oe.h \
+ lwIP_Apps/lwIP_Apps.h ../include/private/cpu.h \
+ ../include/private/sys_delay.h ../include/private/port_io.h \
+ ../include/private/atomic.h ports/netif/gei_netif.h
+smClient.o: lwIP_Apps/apps/SmClient/smClient.c ../include/stdlib.h \
+ ../include/errors.h ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdtypes.h ../include/stdio.h ../include/bit/console.h \
+ ../include/string.h ../include/bit/bit.h ../include/bit/hal.h \
+ ../include/bit/pci.h ../include/bit/io.h ../include/bit/delay.h \
+ ../include/bit/mem.h ../include/bit/interrupt.h \
+ ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/queue.h ../include/private/atomic.h \
+ ../include/cute/packet.h src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/private/debug.h ../include/../debug/dbgLog.h \
+ ../board/TPB1x.msd/config.h src/include/lwip/sockets.h \
+ src/include/ipv4/lwip/ip_addr.h src/include/lwip/def.h \
+ src/include/ipv4/lwip/inet.h src/include/lwip/mem.h \
+ lwIP_Apps/apps/SmClient/ssmmp.h ../include/../vgalib/vga.h
+lwIP_Apps.o: lwIP_Apps/lwIP_Apps.c ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdtypes.h ../include/stdio.h ../include/errors.h \
+ ../include/bit/console.h ../include/string.h ../include/bit/bit.h \
+ ../include/bit/hal.h ../include/bit/pci.h ../include/bit/io.h \
+ ../include/bit/delay.h ../include/bit/mem.h ../include/bit/interrupt.h \
+ ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../FreeRTOS/Source/include/semphr.h ../FreeRTOS/Source/include/queue.h \
+ ../include/private/debug.h src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/tcpip.h src/include/lwip/api_msg.h \
+ src/include/ipv4/lwip/ip_addr.h src/include/lwip/def.h \
+ src/include/lwip/err.h src/include/lwip/sys.h \
+ ports/include/arch/sys_arch.h ../FreeRTOS/Source/include/queue.h \
+ src/include/ipv4/lwip/igmp.h src/include/lwip/netif.h \
+ src/include/lwip/pbuf.h src/include/lwip/api.h src/include/lwip/netbuf.h \
+ src/include/lwip/netifapi.h src/include/lwip/timers.h \
+ src/include/lwip/stats.h src/include/lwip/mem.h src/include/lwip/memp.h \
+ src/include/lwip/memp_std.h src/include/lwip/dhcp.h \
+ src/include/lwip/udp.h src/include/ipv4/lwip/ip.h \
+ lwIP_Apps/./utils/CommandInterpreter.h lwIP_Apps/lwIP_Apps.h
+CommandServer.o: lwIP_Apps/apps/CommandServer/CommandServer.c \
+ ../include/stdlib.h ../include/private/atomic.h ../include/stdtypes.h \
+ src/include/lwip/opt.h lwIP_Apps/lwipopts.h src/include/lwip/debug.h \
+ src/include/lwip/arch.h ports/include/arch/cc.h ../include/string.h \
+ ../include/private/debug.h ../include/../debug/dbgLog.h \
+ ../board/TPB1x.msd/config.h src/include/lwip/sockets.h \
+ src/include/ipv4/lwip/ip_addr.h src/include/lwip/def.h \
+ src/include/ipv4/lwip/inet.h ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ lwIP_Apps/apps/CommandServer/../../utils/CommandInterpreter.h
+CommandInterpreter.o: lwIP_Apps/utils/CommandInterpreter.c \
+ ../include/string.h ../include/stdtypes.h \
+ ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ lwIP_Apps/utils/CommandInterpreter.h
+tcpCliSvr.o: lwIP_Apps/apps/ProducerConsumer/tcpCliSvr.c \
+ ../include/stdlib.h src/include/lwip/opt.h lwIP_Apps/lwipopts.h \
+ src/include/lwip/debug.h src/include/lwip/arch.h ports/include/arch/cc.h \
+ ../include/string.h ../include/stdtypes.h ../include/private/debug.h \
+ ../include/../debug/dbgLog.h ../board/TPB1x.msd/config.h \
+ src/include/lwip/sockets.h src/include/ipv4/lwip/ip_addr.h \
+ src/include/lwip/def.h src/include/ipv4/lwip/inet.h \
+ src/include/lwip/mem.h ../FreeRTOS/Source/include/FreeRTOS.h \
+ ../FreeRTOS/Source/include/projdefs.h \
+ ../FreeRTOS/Demo/CUTE/FreeRTOSConfig.h \
+ ../FreeRTOS/Source/include/portable.h \
+ ../FreeRTOS/Source/include/../../Source/portable/GCC/CUTE/portmacro.h \
+ ../include/stdio.h ../include/errors.h ../include/bit/console.h \
+ ../include/bit/bit.h ../include/bit/hal.h ../include/bit/pci.h \
+ ../include/bit/io.h ../include/bit/delay.h ../include/bit/mem.h \
+ ../include/bit/interrupt.h ../FreeRTOS/Source/include/mpu_wrappers.h \
+ ../FreeRTOS/Source/include/task.h ../FreeRTOS/Source/include/list.h \
+ ../include/private/atomic.h ../include/../vgalib/vga.h
