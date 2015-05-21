@@ -300,17 +300,17 @@
  260 023a 9090     		.def	_xTaskResumeAll;	.scl	2;	.type	32;	.endef
 DEFINED SYMBOLS
                             *ABS*:00000000 heap_2.c
-     /tmp/ccraFxog.s:4      .data:00000000 _pxHeap
-     /tmp/ccraFxog.s:8      .rdata:00000000 _heapSTRUCT_SIZE
-     /tmp/ccraFxog.s:10     .bss:00000000 _xStart
-     /tmp/ccraFxog.s:11     .bss:00000008 _xEnd
-     /tmp/ccraFxog.s:12     .bss:00000010 _xFreeBytesRemaining
-     /tmp/ccraFxog.s:15     .text:00000000 _prvHeapInit
-     /tmp/ccraFxog.s:44     .text:00000055 _pvPortMalloc
-     /tmp/ccraFxog.s:258    .bss:00000014 _xHeapHasBeenInitialised.2003
-     /tmp/ccraFxog.s:170    .text:000001ad _vPortFree
-     /tmp/ccraFxog.s:227    .text:0000022b _xPortGetFreeHeapSize
-     /tmp/ccraFxog.s:244    .text:00000235 _vPortInitialiseBlocks
+     /tmp/ccpTLVEb.s:4      .data:00000000 _pxHeap
+     /tmp/ccpTLVEb.s:8      .rdata:00000000 _heapSTRUCT_SIZE
+     /tmp/ccpTLVEb.s:10     .bss:00000000 _xStart
+     /tmp/ccpTLVEb.s:11     .bss:00000008 _xEnd
+     /tmp/ccpTLVEb.s:12     .bss:00000010 _xFreeBytesRemaining
+     /tmp/ccpTLVEb.s:15     .text:00000000 _prvHeapInit
+     /tmp/ccpTLVEb.s:44     .text:00000055 _pvPortMalloc
+     /tmp/ccpTLVEb.s:258    .bss:00000014 _xHeapHasBeenInitialised.2003
+     /tmp/ccpTLVEb.s:170    .text:000001ad _vPortFree
+     /tmp/ccpTLVEb.s:227    .text:0000022b _xPortGetFreeHeapSize
+     /tmp/ccpTLVEb.s:244    .text:00000235 _vPortInitialiseBlocks
 
 UNDEFINED SYMBOLS
 _vTaskSuspendAll

@@ -1,0 +1,1613 @@
+   1              		.file	"queue.c"
+   2              		.text
+   3              		.def	_prvUnlockQueue;	.scl	3;	.type	32;	.endef
+   4              	_prvUnlockQueue:
+   5              	LFB0:
+   6              		.cfi_startproc
+   7 0000 55       		pushl	%ebp
+   8              		.cfi_def_cfa_offset 8
+   9              		.cfi_offset 5, -8
+  10 0001 89E5     		movl	%esp, %ebp
+  11              		.cfi_def_cfa_register 5
+  12 0003 83EC28   		subl	$40, %esp
+  13 0006 8B4508   		movl	8(%ebp), %eax
+  14 0009 83C050   		addl	$80, %eax
+  15 000c C7442404 		movl	$0, 4(%esp)
+  15      00000000 
+  16 0014 890424   		movl	%eax, (%esp)
+  17 0017 E8000000 		call	_spinLockTake
+  17      00
+  18 001c EB44     		jmp	L2
+  19              	L6:
+  20 001e 8B4508   		movl	8(%ebp), %eax
+  21 0021 8B4024   		movl	36(%eax), %eax
+  22 0024 85C0     		testl	%eax, %eax
+  23 0026 7446     		je	L12
+  24 0028 8B4508   		movl	8(%ebp), %eax
+  25 002b 83C024   		addl	$36, %eax
+  26 002e C7442408 		movl	$0, 8(%esp)
+  26      00000000 
+  27 0036 89442404 		movl	%eax, 4(%esp)
+  28 003a 8D45F4   		leal	-12(%ebp), %eax
+  29 003d 890424   		movl	%eax, (%esp)
+  30 0040 E8000000 		call	_xTaskRemoveFromEventList
+  30      00
+  31 0045 85C0     		testl	%eax, %eax
+  32 0047 740B     		je	L4
+  33 0049 8B45F4   		movl	-12(%ebp), %eax
+  34 004c 890424   		movl	%eax, (%esp)
+  35 004f E8000000 		call	_vTaskMissedYield
+  35      00
+  36              	L4:
+  37 0054 8B4508   		movl	8(%ebp), %eax
+  38 0057 83C048   		addl	$72, %eax
+  39 005a 890424   		movl	%eax, (%esp)
+  40 005d E8000000 		call	_atomic32Dec
+  40      00
+  41              	L2:
+  42 0062 8B4508   		movl	8(%ebp), %eax
+  43 0065 8B4048   		movl	72(%eax), %eax
+  44 0068 85C0     		testl	%eax, %eax
+  45 006a 7FB2     		jg	L6
+  46 006c EB01     		jmp	L5
+  47              	L12:
+  48 006e 90       		nop
+  49              	L5:
+  50 006f 8B4508   		movl	8(%ebp), %eax
+  51 0072 83C048   		addl	$72, %eax
+  52 0075 C7442404 		movl	$-1, 4(%esp)
+  52      FFFFFFFF 
+  53 007d 890424   		movl	%eax, (%esp)
+  54 0080 E8000000 		call	_atomic32Set
+  54      00
+  55 0085 8B4508   		movl	8(%ebp), %eax
+  56 0088 83C050   		addl	$80, %eax
+  57 008b C7442404 		movl	$0, 4(%esp)
+  57      00000000 
+  58 0093 890424   		movl	%eax, (%esp)
+  59 0096 E8000000 		call	_spinLockGive
+  59      00
+  60 009b 8B4508   		movl	8(%ebp), %eax
+  61 009e 83C050   		addl	$80, %eax
+  62 00a1 C7442404 		movl	$0, 4(%esp)
+  62      00000000 
+  63 00a9 890424   		movl	%eax, (%esp)
+  64 00ac E8000000 		call	_spinLockTake
+  64      00
+  65 00b1 EB44     		jmp	L7
+  66              	L11:
+  67 00b3 8B4508   		movl	8(%ebp), %eax
+  68 00b6 8B4010   		movl	16(%eax), %eax
+  69 00b9 85C0     		testl	%eax, %eax
+  70 00bb 7446     		je	L13
+  71 00bd 8B4508   		movl	8(%ebp), %eax
+  72 00c0 83C010   		addl	$16, %eax
+  73 00c3 C7442408 		movl	$0, 8(%esp)
+  73      00000000 
+  74 00cb 89442404 		movl	%eax, 4(%esp)
+  75 00cf 8D45F4   		leal	-12(%ebp), %eax
+  76 00d2 890424   		movl	%eax, (%esp)
+  77 00d5 E8000000 		call	_xTaskRemoveFromEventList
+  77      00
+  78 00da 85C0     		testl	%eax, %eax
+  79 00dc 740B     		je	L9
+  80 00de 8B45F4   		movl	-12(%ebp), %eax
+  81 00e1 890424   		movl	%eax, (%esp)
+  82 00e4 E8000000 		call	_vTaskMissedYield
+  82      00
+  83              	L9:
+  84 00e9 8B4508   		movl	8(%ebp), %eax
+  85 00ec 83C044   		addl	$68, %eax
+  86 00ef 890424   		movl	%eax, (%esp)
+  87 00f2 E8000000 		call	_atomic32Dec
+  87      00
+  88              	L7:
+  89 00f7 8B4508   		movl	8(%ebp), %eax
+  90 00fa 8B4044   		movl	68(%eax), %eax
+  91 00fd 85C0     		testl	%eax, %eax
+  92 00ff 7FB2     		jg	L11
+  93 0101 EB01     		jmp	L10
+  94              	L13:
+  95 0103 90       		nop
+  96              	L10:
+  97 0104 8B4508   		movl	8(%ebp), %eax
+  98 0107 83C044   		addl	$68, %eax
+  99 010a C7442404 		movl	$-1, 4(%esp)
+  99      FFFFFFFF 
+ 100 0112 890424   		movl	%eax, (%esp)
+ 101 0115 E8000000 		call	_atomic32Set
+ 101      00
+ 102 011a 8B4508   		movl	8(%ebp), %eax
+ 103 011d 83C050   		addl	$80, %eax
+ 104 0120 C7442404 		movl	$0, 4(%esp)
+ 104      00000000 
+ 105 0128 890424   		movl	%eax, (%esp)
+ 106 012b E8000000 		call	_spinLockGive
+ 106      00
+ 107 0130 C9       		leave
+ 108              		.cfi_restore 5
+ 109              		.cfi_def_cfa 4, 4
+ 110 0131 C3       		ret
+ 111              		.cfi_endproc
+ 112              	LFE0:
+ 113              		.def	_prvCopyDataToQueue;	.scl	3;	.type	32;	.endef
+ 114              	_prvCopyDataToQueue:
+ 115              	LFB1:
+ 116              		.cfi_startproc
+ 117 0132 55       		pushl	%ebp
+ 118              		.cfi_def_cfa_offset 8
+ 119              		.cfi_offset 5, -8
+ 120 0133 89E5     		movl	%esp, %ebp
+ 121              		.cfi_def_cfa_register 5
+ 122 0135 83EC18   		subl	$24, %esp
+ 123 0138 8B4508   		movl	8(%ebp), %eax
+ 124 013b 8B4040   		movl	64(%eax), %eax
+ 125 013e 85C0     		testl	%eax, %eax
+ 126 0140 7531     		jne	L15
+ 127 0142 8B4508   		movl	8(%ebp), %eax
+ 128 0145 8B00     		movl	(%eax), %eax
+ 129 0147 85C0     		testl	%eax, %eax
+ 130 0149 0F850E01 		jne	L16
+ 130      0000
+ 131 014f 8B4508   		movl	8(%ebp), %eax
+ 132 0152 8B4004   		movl	4(%eax), %eax
+ 133 0155 8B5514   		movl	20(%ebp), %edx
+ 134 0158 89542404 		movl	%edx, 4(%esp)
+ 135 015c 890424   		movl	%eax, (%esp)
+ 136 015f E8000000 		call	_vTaskPriorityDisinherit
+ 136      00
+ 137 0164 8B4508   		movl	8(%ebp), %eax
+ 138 0167 C7400400 		movl	$0, 4(%eax)
+ 138      000000
+ 139 016e E9EA0000 		jmp	L16
+ 139      00
+ 140              	L15:
+ 141 0173 837D1000 		cmpl	$0, 16(%ebp)
+ 142 0177 756F     		jne	L17
+ 143 0179 8B4508   		movl	8(%ebp), %eax
+ 144 017c 8B4040   		movl	64(%eax), %eax
+ 145 017f 83F801   		cmpl	$1, %eax
+ 146 0182 7510     		jne	L18
+ 147 0184 8B4508   		movl	8(%ebp), %eax
+ 148 0187 8B4008   		movl	8(%eax), %eax
+ 149 018a 8B550C   		movl	12(%ebp), %edx
+ 150 018d 0FB612   		movzbl	(%edx), %edx
+ 151 0190 8810     		movb	%dl, (%eax)
+ 152 0192 EB1F     		jmp	L19
+ 153              	L18:
+ 154 0194 8B4508   		movl	8(%ebp), %eax
+ 155 0197 8B5040   		movl	64(%eax), %edx
+ 156 019a 8B4508   		movl	8(%ebp), %eax
+ 157 019d 8B4008   		movl	8(%eax), %eax
+ 158 01a0 89542408 		movl	%edx, 8(%esp)
+ 159 01a4 89442404 		movl	%eax, 4(%esp)
+ 160 01a8 8B450C   		movl	12(%ebp), %eax
+ 161 01ab 890424   		movl	%eax, (%esp)
+ 162 01ae E8000000 		call	_bcopy
+ 162      00
+ 163              	L19:
+ 164 01b3 8B4508   		movl	8(%ebp), %eax
+ 165 01b6 8B5008   		movl	8(%eax), %edx
+ 166 01b9 8B4508   		movl	8(%ebp), %eax
+ 167 01bc 8B4040   		movl	64(%eax), %eax
+ 168 01bf 01C2     		addl	%eax, %edx
+ 169 01c1 8B4508   		movl	8(%ebp), %eax
+ 170 01c4 895008   		movl	%edx, 8(%eax)
+ 171 01c7 8B4508   		movl	8(%ebp), %eax
+ 172 01ca 8B5008   		movl	8(%eax), %edx
+ 173 01cd 8B4508   		movl	8(%ebp), %eax
+ 174 01d0 8B4004   		movl	4(%eax), %eax
+ 175 01d3 39C2     		cmpl	%eax, %edx
+ 176 01d5 0F828200 		jb	L16
+ 176      0000
+ 177 01db 8B4508   		movl	8(%ebp), %eax
+ 178 01de 8B10     		movl	(%eax), %edx
+ 179 01e0 8B4508   		movl	8(%ebp), %eax
+ 180 01e3 895008   		movl	%edx, 8(%eax)
+ 181 01e6 EB75     		jmp	L16
+ 182              	L17:
+ 183 01e8 8B4508   		movl	8(%ebp), %eax
+ 184 01eb 8B4040   		movl	64(%eax), %eax
+ 185 01ee 83F801   		cmpl	$1, %eax
+ 186 01f1 7510     		jne	L20
+ 187 01f3 8B4508   		movl	8(%ebp), %eax
+ 188 01f6 8B400C   		movl	12(%eax), %eax
+ 189 01f9 8B550C   		movl	12(%ebp), %edx
+ 190 01fc 0FB612   		movzbl	(%edx), %edx
+ 191 01ff 8810     		movb	%dl, (%eax)
+ 192 0201 EB1F     		jmp	L21
+ 193              	L20:
+ 194 0203 8B4508   		movl	8(%ebp), %eax
+ 195 0206 8B5040   		movl	64(%eax), %edx
+ 196 0209 8B4508   		movl	8(%ebp), %eax
+ 197 020c 8B400C   		movl	12(%eax), %eax
+ 198 020f 89542408 		movl	%edx, 8(%esp)
+ 199 0213 89442404 		movl	%eax, 4(%esp)
+ 200 0217 8B450C   		movl	12(%ebp), %eax
+ 201 021a 890424   		movl	%eax, (%esp)
+ 202 021d E8000000 		call	_bcopy
+ 202      00
+ 203              	L21:
+ 204 0222 8B4508   		movl	8(%ebp), %eax
+ 205 0225 8B500C   		movl	12(%eax), %edx
+ 206 0228 8B4508   		movl	8(%ebp), %eax
+ 207 022b 8B4040   		movl	64(%eax), %eax
+ 208 022e F7D8     		negl	%eax
+ 209 0230 01C2     		addl	%eax, %edx
+ 210 0232 8B4508   		movl	8(%ebp), %eax
+ 211 0235 89500C   		movl	%edx, 12(%eax)
+ 212 0238 8B4508   		movl	8(%ebp), %eax
+ 213 023b 8B500C   		movl	12(%eax), %edx
+ 214 023e 8B4508   		movl	8(%ebp), %eax
+ 215 0241 8B00     		movl	(%eax), %eax
+ 216 0243 39C2     		cmpl	%eax, %edx
+ 217 0245 7316     		jae	L16
+ 218 0247 8B4508   		movl	8(%ebp), %eax
+ 219 024a 8B5004   		movl	4(%eax), %edx
+ 220 024d 8B4508   		movl	8(%ebp), %eax
+ 221 0250 8B4040   		movl	64(%eax), %eax
+ 222 0253 F7D8     		negl	%eax
+ 223 0255 01C2     		addl	%eax, %edx
+ 224 0257 8B4508   		movl	8(%ebp), %eax
+ 225 025a 89500C   		movl	%edx, 12(%eax)
+ 226              	L16:
+ 227 025d 8B4508   		movl	8(%ebp), %eax
+ 228 0260 83C038   		addl	$56, %eax
+ 229 0263 890424   		movl	%eax, (%esp)
+ 230 0266 E8000000 		call	_atomic32Inc
+ 230      00
+ 231 026b C9       		leave
+ 232              		.cfi_restore 5
+ 233              		.cfi_def_cfa 4, 4
+ 234 026c C3       		ret
+ 235              		.cfi_endproc
+ 236              	LFE1:
+ 237              		.def	_prvCopyDataFromQueue;	.scl	3;	.type	32;	.endef
+ 238              	_prvCopyDataFromQueue:
+ 239              	LFB2:
+ 240              		.cfi_startproc
+ 241 026d 55       		pushl	%ebp
+ 242              		.cfi_def_cfa_offset 8
+ 243              		.cfi_offset 5, -8
+ 244 026e 89E5     		movl	%esp, %ebp
+ 245              		.cfi_def_cfa_register 5
+ 246 0270 83EC18   		subl	$24, %esp
+ 247 0273 837D0C00 		cmpl	$0, 12(%ebp)
+ 248 0277 7473     		je	L22
+ 249 0279 8B4508   		movl	8(%ebp), %eax
+ 250 027c 8B4040   		movl	64(%eax), %eax
+ 251 027f 85C0     		testl	%eax, %eax
+ 252 0281 7469     		je	L22
+ 253 0283 8B4508   		movl	8(%ebp), %eax
+ 254 0286 8B500C   		movl	12(%eax), %edx
+ 255 0289 8B4508   		movl	8(%ebp), %eax
+ 256 028c 8B4040   		movl	64(%eax), %eax
+ 257 028f 01C2     		addl	%eax, %edx
+ 258 0291 8B4508   		movl	8(%ebp), %eax
+ 259 0294 89500C   		movl	%edx, 12(%eax)
+ 260 0297 8B4508   		movl	8(%ebp), %eax
+ 261 029a 8B500C   		movl	12(%eax), %edx
+ 262 029d 8B4508   		movl	8(%ebp), %eax
+ 263 02a0 8B4004   		movl	4(%eax), %eax
+ 264 02a3 39C2     		cmpl	%eax, %edx
+ 265 02a5 720B     		jb	L24
+ 266 02a7 8B4508   		movl	8(%ebp), %eax
+ 267 02aa 8B10     		movl	(%eax), %edx
+ 268 02ac 8B4508   		movl	8(%ebp), %eax
+ 269 02af 89500C   		movl	%edx, 12(%eax)
+ 270              	L24:
+ 271 02b2 8B4508   		movl	8(%ebp), %eax
+ 272 02b5 8B4040   		movl	64(%eax), %eax
+ 273 02b8 83F801   		cmpl	$1, %eax
+ 274 02bb 7510     		jne	L25
+ 275 02bd 8B4508   		movl	8(%ebp), %eax
+ 276 02c0 8B400C   		movl	12(%eax), %eax
+ 277 02c3 0FB610   		movzbl	(%eax), %edx
+ 278 02c6 8B450C   		movl	12(%ebp), %eax
+ 279 02c9 8810     		movb	%dl, (%eax)
+ 280 02cb EB1F     		jmp	L22
+ 281              	L25:
+ 282 02cd 8B4508   		movl	8(%ebp), %eax
+ 283 02d0 8B5040   		movl	64(%eax), %edx
+ 284 02d3 8B4508   		movl	8(%ebp), %eax
+ 285 02d6 8B400C   		movl	12(%eax), %eax
+ 286 02d9 89542408 		movl	%edx, 8(%esp)
+ 287 02dd 8B550C   		movl	12(%ebp), %edx
+ 288 02e0 89542404 		movl	%edx, 4(%esp)
+ 289 02e4 890424   		movl	%eax, (%esp)
+ 290 02e7 E8000000 		call	_bcopy
+ 290      00
+ 291              	L22:
+ 292 02ec C9       		leave
+ 293              		.cfi_restore 5
+ 294              		.cfi_def_cfa 4, 4
+ 295 02ed C3       		ret
+ 296              		.cfi_endproc
+ 297              	LFE2:
+ 298              		.def	_prvIsQueueFull;	.scl	3;	.type	32;	.endef
+ 299              	_prvIsQueueFull:
+ 300              	LFB3:
+ 301              		.cfi_startproc
+ 302 02ee 55       		pushl	%ebp
+ 303              		.cfi_def_cfa_offset 8
+ 304              		.cfi_offset 5, -8
+ 305 02ef 89E5     		movl	%esp, %ebp
+ 306              		.cfi_def_cfa_register 5
+ 307 02f1 83EC18   		subl	$24, %esp
+ 308 02f4 8B4508   		movl	8(%ebp), %eax
+ 309 02f7 83C038   		addl	$56, %eax
+ 310 02fa 890424   		movl	%eax, (%esp)
+ 311 02fd E8000000 		call	_atomic32Get
+ 311      00
+ 312 0302 8B5508   		movl	8(%ebp), %edx
+ 313 0305 8B523C   		movl	60(%edx), %edx
+ 314 0308 39D0     		cmpl	%edx, %eax
+ 315 030a 0F94C0   		sete	%al
+ 316 030d 0FB6C0   		movzbl	%al, %eax
+ 317 0310 C9       		leave
+ 318              		.cfi_restore 5
+ 319              		.cfi_def_cfa 4, 4
+ 320 0311 C3       		ret
+ 321              		.cfi_endproc
+ 322              	LFE3:
+ 323              		.def	_prvIsQueueEmpty;	.scl	3;	.type	32;	.endef
+ 324              	_prvIsQueueEmpty:
+ 325              	LFB4:
+ 326              		.cfi_startproc
+ 327 0312 55       		pushl	%ebp
+ 328              		.cfi_def_cfa_offset 8
+ 329              		.cfi_offset 5, -8
+ 330 0313 89E5     		movl	%esp, %ebp
+ 331              		.cfi_def_cfa_register 5
+ 332 0315 83EC18   		subl	$24, %esp
+ 333 0318 8B4508   		movl	8(%ebp), %eax
+ 334 031b 83C038   		addl	$56, %eax
+ 335 031e 890424   		movl	%eax, (%esp)
+ 336 0321 E8000000 		call	_atomic32Get
+ 336      00
+ 337 0326 85C0     		testl	%eax, %eax
+ 338 0328 0F94C0   		sete	%al
+ 339 032b 0FB6C0   		movzbl	%al, %eax
+ 340 032e C9       		leave
+ 341              		.cfi_restore 5
+ 342              		.cfi_def_cfa 4, 4
+ 343 032f C3       		ret
+ 344              		.cfi_endproc
+ 345              	LFE4:
+ 346              		.globl	_xQueueGenericSend
+ 347              		.def	_xQueueGenericSend;	.scl	2;	.type	32;	.endef
+ 348              	_xQueueGenericSend:
+ 349              	LFB5:
+ 350              		.cfi_startproc
+ 351 0330 55       		pushl	%ebp
+ 352              		.cfi_def_cfa_offset 8
+ 353              		.cfi_offset 5, -8
+ 354 0331 89E5     		movl	%esp, %ebp
+ 355              		.cfi_def_cfa_register 5
+ 356 0333 83EC38   		subl	$56, %esp
+ 357 0336 C745F400 		movl	$0, -12(%ebp)
+ 357      000000
+ 358 033d E8000000 		call	_sPortGetCurrentCPU
+ 358      00
+ 359 0342 8945EC   		movl	%eax, -20(%ebp)
+ 360 0345 8B45EC   		movl	-20(%ebp), %eax
+ 361 0348 8945E0   		movl	%eax, -32(%ebp)
+ 362 034b EB01     		jmp	L42
+ 363              	L44:
+ 364 034d 90       		nop
+ 365              	L42:
+ 366 034e 8B4508   		movl	8(%ebp), %eax
+ 367 0351 83C050   		addl	$80, %eax
+ 368 0354 C7442404 		movl	$0, 4(%esp)
+ 368      00000000 
+ 369 035c 890424   		movl	%eax, (%esp)
+ 370 035f E8000000 		call	_spinLockTake
+ 370      00
+ 371 0364 8B4508   		movl	8(%ebp), %eax
+ 372 0367 83C038   		addl	$56, %eax
+ 373 036a 890424   		movl	%eax, (%esp)
+ 374 036d E8000000 		call	_atomic32Get
+ 374      00
+ 375 0372 8B5508   		movl	8(%ebp), %edx
+ 376 0375 8B523C   		movl	60(%edx), %edx
+ 377 0378 39D0     		cmpl	%edx, %eax
+ 378 037a 0F838800 		jae	L31
+ 378      0000
+ 379 0380 E8000000 		call	_vMainQueueSendPassed
+ 379      00
+ 380 0385 C745F000 		movl	$0, -16(%ebp)
+ 380      000000
+ 381 038c C744240C 		movl	$0, 12(%esp)
+ 381      00000000 
+ 382 0394 8B4514   		movl	20(%ebp), %eax
+ 383 0397 89442408 		movl	%eax, 8(%esp)
+ 384 039b 8B450C   		movl	12(%ebp), %eax
+ 385 039e 89442404 		movl	%eax, 4(%esp)
+ 386 03a2 8B4508   		movl	8(%ebp), %eax
+ 387 03a5 890424   		movl	%eax, (%esp)
+ 388 03a8 E885FDFF 		call	_prvCopyDataToQueue
+ 388      FF
+ 389 03ad 8B4508   		movl	8(%ebp), %eax
+ 390 03b0 8B4024   		movl	36(%eax), %eax
+ 391 03b3 85C0     		testl	%eax, %eax
+ 392 03b5 7420     		je	L32
+ 393 03b7 8B4508   		movl	8(%ebp), %eax
+ 394 03ba 83C024   		addl	$36, %eax
+ 395 03bd C7442408 		movl	$0, 8(%esp)
+ 395      00000000 
+ 396 03c5 89442404 		movl	%eax, 4(%esp)
+ 397 03c9 8D45E0   		leal	-32(%ebp), %eax
+ 398 03cc 890424   		movl	%eax, (%esp)
+ 399 03cf E8000000 		call	_xTaskRemoveFromEventList
+ 399      00
+ 400 03d4 8945F0   		movl	%eax, -16(%ebp)
+ 401              	L32:
+ 402 03d7 8B4508   		movl	8(%ebp), %eax
+ 403 03da 83C050   		addl	$80, %eax
+ 404 03dd C7442404 		movl	$0, 4(%esp)
+ 404      00000000 
+ 405 03e5 890424   		movl	%eax, (%esp)
+ 406 03e8 E8000000 		call	_spinLockGive
+ 406      00
+ 407 03ed 837DF001 		cmpl	$1, -16(%ebp)
+ 408 03f1 750B     		jne	L33
+ 409 03f3 8B45E0   		movl	-32(%ebp), %eax
+ 410 03f6 890424   		movl	%eax, (%esp)
+ 411 03f9 E8000000 		call	_vPortYieldCPU
+ 411      00
+ 412              	L33:
+ 413 03fe B8010000 		movl	$1, %eax
+ 413      00
+ 414 0403 E9810100 		jmp	L43
+ 414      00
+ 415              	L31:
+ 416 0408 8B4510   		movl	16(%ebp), %eax
+ 417 040b 85C0     		testl	%eax, %eax
+ 418 040d 7520     		jne	L35
+ 419 040f 8B4508   		movl	8(%ebp), %eax
+ 420 0412 83C050   		addl	$80, %eax
+ 421 0415 C7442404 		movl	$0, 4(%esp)
+ 421      00000000 
+ 422 041d 890424   		movl	%eax, (%esp)
+ 423 0420 E8000000 		call	_spinLockGive
+ 423      00
+ 424 0425 B8000000 		movl	$0, %eax
+ 424      00
+ 425 042a E95A0100 		jmp	L43
+ 425      00
+ 426              	L35:
+ 427 042f 837DF400 		cmpl	$0, -12(%ebp)
+ 428 0433 7519     		jne	L36
+ 429 0435 8D45E4   		leal	-28(%ebp), %eax
+ 430 0438 89442404 		movl	%eax, 4(%esp)
+ 431 043c 8B45EC   		movl	-20(%ebp), %eax
+ 432 043f 890424   		movl	%eax, (%esp)
+ 433 0442 E8000000 		call	_vTaskSetTimeOutState
+ 433      00
+ 434 0447 C745F401 		movl	$1, -12(%ebp)
+ 434      000000
+ 435              	L36:
+ 436 044e 8B4508   		movl	8(%ebp), %eax
+ 437 0451 83C050   		addl	$80, %eax
+ 438 0454 C7442404 		movl	$0, 4(%esp)
+ 438      00000000 
+ 439 045c 890424   		movl	%eax, (%esp)
+ 440 045f E8000000 		call	_spinLockGive
+ 440      00
+ 441 0464 8B4508   		movl	8(%ebp), %eax
+ 442 0467 83C050   		addl	$80, %eax
+ 443 046a C7442404 		movl	$0, 4(%esp)
+ 443      00000000 
+ 444 0472 890424   		movl	%eax, (%esp)
+ 445 0475 E8000000 		call	_spinLockTake
+ 445      00
+ 446 047a 8B45EC   		movl	-20(%ebp), %eax
+ 447 047d 890424   		movl	%eax, (%esp)
+ 448 0480 E8000000 		call	_vTaskSuspendCpu
+ 448      00
+ 449 0485 8B4508   		movl	8(%ebp), %eax
+ 450 0488 8B4044   		movl	68(%eax), %eax
+ 451 048b 83F8FF   		cmpl	$-1, %eax
+ 452 048e 7516     		jne	L37
+ 453 0490 8B4508   		movl	8(%ebp), %eax
+ 454 0493 83C044   		addl	$68, %eax
+ 455 0496 C7442404 		movl	$0, 4(%esp)
+ 455      00000000 
+ 456 049e 890424   		movl	%eax, (%esp)
+ 457 04a1 E8000000 		call	_atomic32Set
+ 457      00
+ 458              	L37:
+ 459 04a6 8B4508   		movl	8(%ebp), %eax
+ 460 04a9 8B4048   		movl	72(%eax), %eax
+ 461 04ac 83F8FF   		cmpl	$-1, %eax
+ 462 04af 7516     		jne	L38
+ 463 04b1 8B4508   		movl	8(%ebp), %eax
+ 464 04b4 83C048   		addl	$72, %eax
+ 465 04b7 C7442404 		movl	$0, 4(%esp)
+ 465      00000000 
+ 466 04bf 890424   		movl	%eax, (%esp)
+ 467 04c2 E8000000 		call	_atomic32Set
+ 467      00
+ 468              	L38:
+ 469 04c7 8B4508   		movl	8(%ebp), %eax
+ 470 04ca 83C050   		addl	$80, %eax
+ 471 04cd C7442404 		movl	$0, 4(%esp)
+ 471      00000000 
+ 472 04d5 890424   		movl	%eax, (%esp)
+ 473 04d8 E8000000 		call	_spinLockGive
+ 473      00
+ 474 04dd 8D4510   		leal	16(%ebp), %eax
+ 475 04e0 89442408 		movl	%eax, 8(%esp)
+ 476 04e4 8D45E4   		leal	-28(%ebp), %eax
+ 477 04e7 89442404 		movl	%eax, 4(%esp)
+ 478 04eb 8B45EC   		movl	-20(%ebp), %eax
+ 479 04ee 890424   		movl	%eax, (%esp)
+ 480 04f1 E8000000 		call	_xTaskCheckForTimeOut
+ 480      00
+ 481 04f6 85C0     		testl	%eax, %eax
+ 482 04f8 7574     		jne	L39
+ 483 04fa 8B4508   		movl	8(%ebp), %eax
+ 484 04fd 890424   		movl	%eax, (%esp)
+ 485 0500 E8E9FDFF 		call	_prvIsQueueFull
+ 485      FF
+ 486 0505 85C0     		testl	%eax, %eax
+ 487 0507 744A     		je	L40
+ 488 0509 8B4510   		movl	16(%ebp), %eax
+ 489 050c 8B5508   		movl	8(%ebp), %edx
+ 490 050f 83C210   		addl	$16, %edx
+ 491 0512 89442408 		movl	%eax, 8(%esp)
+ 492 0516 89542404 		movl	%edx, 4(%esp)
+ 493 051a 8B45EC   		movl	-20(%ebp), %eax
+ 494 051d 890424   		movl	%eax, (%esp)
+ 495 0520 E8000000 		call	_vTaskPlaceOnEventList
+ 495      00
+ 496 0525 8B4508   		movl	8(%ebp), %eax
+ 497 0528 890424   		movl	%eax, (%esp)
+ 498 052b E8D0FAFF 		call	_prvUnlockQueue
+ 498      FF
+ 499 0530 8B45EC   		movl	-20(%ebp), %eax
+ 500 0533 890424   		movl	%eax, (%esp)
+ 501 0536 E8000000 		call	_xTaskResumeCpu
+ 501      00
+ 502 053b 85C0     		testl	%eax, %eax
+ 503 053d 0F850AFE 		jne	L44
+ 503      FFFF
+ 504 0543 8B45EC   		movl	-20(%ebp), %eax
+ 505 0546 890424   		movl	%eax, (%esp)
+ 506 0549 E8000000 		call	_vPortYieldCPU
+ 506      00
+ 507 054e E9FAFDFF 		jmp	L44
+ 507      FF
+ 508              	L40:
+ 509 0553 8B4508   		movl	8(%ebp), %eax
+ 510 0556 890424   		movl	%eax, (%esp)
+ 511 0559 E8A2FAFF 		call	_prvUnlockQueue
+ 511      FF
+ 512 055e 8B45EC   		movl	-20(%ebp), %eax
+ 513 0561 890424   		movl	%eax, (%esp)
+ 514 0564 E8000000 		call	_xTaskResumeCpu
+ 514      00
+ 515 0569 E9DFFDFF 		jmp	L44
+ 515      FF
+ 516              	L39:
+ 517 056e 8B4508   		movl	8(%ebp), %eax
+ 518 0571 890424   		movl	%eax, (%esp)
+ 519 0574 E887FAFF 		call	_prvUnlockQueue
+ 519      FF
+ 520 0579 8B45EC   		movl	-20(%ebp), %eax
+ 521 057c 890424   		movl	%eax, (%esp)
+ 522 057f E8000000 		call	_xTaskResumeCpu
+ 522      00
+ 523 0584 B8000000 		movl	$0, %eax
+ 523      00
+ 524              	L43:
+ 525 0589 C9       		leave
+ 526              		.cfi_restore 5
+ 527              		.cfi_def_cfa 4, 4
+ 528 058a C3       		ret
+ 529              		.cfi_endproc
+ 530              	LFE5:
+ 531              		.globl	_xQueueGenericSendFromISR
+ 532              		.def	_xQueueGenericSendFromISR;	.scl	2;	.type	32;	.endef
+ 533              	_xQueueGenericSendFromISR:
+ 534              	LFB6:
+ 535              		.cfi_startproc
+ 536 058b 55       		pushl	%ebp
+ 537              		.cfi_def_cfa_offset 8
+ 538              		.cfi_offset 5, -8
+ 539 058c 89E5     		movl	%esp, %ebp
+ 540              		.cfi_def_cfa_register 5
+ 541 058e 83EC28   		subl	$40, %esp
+ 542 0591 8B4508   		movl	8(%ebp), %eax
+ 543 0594 83C050   		addl	$80, %eax
+ 544 0597 C7442404 		movl	$1, 4(%esp)
+ 544      01000000 
+ 545 059f 890424   		movl	%eax, (%esp)
+ 546 05a2 E8000000 		call	_spinLockTake
+ 546      00
+ 547 05a7 8B4508   		movl	8(%ebp), %eax
+ 548 05aa 8B4040   		movl	64(%eax), %eax
+ 549 05ad 85C0     		testl	%eax, %eax
+ 550 05af 7506     		jne	L46
+ 551 05b1 837D0C00 		cmpl	$0, 12(%ebp)
+ 552 05b5 741C     		je	L47
+ 553              	L46:
+ 554 05b7 8B4508   		movl	8(%ebp), %eax
+ 555 05ba 83C038   		addl	$56, %eax
+ 556 05bd 890424   		movl	%eax, (%esp)
+ 557 05c0 E8000000 		call	_atomic32Get
+ 557      00
+ 558 05c5 8B5508   		movl	8(%ebp), %edx
+ 559 05c8 8B523C   		movl	60(%edx), %edx
+ 560 05cb 39D0     		cmpl	%edx, %eax
+ 561 05cd 0F838100 		jae	L48
+ 561      0000
+ 562              	L47:
+ 563 05d3 C744240C 		movl	$1, 12(%esp)
+ 563      01000000 
+ 564 05db 8B4518   		movl	24(%ebp), %eax
+ 565 05de 89442408 		movl	%eax, 8(%esp)
+ 566 05e2 8B450C   		movl	12(%ebp), %eax
+ 567 05e5 89442404 		movl	%eax, 4(%esp)
+ 568 05e9 8B4508   		movl	8(%ebp), %eax
+ 569 05ec 890424   		movl	%eax, (%esp)
+ 570 05ef E83EFBFF 		call	_prvCopyDataToQueue
+ 570      FF
+ 571 05f4 8B4508   		movl	8(%ebp), %eax
+ 572 05f7 83C048   		addl	$72, %eax
+ 573 05fa 890424   		movl	%eax, (%esp)
+ 574 05fd E8000000 		call	_atomic32Get
+ 574      00
+ 575 0602 83F8FF   		cmpl	$-1, %eax
+ 576 0605 7536     		jne	L49
+ 577 0607 8B4508   		movl	8(%ebp), %eax
+ 578 060a 8B4024   		movl	36(%eax), %eax
+ 579 060d 85C0     		testl	%eax, %eax
+ 580 060f 743A     		je	L50
+ 581 0611 8B4508   		movl	8(%ebp), %eax
+ 582 0614 83C024   		addl	$36, %eax
+ 583 0617 C7442408 		movl	$1, 8(%esp)
+ 583      01000000 
+ 584 061f 89442404 		movl	%eax, 4(%esp)
+ 585 0623 8B4514   		movl	20(%ebp), %eax
+ 586 0626 890424   		movl	%eax, (%esp)
+ 587 0629 E8000000 		call	_xTaskRemoveFromEventList
+ 587      00
+ 588 062e 85C0     		testl	%eax, %eax
+ 589 0630 7419     		je	L50
+ 590 0632 8B4510   		movl	16(%ebp), %eax
+ 591 0635 C7000100 		movl	$1, (%eax)
+ 591      0000
+ 592 063b EB0E     		jmp	L50
+ 593              	L49:
+ 594 063d 8B4508   		movl	8(%ebp), %eax
+ 595 0640 83C048   		addl	$72, %eax
+ 596 0643 890424   		movl	%eax, (%esp)
+ 597 0646 E8000000 		call	_atomic32Inc
+ 597      00
+ 598              	L50:
+ 599 064b C745F401 		movl	$1, -12(%ebp)
+ 599      000000
+ 600 0652 EB07     		jmp	L51
+ 601              	L48:
+ 602 0654 C745F400 		movl	$0, -12(%ebp)
+ 602      000000
+ 603              	L51:
+ 604 065b 8B4508   		movl	8(%ebp), %eax
+ 605 065e 83C050   		addl	$80, %eax
+ 606 0661 C7442404 		movl	$1, 4(%esp)
+ 606      01000000 
+ 607 0669 890424   		movl	%eax, (%esp)
+ 608 066c E8000000 		call	_spinLockGive
+ 608      00
+ 609 0671 8B45F4   		movl	-12(%ebp), %eax
+ 610 0674 C9       		leave
+ 611              		.cfi_restore 5
+ 612              		.cfi_def_cfa 4, 4
+ 613 0675 C3       		ret
+ 614              		.cfi_endproc
+ 615              	LFE6:
+ 616              		.globl	_xQueueGenericReceive
+ 617              		.def	_xQueueGenericReceive;	.scl	2;	.type	32;	.endef
+ 618              	_xQueueGenericReceive:
+ 619              	LFB7:
+ 620              		.cfi_startproc
+ 621 0676 55       		pushl	%ebp
+ 622              		.cfi_def_cfa_offset 8
+ 623              		.cfi_offset 5, -8
+ 624 0677 89E5     		movl	%esp, %ebp
+ 625              		.cfi_def_cfa_register 5
+ 626 0679 83EC38   		subl	$56, %esp
+ 627 067c C745F400 		movl	$0, -12(%ebp)
+ 627      000000
+ 628 0683 E8000000 		call	_sPortGetCurrentCPU
+ 628      00
+ 629 0688 8945EC   		movl	%eax, -20(%ebp)
+ 630 068b 8B45EC   		movl	-20(%ebp), %eax
+ 631 068e 8945DC   		movl	%eax, -36(%ebp)
+ 632 0691 EB01     		jmp	L68
+ 633              	L70:
+ 634 0693 90       		nop
+ 635              	L68:
+ 636 0694 8B4508   		movl	8(%ebp), %eax
+ 637 0697 83C050   		addl	$80, %eax
+ 638 069a C7442404 		movl	$0, 4(%esp)
+ 638      00000000 
+ 639 06a2 890424   		movl	%eax, (%esp)
+ 640 06a5 E8000000 		call	_spinLockTake
+ 640      00
+ 641 06aa 8B4508   		movl	8(%ebp), %eax
+ 642 06ad 83C038   		addl	$56, %eax
+ 643 06b0 890424   		movl	%eax, (%esp)
+ 644 06b3 E8000000 		call	_atomic32Get
+ 644      00
+ 645 06b8 85C0     		testl	%eax, %eax
+ 646 06ba 0F84EC00 		je	L54
+ 646      0000
+ 647 06c0 C745F000 		movl	$0, -16(%ebp)
+ 647      000000
+ 648 06c7 837D1400 		cmpl	$0, 20(%ebp)
+ 649 06cb 7560     		jne	L55
+ 650 06cd 8B4508   		movl	8(%ebp), %eax
+ 651 06d0 83C038   		addl	$56, %eax
+ 652 06d3 890424   		movl	%eax, (%esp)
+ 653 06d6 E8000000 		call	_atomic32Dec
+ 653      00
+ 654 06db 8B450C   		movl	12(%ebp), %eax
+ 655 06de 89442404 		movl	%eax, 4(%esp)
+ 656 06e2 8B4508   		movl	8(%ebp), %eax
+ 657 06e5 890424   		movl	%eax, (%esp)
+ 658 06e8 E880FBFF 		call	_prvCopyDataFromQueue
+ 658      FF
+ 659 06ed 8B4508   		movl	8(%ebp), %eax
+ 660 06f0 8B00     		movl	(%eax), %eax
+ 661 06f2 85C0     		testl	%eax, %eax
+ 662 06f4 750B     		jne	L56
+ 663 06f6 E8000000 		call	_xTaskGetCurrentTaskHandle
+ 663      00
+ 664 06fb 8B5508   		movl	8(%ebp), %edx
+ 665 06fe 894204   		movl	%eax, 4(%edx)
+ 666              	L56:
+ 667 0701 8B4508   		movl	8(%ebp), %eax
+ 668 0704 8B4010   		movl	16(%eax), %eax
+ 669 0707 85C0     		testl	%eax, %eax
+ 670 0709 7470     		je	L57
+ 671 070b 8B4508   		movl	8(%ebp), %eax
+ 672 070e 83C010   		addl	$16, %eax
+ 673 0711 C7442408 		movl	$0, 8(%esp)
+ 673      00000000 
+ 674 0719 89442404 		movl	%eax, 4(%esp)
+ 675 071d 8D45DC   		leal	-36(%ebp), %eax
+ 676 0720 890424   		movl	%eax, (%esp)
+ 677 0723 E8000000 		call	_xTaskRemoveFromEventList
+ 677      00
+ 678 0728 8945F0   		movl	%eax, -16(%ebp)
+ 679 072b EB4E     		jmp	L57
+ 680              	L55:
+ 681 072d 8B4508   		movl	8(%ebp), %eax
+ 682 0730 8B400C   		movl	12(%eax), %eax
+ 683 0733 8945E8   		movl	%eax, -24(%ebp)
+ 684 0736 8B450C   		movl	12(%ebp), %eax
+ 685 0739 89442404 		movl	%eax, 4(%esp)
+ 686 073d 8B4508   		movl	8(%ebp), %eax
+ 687 0740 890424   		movl	%eax, (%esp)
+ 688 0743 E825FBFF 		call	_prvCopyDataFromQueue
+ 688      FF
+ 689 0748 8B4508   		movl	8(%ebp), %eax
+ 690 074b 8B55E8   		movl	-24(%ebp), %edx
+ 691 074e 89500C   		movl	%edx, 12(%eax)
+ 692 0751 8B4508   		movl	8(%ebp), %eax
+ 693 0754 8B4024   		movl	36(%eax), %eax
+ 694 0757 85C0     		testl	%eax, %eax
+ 695 0759 7420     		je	L57
+ 696 075b 8B4508   		movl	8(%ebp), %eax
+ 697 075e 83C024   		addl	$36, %eax
+ 698 0761 C7442408 		movl	$0, 8(%esp)
+ 698      00000000 
+ 699 0769 89442404 		movl	%eax, 4(%esp)
+ 700 076d 8D45DC   		leal	-36(%ebp), %eax
+ 701 0770 890424   		movl	%eax, (%esp)
+ 702 0773 E8000000 		call	_xTaskRemoveFromEventList
+ 702      00
+ 703 0778 8945F0   		movl	%eax, -16(%ebp)
+ 704              	L57:
+ 705 077b 8B4508   		movl	8(%ebp), %eax
+ 706 077e 83C050   		addl	$80, %eax
+ 707 0781 C7442404 		movl	$0, 4(%esp)
+ 707      00000000 
+ 708 0789 890424   		movl	%eax, (%esp)
+ 709 078c E8000000 		call	_spinLockGive
+ 709      00
+ 710 0791 837DF001 		cmpl	$1, -16(%ebp)
+ 711 0795 750B     		jne	L58
+ 712 0797 8B45DC   		movl	-36(%ebp), %eax
+ 713 079a 890424   		movl	%eax, (%esp)
+ 714 079d E8000000 		call	_vPortYieldCPU
+ 714      00
+ 715              	L58:
+ 716 07a2 B8010000 		movl	$1, %eax
+ 716      00
+ 717 07a7 E9A40100 		jmp	L69
+ 717      00
+ 718              	L54:
+ 719 07ac 8B4510   		movl	16(%ebp), %eax
+ 720 07af 85C0     		testl	%eax, %eax
+ 721 07b1 7520     		jne	L60
+ 722 07b3 8B4508   		movl	8(%ebp), %eax
+ 723 07b6 83C050   		addl	$80, %eax
+ 724 07b9 C7442404 		movl	$0, 4(%esp)
+ 724      00000000 
+ 725 07c1 890424   		movl	%eax, (%esp)
+ 726 07c4 E8000000 		call	_spinLockGive
+ 726      00
+ 727 07c9 B8000000 		movl	$0, %eax
+ 727      00
+ 728 07ce E97D0100 		jmp	L69
+ 728      00
+ 729              	L60:
+ 730 07d3 837DF400 		cmpl	$0, -12(%ebp)
+ 731 07d7 7519     		jne	L61
+ 732 07d9 8D45E0   		leal	-32(%ebp), %eax
+ 733 07dc 89442404 		movl	%eax, 4(%esp)
+ 734 07e0 8B45EC   		movl	-20(%ebp), %eax
+ 735 07e3 890424   		movl	%eax, (%esp)
+ 736 07e6 E8000000 		call	_vTaskSetTimeOutState
+ 736      00
+ 737 07eb C745F401 		movl	$1, -12(%ebp)
+ 737      000000
+ 738              	L61:
+ 739 07f2 8B4508   		movl	8(%ebp), %eax
+ 740 07f5 83C050   		addl	$80, %eax
+ 741 07f8 C7442404 		movl	$0, 4(%esp)
+ 741      00000000 
+ 742 0800 890424   		movl	%eax, (%esp)
+ 743 0803 E8000000 		call	_spinLockGive
+ 743      00
+ 744 0808 8B4508   		movl	8(%ebp), %eax
+ 745 080b 83C050   		addl	$80, %eax
+ 746 080e C7442404 		movl	$0, 4(%esp)
+ 746      00000000 
+ 747 0816 890424   		movl	%eax, (%esp)
+ 748 0819 E8000000 		call	_spinLockTake
+ 748      00
+ 749 081e 8B45EC   		movl	-20(%ebp), %eax
+ 750 0821 890424   		movl	%eax, (%esp)
+ 751 0824 E8000000 		call	_vTaskSuspendCpu
+ 751      00
+ 752 0829 8B4508   		movl	8(%ebp), %eax
+ 753 082c 8B4044   		movl	68(%eax), %eax
+ 754 082f 83F8FF   		cmpl	$-1, %eax
+ 755 0832 7516     		jne	L62
+ 756 0834 8B4508   		movl	8(%ebp), %eax
+ 757 0837 83C044   		addl	$68, %eax
+ 758 083a C7442404 		movl	$0, 4(%esp)
+ 758      00000000 
+ 759 0842 890424   		movl	%eax, (%esp)
+ 760 0845 E8000000 		call	_atomic32Set
+ 760      00
+ 761              	L62:
+ 762 084a 8B4508   		movl	8(%ebp), %eax
+ 763 084d 8B4048   		movl	72(%eax), %eax
+ 764 0850 83F8FF   		cmpl	$-1, %eax
+ 765 0853 7516     		jne	L63
+ 766 0855 8B4508   		movl	8(%ebp), %eax
+ 767 0858 83C048   		addl	$72, %eax
+ 768 085b C7442404 		movl	$0, 4(%esp)
+ 768      00000000 
+ 769 0863 890424   		movl	%eax, (%esp)
+ 770 0866 E8000000 		call	_atomic32Set
+ 770      00
+ 771              	L63:
+ 772 086b 8B4508   		movl	8(%ebp), %eax
+ 773 086e 83C050   		addl	$80, %eax
+ 774 0871 C7442404 		movl	$0, 4(%esp)
+ 774      00000000 
+ 775 0879 890424   		movl	%eax, (%esp)
+ 776 087c E8000000 		call	_spinLockGive
+ 776      00
+ 777 0881 8D4510   		leal	16(%ebp), %eax
+ 778 0884 89442408 		movl	%eax, 8(%esp)
+ 779 0888 8D45E0   		leal	-32(%ebp), %eax
+ 780 088b 89442404 		movl	%eax, 4(%esp)
+ 781 088f 8B45EC   		movl	-20(%ebp), %eax
+ 782 0892 890424   		movl	%eax, (%esp)
+ 783 0895 E8000000 		call	_xTaskCheckForTimeOut
+ 783      00
+ 784 089a 85C0     		testl	%eax, %eax
+ 785 089c 0F859300 		jne	L64
+ 785      0000
+ 786 08a2 8B4508   		movl	8(%ebp), %eax
+ 787 08a5 890424   		movl	%eax, (%esp)
+ 788 08a8 E865FAFF 		call	_prvIsQueueEmpty
+ 788      FF
+ 789 08ad 85C0     		testl	%eax, %eax
+ 790 08af 7469     		je	L65
+ 791 08b1 8B4508   		movl	8(%ebp), %eax
+ 792 08b4 8B00     		movl	(%eax), %eax
+ 793 08b6 85C0     		testl	%eax, %eax
+ 794 08b8 7516     		jne	L66
+ 795 08ba 8B4508   		movl	8(%ebp), %eax
+ 796 08bd 8B4004   		movl	4(%eax), %eax
+ 797 08c0 C7442404 		movl	$0, 4(%esp)
+ 797      00000000 
+ 798 08c8 890424   		movl	%eax, (%esp)
+ 799 08cb E8000000 		call	_vTaskPriorityInherit
+ 799      00
+ 800              	L66:
+ 801 08d0 8B4510   		movl	16(%ebp), %eax
+ 802 08d3 8B5508   		movl	8(%ebp), %edx
+ 803 08d6 83C224   		addl	$36, %edx
+ 804 08d9 89442408 		movl	%eax, 8(%esp)
+ 805 08dd 89542404 		movl	%edx, 4(%esp)
+ 806 08e1 8B45EC   		movl	-20(%ebp), %eax
+ 807 08e4 890424   		movl	%eax, (%esp)
+ 808 08e7 E8000000 		call	_vTaskPlaceOnEventList
+ 808      00
+ 809 08ec 8B4508   		movl	8(%ebp), %eax
+ 810 08ef 890424   		movl	%eax, (%esp)
+ 811 08f2 E809F7FF 		call	_prvUnlockQueue
+ 811      FF
+ 812 08f7 8B45EC   		movl	-20(%ebp), %eax
+ 813 08fa 890424   		movl	%eax, (%esp)
+ 814 08fd E8000000 		call	_xTaskResumeCpu
+ 814      00
+ 815 0902 85C0     		testl	%eax, %eax
+ 816 0904 0F8589FD 		jne	L70
+ 816      FFFF
+ 817 090a 8B45EC   		movl	-20(%ebp), %eax
+ 818 090d 890424   		movl	%eax, (%esp)
+ 819 0910 E8000000 		call	_vPortYieldCPU
+ 819      00
+ 820 0915 E979FDFF 		jmp	L70
+ 820      FF
+ 821              	L65:
+ 822 091a 8B4508   		movl	8(%ebp), %eax
+ 823 091d 890424   		movl	%eax, (%esp)
+ 824 0920 E8DBF6FF 		call	_prvUnlockQueue
+ 824      FF
+ 825 0925 8B45EC   		movl	-20(%ebp), %eax
+ 826 0928 890424   		movl	%eax, (%esp)
+ 827 092b E8000000 		call	_xTaskResumeCpu
+ 827      00
+ 828 0930 E95EFDFF 		jmp	L70
+ 828      FF
+ 829              	L64:
+ 830 0935 8B4508   		movl	8(%ebp), %eax
+ 831 0938 890424   		movl	%eax, (%esp)
+ 832 093b E8C0F6FF 		call	_prvUnlockQueue
+ 832      FF
+ 833 0940 8B45EC   		movl	-20(%ebp), %eax
+ 834 0943 890424   		movl	%eax, (%esp)
+ 835 0946 E8000000 		call	_xTaskResumeCpu
+ 835      00
+ 836 094b B8000000 		movl	$0, %eax
+ 836      00
+ 837              	L69:
+ 838 0950 C9       		leave
+ 839              		.cfi_restore 5
+ 840              		.cfi_def_cfa 4, 4
+ 841 0951 C3       		ret
+ 842              		.cfi_endproc
+ 843              	LFE7:
+ 844              		.globl	_xQueueReceiveFromISR
+ 845              		.def	_xQueueReceiveFromISR;	.scl	2;	.type	32;	.endef
+ 846              	_xQueueReceiveFromISR:
+ 847              	LFB8:
+ 848              		.cfi_startproc
+ 849 0952 55       		pushl	%ebp
+ 850              		.cfi_def_cfa_offset 8
+ 851              		.cfi_offset 5, -8
+ 852 0953 89E5     		movl	%esp, %ebp
+ 853              		.cfi_def_cfa_register 5
+ 854 0955 83EC28   		subl	$40, %esp
+ 855 0958 8B4508   		movl	8(%ebp), %eax
+ 856 095b 83C050   		addl	$80, %eax
+ 857 095e C7442404 		movl	$1, 4(%esp)
+ 857      01000000 
+ 858 0966 890424   		movl	%eax, (%esp)
+ 859 0969 E8000000 		call	_spinLockTake
+ 859      00
+ 860 096e 8B4508   		movl	8(%ebp), %eax
+ 861 0971 83C038   		addl	$56, %eax
+ 862 0974 890424   		movl	%eax, (%esp)
+ 863 0977 E8000000 		call	_atomic32Get
+ 863      00
+ 864 097c 85C0     		testl	%eax, %eax
+ 865 097e 0F848000 		je	L72
+ 865      0000
+ 866 0984 8B450C   		movl	12(%ebp), %eax
+ 867 0987 89442404 		movl	%eax, 4(%esp)
+ 868 098b 8B4508   		movl	8(%ebp), %eax
+ 869 098e 890424   		movl	%eax, (%esp)
+ 870 0991 E8D7F8FF 		call	_prvCopyDataFromQueue
+ 870      FF
+ 871 0996 8B4508   		movl	8(%ebp), %eax
+ 872 0999 83C038   		addl	$56, %eax
+ 873 099c 890424   		movl	%eax, (%esp)
+ 874 099f E8000000 		call	_atomic32Dec
+ 874      00
+ 875 09a4 8B4508   		movl	8(%ebp), %eax
+ 876 09a7 83C044   		addl	$68, %eax
+ 877 09aa 890424   		movl	%eax, (%esp)
+ 878 09ad E8000000 		call	_atomic32Get
+ 878      00
+ 879 09b2 83F8FF   		cmpl	$-1, %eax
+ 880 09b5 7536     		jne	L73
+ 881 09b7 8B4508   		movl	8(%ebp), %eax
+ 882 09ba 8B4010   		movl	16(%eax), %eax
+ 883 09bd 85C0     		testl	%eax, %eax
+ 884 09bf 743A     		je	L74
+ 885 09c1 8B4508   		movl	8(%ebp), %eax
+ 886 09c4 83C010   		addl	$16, %eax
+ 887 09c7 C7442408 		movl	$1, 8(%esp)
+ 887      01000000 
+ 888 09cf 89442404 		movl	%eax, 4(%esp)
+ 889 09d3 8B4514   		movl	20(%ebp), %eax
+ 890 09d6 890424   		movl	%eax, (%esp)
+ 891 09d9 E8000000 		call	_xTaskRemoveFromEventList
+ 891      00
+ 892 09de 85C0     		testl	%eax, %eax
+ 893 09e0 7419     		je	L74
+ 894 09e2 8B4510   		movl	16(%ebp), %eax
+ 895 09e5 C7000100 		movl	$1, (%eax)
+ 895      0000
+ 896 09eb EB0E     		jmp	L74
+ 897              	L73:
+ 898 09ed 8B4508   		movl	8(%ebp), %eax
+ 899 09f0 83C044   		addl	$68, %eax
+ 900 09f3 890424   		movl	%eax, (%esp)
+ 901 09f6 E8000000 		call	_atomic32Inc
+ 901      00
+ 902              	L74:
+ 903 09fb C745F401 		movl	$1, -12(%ebp)
+ 903      000000
+ 904 0a02 EB07     		jmp	L75
+ 905              	L72:
+ 906 0a04 C745F400 		movl	$0, -12(%ebp)
+ 906      000000
+ 907              	L75:
+ 908 0a0b 8B4508   		movl	8(%ebp), %eax
+ 909 0a0e 83C050   		addl	$80, %eax
+ 910 0a11 C7442404 		movl	$1, 4(%esp)
+ 910      01000000 
+ 911 0a19 890424   		movl	%eax, (%esp)
+ 912 0a1c E8000000 		call	_spinLockGive
+ 912      00
+ 913 0a21 8B45F4   		movl	-12(%ebp), %eax
+ 914 0a24 C9       		leave
+ 915              		.cfi_restore 5
+ 916              		.cfi_def_cfa 4, 4
+ 917 0a25 C3       		ret
+ 918              		.cfi_endproc
+ 919              	LFE8:
+ 920              		.globl	_xQueueCreate
+ 921              		.def	_xQueueCreate;	.scl	2;	.type	32;	.endef
+ 922              	_xQueueCreate:
+ 923              	LFB9:
+ 924              		.cfi_startproc
+ 925 0a26 55       		pushl	%ebp
+ 926              		.cfi_def_cfa_offset 8
+ 927              		.cfi_offset 5, -8
+ 928 0a27 89E5     		movl	%esp, %ebp
+ 929              		.cfi_def_cfa_register 5
+ 930 0a29 83EC28   		subl	$40, %esp
+ 931 0a2c 837D0800 		cmpl	$0, 8(%ebp)
+ 932 0a30 0F84EE00 		je	L78
+ 932      0000
+ 933 0a36 C7042478 		movl	$120, (%esp)
+ 933      000000
+ 934 0a3d E8000000 		call	_pvPortMalloc
+ 934      00
+ 935 0a42 8945F4   		movl	%eax, -12(%ebp)
+ 936 0a45 837DF400 		cmpl	$0, -12(%ebp)
+ 937 0a49 0F84D500 		je	L78
+ 937      0000
+ 938 0a4f 8B4508   		movl	8(%ebp), %eax
+ 939 0a52 0FAF450C 		imull	12(%ebp), %eax
+ 940 0a56 83C001   		addl	$1, %eax
+ 941 0a59 8945F0   		movl	%eax, -16(%ebp)
+ 942 0a5c 8B45F0   		movl	-16(%ebp), %eax
+ 943 0a5f 890424   		movl	%eax, (%esp)
+ 944 0a62 E8000000 		call	_pvPortMalloc
+ 944      00
+ 945 0a67 8B55F4   		movl	-12(%ebp), %edx
+ 946 0a6a 8902     		movl	%eax, (%edx)
+ 947 0a6c 8B45F4   		movl	-12(%ebp), %eax
+ 948 0a6f 8B00     		movl	(%eax), %eax
+ 949 0a71 85C0     		testl	%eax, %eax
+ 950 0a73 0F84A000 		je	L79
+ 950      0000
+ 951 0a79 8B45F4   		movl	-12(%ebp), %eax
+ 952 0a7c 8B10     		movl	(%eax), %edx
+ 953 0a7e 8B4508   		movl	8(%ebp), %eax
+ 954 0a81 0FAF450C 		imull	12(%ebp), %eax
+ 955 0a85 01C2     		addl	%eax, %edx
+ 956 0a87 8B45F4   		movl	-12(%ebp), %eax
+ 957 0a8a 895004   		movl	%edx, 4(%eax)
+ 958 0a8d 8B45F4   		movl	-12(%ebp), %eax
+ 959 0a90 C7403800 		movl	$0, 56(%eax)
+ 959      000000
+ 960 0a97 8B45F4   		movl	-12(%ebp), %eax
+ 961 0a9a 8B10     		movl	(%eax), %edx
+ 962 0a9c 8B45F4   		movl	-12(%ebp), %eax
+ 963 0a9f 895008   		movl	%edx, 8(%eax)
+ 964 0aa2 8B45F4   		movl	-12(%ebp), %eax
+ 965 0aa5 8B10     		movl	(%eax), %edx
+ 966 0aa7 8B4508   		movl	8(%ebp), %eax
+ 967 0aaa 83E801   		subl	$1, %eax
+ 968 0aad 0FAF450C 		imull	12(%ebp), %eax
+ 969 0ab1 01C2     		addl	%eax, %edx
+ 970 0ab3 8B45F4   		movl	-12(%ebp), %eax
+ 971 0ab6 89500C   		movl	%edx, 12(%eax)
+ 972 0ab9 8B45F4   		movl	-12(%ebp), %eax
+ 973 0abc 8B5508   		movl	8(%ebp), %edx
+ 974 0abf 89503C   		movl	%edx, 60(%eax)
+ 975 0ac2 8B45F4   		movl	-12(%ebp), %eax
+ 976 0ac5 8B550C   		movl	12(%ebp), %edx
+ 977 0ac8 895040   		movl	%edx, 64(%eax)
+ 978 0acb 8B45F4   		movl	-12(%ebp), %eax
+ 979 0ace C74044FF 		movl	$-1, 68(%eax)
+ 979      FFFFFF
+ 980 0ad5 8B45F4   		movl	-12(%ebp), %eax
+ 981 0ad8 C74048FF 		movl	$-1, 72(%eax)
+ 981      FFFFFF
+ 982 0adf E8000000 		call	_sPortGetCurrentCPU
+ 982      00
+ 983 0ae4 8B55F4   		movl	-12(%ebp), %edx
+ 984 0ae7 89424C   		movl	%eax, 76(%edx)
+ 985 0aea 8B45F4   		movl	-12(%ebp), %eax
+ 986 0aed 83C050   		addl	$80, %eax
+ 987 0af0 890424   		movl	%eax, (%esp)
+ 988 0af3 E8000000 		call	_spinLockInit
+ 988      00
+ 989 0af8 8B45F4   		movl	-12(%ebp), %eax
+ 990 0afb 83C010   		addl	$16, %eax
+ 991 0afe 890424   		movl	%eax, (%esp)
+ 992 0b01 E8000000 		call	_vListInitialise
+ 992      00
+ 993 0b06 8B45F4   		movl	-12(%ebp), %eax
+ 994 0b09 83C024   		addl	$36, %eax
+ 995 0b0c 890424   		movl	%eax, (%esp)
+ 996 0b0f E8000000 		call	_vListInitialise
+ 996      00
+ 997 0b14 8B45F4   		movl	-12(%ebp), %eax
+ 998 0b17 EB10     		jmp	L80
+ 999              	L79:
+ 1000 0b19 8B45F4   		movl	-12(%ebp), %eax
+ 1001 0b1c 890424   		movl	%eax, (%esp)
+ 1002 0b1f E8000000 		call	_vPortFree
+ 1002      00
+ 1003              	L78:
+ 1004 0b24 B8000000 		movl	$0, %eax
+ 1004      00
+ 1005              	L80:
+ 1006 0b29 C9       		leave
+ 1007              		.cfi_restore 5
+ 1008              		.cfi_def_cfa 4, 4
+ 1009 0b2a C3       		ret
+ 1010              		.cfi_endproc
+ 1011              	LFE9:
+ 1012              		.globl	_xQueueCreateMutex
+ 1013              		.def	_xQueueCreateMutex;	.scl	2;	.type	32;	.endef
+ 1014              	_xQueueCreateMutex:
+ 1015              	LFB10:
+ 1016              		.cfi_startproc
+ 1017 0b2b 55       		pushl	%ebp
+ 1018              		.cfi_def_cfa_offset 8
+ 1019              		.cfi_offset 5, -8
+ 1020 0b2c 89E5     		movl	%esp, %ebp
+ 1021              		.cfi_def_cfa_register 5
+ 1022 0b2e 83EC28   		subl	$40, %esp
+ 1023 0b31 C7042478 		movl	$120, (%esp)
+ 1023      000000
+ 1024 0b38 E8000000 		call	_pvPortMalloc
+ 1024      00
+ 1025 0b3d 8945F4   		movl	%eax, -12(%ebp)
+ 1026 0b40 837DF400 		cmpl	$0, -12(%ebp)
+ 1027 0b44 0F84B100 		je	L82
+ 1027      0000
+ 1028 0b4a 8B45F4   		movl	-12(%ebp), %eax
+ 1029 0b4d C7400400 		movl	$0, 4(%eax)
+ 1029      000000
+ 1030 0b54 8B45F4   		movl	-12(%ebp), %eax
+ 1031 0b57 C7000000 		movl	$0, (%eax)
+ 1031      0000
+ 1032 0b5d 8B45F4   		movl	-12(%ebp), %eax
+ 1033 0b60 C7400800 		movl	$0, 8(%eax)
+ 1033      000000
+ 1034 0b67 8B45F4   		movl	-12(%ebp), %eax
+ 1035 0b6a C7400C00 		movl	$0, 12(%eax)
+ 1035      000000
+ 1036 0b71 8B45F4   		movl	-12(%ebp), %eax
+ 1037 0b74 C7403800 		movl	$0, 56(%eax)
+ 1037      000000
+ 1038 0b7b 8B45F4   		movl	-12(%ebp), %eax
+ 1039 0b7e C7403C01 		movl	$1, 60(%eax)
+ 1039      000000
+ 1040 0b85 8B45F4   		movl	-12(%ebp), %eax
+ 1041 0b88 C7404000 		movl	$0, 64(%eax)
+ 1041      000000
+ 1042 0b8f 8B45F4   		movl	-12(%ebp), %eax
+ 1043 0b92 C74044FF 		movl	$-1, 68(%eax)
+ 1043      FFFFFF
+ 1044 0b99 8B45F4   		movl	-12(%ebp), %eax
+ 1045 0b9c C74048FF 		movl	$-1, 72(%eax)
+ 1045      FFFFFF
+ 1046 0ba3 E8000000 		call	_sPortGetCurrentCPU
+ 1046      00
+ 1047 0ba8 8B55F4   		movl	-12(%ebp), %edx
+ 1048 0bab 89424C   		movl	%eax, 76(%edx)
+ 1049 0bae 8B45F4   		movl	-12(%ebp), %eax
+ 1050 0bb1 83C050   		addl	$80, %eax
+ 1051 0bb4 890424   		movl	%eax, (%esp)
+ 1052 0bb7 E8000000 		call	_spinLockInit
+ 1052      00
+ 1053 0bbc 8B45F4   		movl	-12(%ebp), %eax
+ 1054 0bbf 83C010   		addl	$16, %eax
+ 1055 0bc2 890424   		movl	%eax, (%esp)
+ 1056 0bc5 E8000000 		call	_vListInitialise
+ 1056      00
+ 1057 0bca 8B45F4   		movl	-12(%ebp), %eax
+ 1058 0bcd 83C024   		addl	$36, %eax
+ 1059 0bd0 890424   		movl	%eax, (%esp)
+ 1060 0bd3 E8000000 		call	_vListInitialise
+ 1060      00
+ 1061 0bd8 C744240C 		movl	$0, 12(%esp)
+ 1061      00000000 
+ 1062 0be0 C7442408 		movl	$0, 8(%esp)
+ 1062      00000000 
+ 1063 0be8 C7442404 		movl	$0, 4(%esp)
+ 1063      00000000 
+ 1064 0bf0 8B45F4   		movl	-12(%ebp), %eax
+ 1065 0bf3 890424   		movl	%eax, (%esp)
+ 1066 0bf6 E835F7FF 		call	_xQueueGenericSend
+ 1066      FF
+ 1067              	L82:
+ 1068 0bfb 8B45F4   		movl	-12(%ebp), %eax
+ 1069 0bfe C9       		leave
+ 1070              		.cfi_restore 5
+ 1071              		.cfi_def_cfa 4, 4
+ 1072 0bff C3       		ret
+ 1073              		.cfi_endproc
+ 1074              	LFE10:
+ 1075              		.globl	_xQueueGiveMutexRecursive
+ 1076              		.def	_xQueueGiveMutexRecursive;	.scl	2;	.type	32;	.endef
+ 1077              	_xQueueGiveMutexRecursive:
+ 1078              	LFB11:
+ 1079              		.cfi_startproc
+ 1080 0c00 55       		pushl	%ebp
+ 1081              		.cfi_def_cfa_offset 8
+ 1082              		.cfi_offset 5, -8
+ 1083 0c01 89E5     		movl	%esp, %ebp
+ 1084              		.cfi_def_cfa_register 5
+ 1085 0c03 53       		pushl	%ebx
+ 1086 0c04 83EC24   		subl	$36, %esp
+ 1087              		.cfi_offset 3, -12
+ 1088 0c07 8B4508   		movl	8(%ebp), %eax
+ 1089 0c0a 8B5804   		movl	4(%eax), %ebx
+ 1090 0c0d E8000000 		call	_xTaskGetCurrentTaskHandle
+ 1090      00
+ 1091 0c12 39C3     		cmpl	%eax, %ebx
+ 1092 0c14 7545     		jne	L85
+ 1093 0c16 8B4508   		movl	8(%ebp), %eax
+ 1094 0c19 8B400C   		movl	12(%eax), %eax
+ 1095 0c1c 8D50FF   		leal	-1(%eax), %edx
+ 1096 0c1f 8B4508   		movl	8(%ebp), %eax
+ 1097 0c22 89500C   		movl	%edx, 12(%eax)
+ 1098 0c25 8B4508   		movl	8(%ebp), %eax
+ 1099 0c28 8B400C   		movl	12(%eax), %eax
+ 1100 0c2b 85C0     		testl	%eax, %eax
+ 1101 0c2d 7523     		jne	L86
+ 1102 0c2f C744240C 		movl	$0, 12(%esp)
+ 1102      00000000 
+ 1103 0c37 C7442408 		movl	$0, 8(%esp)
+ 1103      00000000 
+ 1104 0c3f C7442404 		movl	$0, 4(%esp)
+ 1104      00000000 
+ 1105 0c47 8B4508   		movl	8(%ebp), %eax
+ 1106 0c4a 890424   		movl	%eax, (%esp)
+ 1107 0c4d E8DEF6FF 		call	_xQueueGenericSend
+ 1107      FF
+ 1108              	L86:
+ 1109 0c52 C745F401 		movl	$1, -12(%ebp)
+ 1109      000000
+ 1110 0c59 EB07     		jmp	L87
+ 1111              	L85:
+ 1112 0c5b C745F400 		movl	$0, -12(%ebp)
+ 1112      000000
+ 1113              	L87:
+ 1114 0c62 8B45F4   		movl	-12(%ebp), %eax
+ 1115 0c65 83C424   		addl	$36, %esp
+ 1116 0c68 5B       		popl	%ebx
+ 1117              		.cfi_restore 3
+ 1118 0c69 5D       		popl	%ebp
+ 1119              		.cfi_restore 5
+ 1120              		.cfi_def_cfa 4, 4
+ 1121 0c6a C3       		ret
+ 1122              		.cfi_endproc
+ 1123              	LFE11:
+ 1124              		.globl	_xQueueTakeMutexRecursive
+ 1125              		.def	_xQueueTakeMutexRecursive;	.scl	2;	.type	32;	.endef
+ 1126              	_xQueueTakeMutexRecursive:
+ 1127              	LFB12:
+ 1128              		.cfi_startproc
+ 1129 0c6b 55       		pushl	%ebp
+ 1130              		.cfi_def_cfa_offset 8
+ 1131              		.cfi_offset 5, -8
+ 1132 0c6c 89E5     		movl	%esp, %ebp
+ 1133              		.cfi_def_cfa_register 5
+ 1134 0c6e 53       		pushl	%ebx
+ 1135 0c6f 83EC24   		subl	$36, %esp
+ 1136              		.cfi_offset 3, -12
+ 1137 0c72 8B4508   		movl	8(%ebp), %eax
+ 1138 0c75 8B5804   		movl	4(%eax), %ebx
+ 1139 0c78 E8000000 		call	_xTaskGetCurrentTaskHandle
+ 1139      00
+ 1140 0c7d 39C3     		cmpl	%eax, %ebx
+ 1141 0c7f 7518     		jne	L90
+ 1142 0c81 8B4508   		movl	8(%ebp), %eax
+ 1143 0c84 8B400C   		movl	12(%eax), %eax
+ 1144 0c87 8D5001   		leal	1(%eax), %edx
+ 1145 0c8a 8B4508   		movl	8(%ebp), %eax
+ 1146 0c8d 89500C   		movl	%edx, 12(%eax)
+ 1147 0c90 C745F401 		movl	$1, -12(%ebp)
+ 1147      000000
+ 1148 0c97 EB3A     		jmp	L91
+ 1149              	L90:
+ 1150 0c99 C744240C 		movl	$0, 12(%esp)
+ 1150      00000000 
+ 1151 0ca1 8B450C   		movl	12(%ebp), %eax
+ 1152 0ca4 89442408 		movl	%eax, 8(%esp)
+ 1153 0ca8 C7442404 		movl	$0, 4(%esp)
+ 1153      00000000 
+ 1154 0cb0 8B4508   		movl	8(%ebp), %eax
+ 1155 0cb3 890424   		movl	%eax, (%esp)
+ 1156 0cb6 E8BBF9FF 		call	_xQueueGenericReceive
+ 1156      FF
+ 1157 0cbb 8945F4   		movl	%eax, -12(%ebp)
+ 1158 0cbe 837DF401 		cmpl	$1, -12(%ebp)
+ 1159 0cc2 750F     		jne	L91
+ 1160 0cc4 8B4508   		movl	8(%ebp), %eax
+ 1161 0cc7 8B400C   		movl	12(%eax), %eax
+ 1162 0cca 8D5001   		leal	1(%eax), %edx
+ 1163 0ccd 8B4508   		movl	8(%ebp), %eax
+ 1164 0cd0 89500C   		movl	%edx, 12(%eax)
+ 1165              	L91:
+ 1166 0cd3 8B45F4   		movl	-12(%ebp), %eax
+ 1167 0cd6 83C424   		addl	$36, %esp
+ 1168 0cd9 5B       		popl	%ebx
+ 1169              		.cfi_restore 3
+ 1170 0cda 5D       		popl	%ebp
+ 1171              		.cfi_restore 5
+ 1172              		.cfi_def_cfa 4, 4
+ 1173 0cdb C3       		ret
+ 1174              		.cfi_endproc
+ 1175              	LFE12:
+ 1176              		.globl	_xQueueCreateCountingSemaphore
+ 1177              		.def	_xQueueCreateCountingSemaphore;	.scl	2;	.type	32;	.endef
+ 1178              	_xQueueCreateCountingSemaphore:
+ 1179              	LFB13:
+ 1180              		.cfi_startproc
+ 1181 0cdc 55       		pushl	%ebp
+ 1182              		.cfi_def_cfa_offset 8
+ 1183              		.cfi_offset 5, -8
+ 1184 0cdd 89E5     		movl	%esp, %ebp
+ 1185              		.cfi_def_cfa_register 5
+ 1186 0cdf 83EC28   		subl	$40, %esp
+ 1187 0ce2 C7442404 		movl	$0, 4(%esp)
+ 1187      00000000 
+ 1188 0cea 8B4508   		movl	8(%ebp), %eax
+ 1189 0ced 890424   		movl	%eax, (%esp)
+ 1190 0cf0 E831FDFF 		call	_xQueueCreate
+ 1190      FF
+ 1191 0cf5 8945F4   		movl	%eax, -12(%ebp)
+ 1192 0cf8 837DF400 		cmpl	$0, -12(%ebp)
+ 1193 0cfc 7415     		je	L94
+ 1194 0cfe 8B45F4   		movl	-12(%ebp), %eax
+ 1195 0d01 8D5038   		leal	56(%eax), %edx
+ 1196 0d04 8B450C   		movl	12(%ebp), %eax
+ 1197 0d07 89442404 		movl	%eax, 4(%esp)
+ 1198 0d0b 891424   		movl	%edx, (%esp)
+ 1199 0d0e E8000000 		call	_atomic32Set
+ 1199      00
+ 1200              	L94:
+ 1201 0d13 8B45F4   		movl	-12(%ebp), %eax
+ 1202 0d16 C9       		leave
+ 1203              		.cfi_restore 5
+ 1204              		.cfi_def_cfa 4, 4
+ 1205 0d17 C3       		ret
+ 1206              		.cfi_endproc
+ 1207              	LFE13:
+ 1208              		.globl	_uxQueueMessagesWaiting
+ 1209              		.def	_uxQueueMessagesWaiting;	.scl	2;	.type	32;	.endef
+ 1210              	_uxQueueMessagesWaiting:
+ 1211              	LFB14:
+ 1212              		.cfi_startproc
+ 1213 0d18 55       		pushl	%ebp
+ 1214              		.cfi_def_cfa_offset 8
+ 1215              		.cfi_offset 5, -8
+ 1216 0d19 89E5     		movl	%esp, %ebp
+ 1217              		.cfi_def_cfa_register 5
+ 1218 0d1b 83EC18   		subl	$24, %esp
+ 1219 0d1e 8B4508   		movl	8(%ebp), %eax
+ 1220 0d21 83C038   		addl	$56, %eax
+ 1221 0d24 890424   		movl	%eax, (%esp)
+ 1222 0d27 E8000000 		call	_atomic32Get
+ 1222      00
+ 1223 0d2c C9       		leave
+ 1224              		.cfi_restore 5
+ 1225              		.cfi_def_cfa 4, 4
+ 1226 0d2d C3       		ret
+ 1227              		.cfi_endproc
+ 1228              	LFE14:
+ 1229              		.globl	_uxQueueMessagesWaitingFromISR
+ 1230              		.def	_uxQueueMessagesWaitingFromISR;	.scl	2;	.type	32;	.endef
+ 1231              	_uxQueueMessagesWaitingFromISR:
+ 1232              	LFB15:
+ 1233              		.cfi_startproc
+ 1234 0d2e 55       		pushl	%ebp
+ 1235              		.cfi_def_cfa_offset 8
+ 1236              		.cfi_offset 5, -8
+ 1237 0d2f 89E5     		movl	%esp, %ebp
+ 1238              		.cfi_def_cfa_register 5
+ 1239 0d31 83EC18   		subl	$24, %esp
+ 1240 0d34 8B4508   		movl	8(%ebp), %eax
+ 1241 0d37 83C038   		addl	$56, %eax
+ 1242 0d3a 890424   		movl	%eax, (%esp)
+ 1243 0d3d E8000000 		call	_atomic32Get
+ 1243      00
+ 1244 0d42 C9       		leave
+ 1245              		.cfi_restore 5
+ 1246              		.cfi_def_cfa 4, 4
+ 1247 0d43 C3       		ret
+ 1248              		.cfi_endproc
+ 1249              	LFE15:
+ 1250              		.globl	_xQueueIsQueueEmptyFromISR
+ 1251              		.def	_xQueueIsQueueEmptyFromISR;	.scl	2;	.type	32;	.endef
+ 1252              	_xQueueIsQueueEmptyFromISR:
+ 1253              	LFB16:
+ 1254              		.cfi_startproc
+ 1255 0d44 55       		pushl	%ebp
+ 1256              		.cfi_def_cfa_offset 8
+ 1257              		.cfi_offset 5, -8
+ 1258 0d45 89E5     		movl	%esp, %ebp
+ 1259              		.cfi_def_cfa_register 5
+ 1260 0d47 83EC18   		subl	$24, %esp
+ 1261 0d4a 8B4508   		movl	8(%ebp), %eax
+ 1262 0d4d 83C038   		addl	$56, %eax
+ 1263 0d50 890424   		movl	%eax, (%esp)
+ 1264 0d53 E8000000 		call	_atomic32Get
+ 1264      00
+ 1265 0d58 85C0     		testl	%eax, %eax
+ 1266 0d5a 0F94C0   		sete	%al
+ 1267 0d5d 0FB6C0   		movzbl	%al, %eax
+ 1268 0d60 C9       		leave
+ 1269              		.cfi_restore 5
+ 1270              		.cfi_def_cfa 4, 4
+ 1271 0d61 C3       		ret
+ 1272              		.cfi_endproc
+ 1273              	LFE16:
+ 1274              		.globl	_xQueueIsQueueFullFromISR
+ 1275              		.def	_xQueueIsQueueFullFromISR;	.scl	2;	.type	32;	.endef
+ 1276              	_xQueueIsQueueFullFromISR:
+ 1277              	LFB17:
+ 1278              		.cfi_startproc
+ 1279 0d62 55       		pushl	%ebp
+ 1280              		.cfi_def_cfa_offset 8
+ 1281              		.cfi_offset 5, -8
+ 1282 0d63 89E5     		movl	%esp, %ebp
+ 1283              		.cfi_def_cfa_register 5
+ 1284 0d65 83EC18   		subl	$24, %esp
+ 1285 0d68 8B4508   		movl	8(%ebp), %eax
+ 1286 0d6b 83C038   		addl	$56, %eax
+ 1287 0d6e 890424   		movl	%eax, (%esp)
+ 1288 0d71 E8000000 		call	_atomic32Get
+ 1288      00
+ 1289 0d76 8B5508   		movl	8(%ebp), %edx
+ 1290 0d79 8B523C   		movl	60(%edx), %edx
+ 1291 0d7c 39D0     		cmpl	%edx, %eax
+ 1292 0d7e 0F94C0   		sete	%al
+ 1293 0d81 0FB6C0   		movzbl	%al, %eax
+ 1294 0d84 C9       		leave
+ 1295              		.cfi_restore 5
+ 1296              		.cfi_def_cfa 4, 4
+ 1297 0d85 C3       		ret
+ 1298              		.cfi_endproc
+ 1299              	LFE17:
+ 1300              		.globl	_vQueueDelete
+ 1301              		.def	_vQueueDelete;	.scl	2;	.type	32;	.endef
+ 1302              	_vQueueDelete:
+ 1303              	LFB18:
+ 1304              		.cfi_startproc
+ 1305 0d86 55       		pushl	%ebp
+ 1306              		.cfi_def_cfa_offset 8
+ 1307              		.cfi_offset 5, -8
+ 1308 0d87 89E5     		movl	%esp, %ebp
+ 1309              		.cfi_def_cfa_register 5
+ 1310 0d89 83EC18   		subl	$24, %esp
+ 1311 0d8c 8B4508   		movl	8(%ebp), %eax
+ 1312 0d8f 8B00     		movl	(%eax), %eax
+ 1313 0d91 890424   		movl	%eax, (%esp)
+ 1314 0d94 E8000000 		call	_vPortFree
+ 1314      00
+ 1315 0d99 8B4508   		movl	8(%ebp), %eax
+ 1316 0d9c 890424   		movl	%eax, (%esp)
+ 1317 0d9f E8000000 		call	_vPortFree
+ 1317      00
+ 1318 0da4 C9       		leave
+ 1319              		.cfi_restore 5
+ 1320              		.cfi_def_cfa 4, 4
+ 1321 0da5 C3       		ret
+ 1322              		.cfi_endproc
+ 1323              	LFE18:
+ 1324              		.def	_spinLockTake;	.scl	2;	.type	32;	.endef
+ 1325              		.def	_xTaskRemoveFromEventList;	.scl	2;	.type	32;	.endef
+ 1326              		.def	_vTaskMissedYield;	.scl	2;	.type	32;	.endef
+ 1327              		.def	_atomic32Dec;	.scl	2;	.type	32;	.endef
+ 1328              		.def	_atomic32Set;	.scl	2;	.type	32;	.endef
+ 1329              		.def	_spinLockGive;	.scl	2;	.type	32;	.endef
+ 1330              		.def	_vTaskPriorityDisinherit;	.scl	2;	.type	32;	.endef
+ 1331              		.def	_bcopy;	.scl	2;	.type	32;	.endef
+ 1332              		.def	_atomic32Inc;	.scl	2;	.type	32;	.endef
+ 1333              		.def	_atomic32Get;	.scl	2;	.type	32;	.endef
+ 1334              		.def	_sPortGetCurrentCPU;	.scl	2;	.type	32;	.endef
+ 1335              		.def	_vMainQueueSendPassed;	.scl	2;	.type	32;	.endef
+ 1336              		.def	_vPortYieldCPU;	.scl	2;	.type	32;	.endef
+ 1337              		.def	_vTaskSetTimeOutState;	.scl	2;	.type	32;	.endef
+ 1338              		.def	_vTaskSuspendCpu;	.scl	2;	.type	32;	.endef
+ 1339              		.def	_xTaskCheckForTimeOut;	.scl	2;	.type	32;	.endef
+ 1340              		.def	_vTaskPlaceOnEventList;	.scl	2;	.type	32;	.endef
+ 1341              		.def	_xTaskResumeCpu;	.scl	2;	.type	32;	.endef
+ 1342              		.def	_xTaskGetCurrentTaskHandle;	.scl	2;	.type	32;	.endef
+ 1343              		.def	_vTaskPriorityInherit;	.scl	2;	.type	32;	.endef
+ 1344              		.def	_pvPortMalloc;	.scl	2;	.type	32;	.endef
+ 1345              		.def	_spinLockInit;	.scl	2;	.type	32;	.endef
+ 1346              		.def	_vListInitialise;	.scl	2;	.type	32;	.endef
+ 1347 0da6 9090     		.def	_vPortFree;	.scl	2;	.type	32;	.endef
+DEFINED SYMBOLS
+                            *ABS*:00000000 queue.c
+     /tmp/ccII3Nwe.s:4      .text:00000000 _prvUnlockQueue
+     /tmp/ccII3Nwe.s:114    .text:00000132 _prvCopyDataToQueue
+     /tmp/ccII3Nwe.s:238    .text:0000026d _prvCopyDataFromQueue
+     /tmp/ccII3Nwe.s:299    .text:000002ee _prvIsQueueFull
+     /tmp/ccII3Nwe.s:324    .text:00000312 _prvIsQueueEmpty
+     /tmp/ccII3Nwe.s:348    .text:00000330 _xQueueGenericSend
+     /tmp/ccII3Nwe.s:533    .text:0000058b _xQueueGenericSendFromISR
+     /tmp/ccII3Nwe.s:618    .text:00000676 _xQueueGenericReceive
+     /tmp/ccII3Nwe.s:846    .text:00000952 _xQueueReceiveFromISR
+     /tmp/ccII3Nwe.s:922    .text:00000a26 _xQueueCreate
+     /tmp/ccII3Nwe.s:1014   .text:00000b2b _xQueueCreateMutex
+     /tmp/ccII3Nwe.s:1077   .text:00000c00 _xQueueGiveMutexRecursive
+     /tmp/ccII3Nwe.s:1126   .text:00000c6b _xQueueTakeMutexRecursive
+     /tmp/ccII3Nwe.s:1178   .text:00000cdc _xQueueCreateCountingSemaphore
+     /tmp/ccII3Nwe.s:1210   .text:00000d18 _uxQueueMessagesWaiting
+     /tmp/ccII3Nwe.s:1231   .text:00000d2e _uxQueueMessagesWaitingFromISR
+     /tmp/ccII3Nwe.s:1252   .text:00000d44 _xQueueIsQueueEmptyFromISR
+     /tmp/ccII3Nwe.s:1276   .text:00000d62 _xQueueIsQueueFullFromISR
+     /tmp/ccII3Nwe.s:1302   .text:00000d86 _vQueueDelete
+
+UNDEFINED SYMBOLS
+_spinLockTake
+_xTaskRemoveFromEventList
+_vTaskMissedYield
+_atomic32Dec
+_atomic32Set
+_spinLockGive
+_vTaskPriorityDisinherit
+_bcopy
+_atomic32Inc
+_atomic32Get
+_sPortGetCurrentCPU
+_vMainQueueSendPassed
+_vPortYieldCPU
+_vTaskSetTimeOutState
+_vTaskSuspendCpu
+_xTaskCheckForTimeOut
+_vTaskPlaceOnEventList
+_xTaskResumeCpu
+_xTaskGetCurrentTaskHandle
+_vTaskPriorityInherit
+_pvPortMalloc
+_spinLockInit
+_vListInitialise
+_vPortFree

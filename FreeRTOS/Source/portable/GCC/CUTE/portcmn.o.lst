@@ -114,6 +114,6 @@
   97 0136 9090     	LFE0:
 DEFINED SYMBOLS
                             *ABS*:00000000 portcmn.c
-     /tmp/cccTVguw.s:5      .text:00000000 _pxPortInitialiseStack
+     /tmp/ccJkLJBn.s:5      .text:00000000 _pxPortInitialiseStack
 
 NO UNDEFINED SYMBOLS

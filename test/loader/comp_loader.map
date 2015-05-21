@@ -1,0 +1,183 @@
+Archive member included because of file (symbol)
+
+../lzlib/liblz.a(lz.o)        boot_comp.o (LZ_UncompressImage)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD boot_comp.o
+LOAD ../lzlib/liblz.a
+
+.text           0x00000000      0x1ec
+ *(.text)
+ .text          0x00000000       0x64 boot_comp.o
+                0x00000000                s2_signature
+                0x0000000c                comp_entry
+ .text          0x00000064      0x188 ../lzlib/liblz.a(lz.o)
+                0x000000b8                LZ_Uncompress
+                0x000001ae                LZ_UncompressImage
+ *(.glue_7t)
+ *(.glue_7)
+
+.data           0x00000000       0x20
+ *(.data)
+ .data          0x00000000       0x20 boot_comp.o
+                0x00000000                dStartupFlags
+                0x00000004                dApEntry
+                0x00000010                stack_start
+ .data          0x00000020        0x0 ../lzlib/liblz.a(lz.o)
+ *(.data2)
+ *(.jcr)
+
+.rdata
+ *(.rdata)
+ *(.rdata_runtime_pseudo_reloc)
+
+.eh_frame       0x00000000       0x78
+ *(.eh_frame*)
+ .eh_frame      0x00000000       0x78 ../lzlib/liblz.a(lz.o)
+
+.pdata
+ *(.pdata)
+
+.bss            0x00000000        0x0
+ *(.bss)
+ .bss           0x00000000        0x0 boot_comp.o
+ .bss           0x00000000        0x0 ../lzlib/liblz.a(lz.o)
+ *(COMMON)
+
+.edata
+ *(.edata)
+
+/DISCARD/
+ *(.debug$S)
+ *(.debug$T)
+ *(.debug$F)
+ *(.drectve)
+
+.idata
+
+.CRT
+
+.tls
+
+.endjunk
+
+.rsrc
+ *(.rsrc)
+
+.reloc
+ *(.reloc)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.zdebug_aranges
+ *(.zdebug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.zdebug_pubnames
+ *(.zdebug_pubnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.zdebug_pubtypes
+ *(.zdebug_pubtypes)
+
+.debug_info
+ *(.debug_info)
+
+.zdebug_info
+ *(.zdebug_info)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.zdebug_abbrev
+ *(.zdebug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.zdebug_line
+ *(.zdebug_line)
+
+.debug_frame
+ *(.debug_frame*)
+
+.zdebug_frame
+ *(.zdebug_frame*)
+
+.debug_str
+ *(.debug_str)
+
+.zdebug_str
+ *(.zdebug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.zdebug_loc
+ *(.zdebug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.zdebug_macinfo
+ *(.zdebug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.zdebug_weaknames
+ *(.zdebug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.zdebug_funcnames
+ *(.zdebug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.zdebug_typenames
+ *(.zdebug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.zdebug_varnames
+ *(.zdebug_varnames)
+
+.debug_macro
+ *(.debug_macro)
+
+.zdebug_macro
+ *(.zdebug_macro)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.zdebug_ranges
+ *(.zdebug_ranges)
+
+.debug_types
+ *(.debug_types)
+
+.zdebug_types
+ *(.zdebug_types)
+OUTPUT(comp_loader.o pe-i386)

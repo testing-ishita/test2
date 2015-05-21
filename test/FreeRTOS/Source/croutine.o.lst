@@ -1,0 +1,677 @@
+   1              		.file	"croutine.c"
+   2              	.lcomm _pxReadyCoRoutineLists,40,32
+   3              	.lcomm _xDelayedCoRoutineList1,20,4
+   4              	.lcomm _xDelayedCoRoutineList2,20,4
+   5              	.lcomm _pxDelayedCoRoutineList,4,4
+   6              	.lcomm _pxOverflowDelayedCoRoutineList,4,4
+   7              	.lcomm _xPendingReadyCoRoutineList,20,4
+   8              		.globl	_pxCurrentCoRoutine
+   9              		.bss
+  10              		.align 4
+  11              	_pxCurrentCoRoutine:
+  12 0000 00000000 		.space 4
+  13              	.lcomm _uxTopCoRoutineReadyPriority,4,4
+  14              	.lcomm _xCoRoutineTickCount,4,4
+  15              	.lcomm _xLastTickCount,4,4
+  16              	.lcomm _xPassedTicks,4,4
+  17              		.text
+  18              		.globl	_xCoRoutineCreate
+  19              		.def	_xCoRoutineCreate;	.scl	2;	.type	32;	.endef
+  20              	_xCoRoutineCreate:
+  21              	LFB0:
+  22              		.cfi_startproc
+  23 0000 55       		pushl	%ebp
+  24              		.cfi_def_cfa_offset 8
+  25              		.cfi_offset 5, -8
+  26 0001 89E5     		movl	%esp, %ebp
+  27              		.cfi_def_cfa_register 5
+  28 0003 83EC28   		subl	$40, %esp
+  29 0006 C7042438 		movl	$56, (%esp)
+  29      000000
+  30 000d E8000000 		call	_pvPortMalloc
+  30      00
+  31 0012 8945F0   		movl	%eax, -16(%ebp)
+  32 0015 837DF000 		cmpl	$0, -16(%ebp)
+  33 0019 0F84CE00 		je	L2
+  33      0000
+  34 001f A1000000 		movl	_pxCurrentCoRoutine, %eax
+  34      00
+  35 0024 85C0     		testl	%eax, %eax
+  36 0026 750D     		jne	L3
+  37 0028 8B45F0   		movl	-16(%ebp), %eax
+  38 002b A3000000 		movl	%eax, _pxCurrentCoRoutine
+  38      00
+  39 0030 E8280400 		call	_prvInitialiseCoRoutineLists
+  39      00
+  40              	L3:
+  41 0035 837D0C01 		cmpl	$1, 12(%ebp)
+  42 0039 7607     		jbe	L4
+  43 003b C7450C01 		movl	$1, 12(%ebp)
+  43      000000
+  44              	L4:
+  45 0042 8B45F0   		movl	-16(%ebp), %eax
+  46 0045 66C74034 		movw	$0, 52(%eax)
+  46      0000
+  47 004b 8B45F0   		movl	-16(%ebp), %eax
+  48 004e 8B550C   		movl	12(%ebp), %edx
+  49 0051 89502C   		movl	%edx, 44(%eax)
+  50 0054 8B45F0   		movl	-16(%ebp), %eax
+  51 0057 8B5510   		movl	16(%ebp), %edx
+  52 005a 895030   		movl	%edx, 48(%eax)
+  53 005d 8B45F0   		movl	-16(%ebp), %eax
+  54 0060 8B5508   		movl	8(%ebp), %edx
+  55 0063 8910     		movl	%edx, (%eax)
+  56 0065 8B45F0   		movl	-16(%ebp), %eax
+  57 0068 83C004   		addl	$4, %eax
+  58 006b 890424   		movl	%eax, (%esp)
+  59 006e E8000000 		call	_vListInitialiseItem
+  59      00
+  60 0073 8B45F0   		movl	-16(%ebp), %eax
+  61 0076 83C018   		addl	$24, %eax
+  62 0079 890424   		movl	%eax, (%esp)
+  63 007c E8000000 		call	_vListInitialiseItem
+  63      00
+  64 0081 8B45F0   		movl	-16(%ebp), %eax
+  65 0084 8B55F0   		movl	-16(%ebp), %edx
+  66 0087 895010   		movl	%edx, 16(%eax)
+  67 008a 8B45F0   		movl	-16(%ebp), %eax
+  68 008d 8B55F0   		movl	-16(%ebp), %edx
+  69 0090 895024   		movl	%edx, 36(%eax)
+  70 0093 B80A0000 		movl	$10, %eax
+  70      00
+  71 0098 89C2     		movl	%eax, %edx
+  72 009a 2B550C   		subl	12(%ebp), %edx
+  73 009d 8B45F0   		movl	-16(%ebp), %eax
+  74 00a0 895018   		movl	%edx, 24(%eax)
+  75 00a3 8B45F0   		movl	-16(%ebp), %eax
+  76 00a6 8B502C   		movl	44(%eax), %edx
+  77 00a9 A18C0000 		movl	_uxTopCoRoutineReadyPriority, %eax
+  77      00
+  78 00ae 39C2     		cmpl	%eax, %edx
+  79 00b0 760B     		jbe	L5
+  80 00b2 8B45F0   		movl	-16(%ebp), %eax
+  81 00b5 8B402C   		movl	44(%eax), %eax
+  82 00b8 A38C0000 		movl	%eax, _uxTopCoRoutineReadyPriority
+  82      00
+  83              	L5:
+  84 00bd 8B45F0   		movl	-16(%ebp), %eax
+  85 00c0 8D4804   		leal	4(%eax), %ecx
+  86 00c3 8B45F0   		movl	-16(%ebp), %eax
+  87 00c6 8B502C   		movl	44(%eax), %edx
+  88 00c9 89D0     		movl	%edx, %eax
+  89 00cb C1E002   		sall	$2, %eax
+  90 00ce 01D0     		addl	%edx, %eax
+  91 00d0 C1E002   		sall	$2, %eax
+  92 00d3 05200000 		addl	$_pxReadyCoRoutineLists, %eax
+  92      00
+  93 00d8 894C2404 		movl	%ecx, 4(%esp)
+  94 00dc 890424   		movl	%eax, (%esp)
+  95 00df E8000000 		call	_vListInsertEnd
+  95      00
+  96 00e4 C745F401 		movl	$1, -12(%ebp)
+  96      000000
+  97 00eb EB07     		jmp	L6
+  98              	L2:
+  99 00ed C745F4FF 		movl	$-1, -12(%ebp)
+  99      FFFFFF
+ 100              	L6:
+ 101 00f4 8B45F4   		movl	-12(%ebp), %eax
+ 102 00f7 C9       		leave
+ 103              		.cfi_restore 5
+ 104              		.cfi_def_cfa 4, 4
+ 105 00f8 C3       		ret
+ 106              		.cfi_endproc
+ 107              	LFE0:
+ 108              		.globl	_vCoRoutineAddToDelayedList
+ 109              		.def	_vCoRoutineAddToDelayedList;	.scl	2;	.type	32;	.endef
+ 110              	_vCoRoutineAddToDelayedList:
+ 111              	LFB1:
+ 112              		.cfi_startproc
+ 113 00f9 55       		pushl	%ebp
+ 114              		.cfi_def_cfa_offset 8
+ 115              		.cfi_offset 5, -8
+ 116 00fa 89E5     		movl	%esp, %ebp
+ 117              		.cfi_def_cfa_register 5
+ 118 00fc 83EC28   		subl	$40, %esp
+ 119 00ff 8B159000 		movl	_xCoRoutineTickCount, %edx
+ 119      0000
+ 120 0105 8B4508   		movl	8(%ebp), %eax
+ 121 0108 01D0     		addl	%edx, %eax
+ 122 010a 8945F4   		movl	%eax, -12(%ebp)
+ 123 010d A1000000 		movl	_pxCurrentCoRoutine, %eax
+ 123      00
+ 124 0112 83C004   		addl	$4, %eax
+ 125 0115 890424   		movl	%eax, (%esp)
+ 126 0118 E8000000 		call	_vListRemove
+ 126      00
+ 127 011d A1000000 		movl	_pxCurrentCoRoutine, %eax
+ 127      00
+ 128 0122 8B55F4   		movl	-12(%ebp), %edx
+ 129 0125 895004   		movl	%edx, 4(%eax)
+ 130 0128 A1900000 		movl	_xCoRoutineTickCount, %eax
+ 130      00
+ 131 012d 3945F4   		cmpl	%eax, -12(%ebp)
+ 132 0130 731B     		jae	L9
+ 133 0132 A1000000 		movl	_pxCurrentCoRoutine, %eax
+ 133      00
+ 134 0137 8D5004   		leal	4(%eax), %edx
+ 135 013a A1740000 		movl	_pxOverflowDelayedCoRoutineList, %eax
+ 135      00
+ 136 013f 89542404 		movl	%edx, 4(%esp)
+ 137 0143 890424   		movl	%eax, (%esp)
+ 138 0146 E8000000 		call	_vListInsert
+ 138      00
+ 139 014b EB19     		jmp	L10
+ 140              	L9:
+ 141 014d A1000000 		movl	_pxCurrentCoRoutine, %eax
+ 141      00
+ 142 0152 8D5004   		leal	4(%eax), %edx
+ 143 0155 A1700000 		movl	_pxDelayedCoRoutineList, %eax
+ 143      00
+ 144 015a 89542404 		movl	%edx, 4(%esp)
+ 145 015e 890424   		movl	%eax, (%esp)
+ 146 0161 E8000000 		call	_vListInsert
+ 146      00
+ 147              	L10:
+ 148 0166 837D0C00 		cmpl	$0, 12(%ebp)
+ 149 016a 7417     		je	L8
+ 150 016c A1000000 		movl	_pxCurrentCoRoutine, %eax
+ 150      00
+ 151 0171 83C018   		addl	$24, %eax
+ 152 0174 89442404 		movl	%eax, 4(%esp)
+ 153 0178 8B450C   		movl	12(%ebp), %eax
+ 154 017b 890424   		movl	%eax, (%esp)
+ 155 017e E8000000 		call	_vListInsert
+ 155      00
+ 156              	L8:
+ 157 0183 C9       		leave
+ 158              		.cfi_restore 5
+ 159              		.cfi_def_cfa 4, 4
+ 160 0184 C3       		ret
+ 161              		.cfi_endproc
+ 162              	LFE1:
+ 163              		.def	_prvCheckPendingReadyList;	.scl	3;	.type	32;	.endef
+ 164              	_prvCheckPendingReadyList:
+ 165              	LFB2:
+ 166              		.cfi_startproc
+ 167 0185 55       		pushl	%ebp
+ 168              		.cfi_def_cfa_offset 8
+ 169              		.cfi_offset 5, -8
+ 170 0186 89E5     		movl	%esp, %ebp
+ 171              		.cfi_def_cfa_register 5
+ 172 0188 83EC28   		subl	$40, %esp
+ 173 018b E99E0000 		jmp	L13
+ 173      00
+ 174              	L17:
+ 175 0190 C7442404 		movl	$0, 4(%esp)
+ 175      00000000 
+ 176 0198 8B4508   		movl	8(%ebp), %eax
+ 177 019b 890424   		movl	%eax, (%esp)
+ 178 019e E8000000 		call	_vTaskLockTake
+ 178      00
+ 179 01a3 A1780000 		movl	_xPendingReadyCoRoutineList, %eax
+ 179      00
+ 180 01a8 85C0     		testl	%eax, %eax
+ 181 01aa 740A     		je	L14
+ 182 01ac A1840000 		movl	_xPendingReadyCoRoutineList+12, %eax
+ 182      00
+ 183 01b1 8B400C   		movl	12(%eax), %eax
+ 184 01b4 EB05     		jmp	L15
+ 185              	L14:
+ 186 01b6 B8000000 		movl	$0, %eax
+ 186      00
+ 187              	L15:
+ 188 01bb 8945F4   		movl	%eax, -12(%ebp)
+ 189 01be 8B45F4   		movl	-12(%ebp), %eax
+ 190 01c1 83C018   		addl	$24, %eax
+ 191 01c4 890424   		movl	%eax, (%esp)
+ 192 01c7 E8000000 		call	_vListRemove
+ 192      00
+ 193 01cc C7442404 		movl	$0, 4(%esp)
+ 193      00000000 
+ 194 01d4 8B4508   		movl	8(%ebp), %eax
+ 195 01d7 890424   		movl	%eax, (%esp)
+ 196 01da E8000000 		call	_vTaskLockGive
+ 196      00
+ 197 01df 8B45F4   		movl	-12(%ebp), %eax
+ 198 01e2 83C004   		addl	$4, %eax
+ 199 01e5 890424   		movl	%eax, (%esp)
+ 200 01e8 E8000000 		call	_vListRemove
+ 200      00
+ 201 01ed 8B45F4   		movl	-12(%ebp), %eax
+ 202 01f0 8B502C   		movl	44(%eax), %edx
+ 203 01f3 A18C0000 		movl	_uxTopCoRoutineReadyPriority, %eax
+ 203      00
+ 204 01f8 39C2     		cmpl	%eax, %edx
+ 205 01fa 760B     		jbe	L16
+ 206 01fc 8B45F4   		movl	-12(%ebp), %eax
+ 207 01ff 8B402C   		movl	44(%eax), %eax
+ 208 0202 A38C0000 		movl	%eax, _uxTopCoRoutineReadyPriority
+ 208      00
+ 209              	L16:
+ 210 0207 8B45F4   		movl	-12(%ebp), %eax
+ 211 020a 8D4804   		leal	4(%eax), %ecx
+ 212 020d 8B45F4   		movl	-12(%ebp), %eax
+ 213 0210 8B502C   		movl	44(%eax), %edx
+ 214 0213 89D0     		movl	%edx, %eax
+ 215 0215 C1E002   		sall	$2, %eax
+ 216 0218 01D0     		addl	%edx, %eax
+ 217 021a C1E002   		sall	$2, %eax
+ 218 021d 05200000 		addl	$_pxReadyCoRoutineLists, %eax
+ 218      00
+ 219 0222 894C2404 		movl	%ecx, 4(%esp)
+ 220 0226 890424   		movl	%eax, (%esp)
+ 221 0229 E8000000 		call	_vListInsertEnd
+ 221      00
+ 222              	L13:
+ 223 022e A1780000 		movl	_xPendingReadyCoRoutineList, %eax
+ 223      00
+ 224 0233 85C0     		testl	%eax, %eax
+ 225 0235 0F8555FF 		jne	L17
+ 225      FFFF
+ 226 023b C9       		leave
+ 227              		.cfi_restore 5
+ 228              		.cfi_def_cfa 4, 4
+ 229 023c C3       		ret
+ 230              		.cfi_endproc
+ 231              	LFE2:
+ 232              		.def	_prvCheckDelayedList;	.scl	3;	.type	32;	.endef
+ 233              	_prvCheckDelayedList:
+ 234              	LFB3:
+ 235              		.cfi_startproc
+ 236 023d 55       		pushl	%ebp
+ 237              		.cfi_def_cfa_offset 8
+ 238              		.cfi_offset 5, -8
+ 239 023e 89E5     		movl	%esp, %ebp
+ 240              		.cfi_def_cfa_register 5
+ 241 0240 83EC28   		subl	$40, %esp
+ 242 0243 E8000000 		call	_xTaskGetTickCount
+ 242      00
+ 243 0248 8B159400 		movl	_xLastTickCount, %edx
+ 243      0000
+ 244 024e 29D0     		subl	%edx, %eax
+ 245 0250 A3980000 		movl	%eax, _xPassedTicks
+ 245      00
+ 246 0255 E9160100 		jmp	L19
+ 246      00
+ 247              	L28:
+ 248 025a A1900000 		movl	_xCoRoutineTickCount, %eax
+ 248      00
+ 249 025f 83C001   		addl	$1, %eax
+ 250 0262 A3900000 		movl	%eax, _xCoRoutineTickCount
+ 250      00
+ 251 0267 A1980000 		movl	_xPassedTicks, %eax
+ 251      00
+ 252 026c 83E801   		subl	$1, %eax
+ 253 026f A3980000 		movl	%eax, _xPassedTicks
+ 253      00
+ 254 0274 A1900000 		movl	_xCoRoutineTickCount, %eax
+ 254      00
+ 255 0279 85C0     		testl	%eax, %eax
+ 256 027b 0F85C100 		jne	L29
+ 256      0000
+ 257 0281 A1700000 		movl	_pxDelayedCoRoutineList, %eax
+ 257      00
+ 258 0286 8945F4   		movl	%eax, -12(%ebp)
+ 259 0289 A1740000 		movl	_pxOverflowDelayedCoRoutineList, %eax
+ 259      00
+ 260 028e A3700000 		movl	%eax, _pxDelayedCoRoutineList
+ 260      00
+ 261 0293 8B45F4   		movl	-12(%ebp), %eax
+ 262 0296 A3740000 		movl	%eax, _pxOverflowDelayedCoRoutineList
+ 262      00
+ 263 029b E9A20000 		jmp	L29
+ 263      00
+ 264              	L27:
+ 265 02a0 8B45F0   		movl	-16(%ebp), %eax
+ 266 02a3 8B5004   		movl	4(%eax), %edx
+ 267 02a6 A1900000 		movl	_xCoRoutineTickCount, %eax
+ 267      00
+ 268 02ab 39C2     		cmpl	%eax, %edx
+ 269 02ad 0F87BC00 		ja	L30
+ 269      0000
+ 270              	L22:
+ 271 02b3 C7442404 		movl	$0, 4(%esp)
+ 271      00000000 
+ 272 02bb 8B4508   		movl	8(%ebp), %eax
+ 273 02be 890424   		movl	%eax, (%esp)
+ 274 02c1 E8000000 		call	_vTaskLockTake
+ 274      00
+ 275 02c6 8B45F0   		movl	-16(%ebp), %eax
+ 276 02c9 83C004   		addl	$4, %eax
+ 277 02cc 890424   		movl	%eax, (%esp)
+ 278 02cf E8000000 		call	_vListRemove
+ 278      00
+ 279 02d4 8B45F0   		movl	-16(%ebp), %eax
+ 280 02d7 8B4028   		movl	40(%eax), %eax
+ 281 02da 85C0     		testl	%eax, %eax
+ 282 02dc 740E     		je	L23
+ 283 02de 8B45F0   		movl	-16(%ebp), %eax
+ 284 02e1 83C018   		addl	$24, %eax
+ 285 02e4 890424   		movl	%eax, (%esp)
+ 286 02e7 E8000000 		call	_vListRemove
+ 286      00
+ 287              	L23:
+ 288 02ec C7442404 		movl	$0, 4(%esp)
+ 288      00000000 
+ 289 02f4 8B4508   		movl	8(%ebp), %eax
+ 290 02f7 890424   		movl	%eax, (%esp)
+ 291 02fa E8000000 		call	_vTaskLockGive
+ 291      00
+ 292 02ff 8B45F0   		movl	-16(%ebp), %eax
+ 293 0302 8B502C   		movl	44(%eax), %edx
+ 294 0305 A18C0000 		movl	_uxTopCoRoutineReadyPriority, %eax
+ 294      00
+ 295 030a 39C2     		cmpl	%eax, %edx
+ 296 030c 760B     		jbe	L24
+ 297 030e 8B45F0   		movl	-16(%ebp), %eax
+ 298 0311 8B402C   		movl	44(%eax), %eax
+ 299 0314 A38C0000 		movl	%eax, _uxTopCoRoutineReadyPriority
+ 299      00
+ 300              	L24:
+ 301 0319 8B45F0   		movl	-16(%ebp), %eax
+ 302 031c 8D4804   		leal	4(%eax), %ecx
+ 303 031f 8B45F0   		movl	-16(%ebp), %eax
+ 304 0322 8B502C   		movl	44(%eax), %edx
+ 305 0325 89D0     		movl	%edx, %eax
+ 306 0327 C1E002   		sall	$2, %eax
+ 307 032a 01D0     		addl	%edx, %eax
+ 308 032c C1E002   		sall	$2, %eax
+ 309 032f 05200000 		addl	$_pxReadyCoRoutineLists, %eax
+ 309      00
+ 310 0334 894C2404 		movl	%ecx, 4(%esp)
+ 311 0338 890424   		movl	%eax, (%esp)
+ 312 033b E8000000 		call	_vListInsertEnd
+ 312      00
+ 313 0340 EB01     		jmp	L21
+ 314              	L29:
+ 315 0342 90       		nop
+ 316              	L21:
+ 317 0343 A1700000 		movl	_pxDelayedCoRoutineList, %eax
+ 317      00
+ 318 0348 8B00     		movl	(%eax), %eax
+ 319 034a 85C0     		testl	%eax, %eax
+ 320 034c 740D     		je	L25
+ 321 034e A1700000 		movl	_pxDelayedCoRoutineList, %eax
+ 321      00
+ 322 0353 8B400C   		movl	12(%eax), %eax
+ 323 0356 8B400C   		movl	12(%eax), %eax
+ 324 0359 EB05     		jmp	L26
+ 325              	L25:
+ 326 035b B8000000 		movl	$0, %eax
+ 326      00
+ 327              	L26:
+ 328 0360 8945F0   		movl	%eax, -16(%ebp)
+ 329 0363 837DF000 		cmpl	$0, -16(%ebp)
+ 330 0367 0F8533FF 		jne	L27
+ 330      FFFF
+ 331 036d EB01     		jmp	L19
+ 332              	L30:
+ 333 036f 90       		nop
+ 334              	L19:
+ 335 0370 A1980000 		movl	_xPassedTicks, %eax
+ 335      00
+ 336 0375 85C0     		testl	%eax, %eax
+ 337 0377 0F85DDFE 		jne	L28
+ 337      FFFF
+ 338 037d A1900000 		movl	_xCoRoutineTickCount, %eax
+ 338      00
+ 339 0382 A3940000 		movl	%eax, _xLastTickCount
+ 339      00
+ 340 0387 C9       		leave
+ 341              		.cfi_restore 5
+ 342              		.cfi_def_cfa 4, 4
+ 343 0388 C3       		ret
+ 344              		.cfi_endproc
+ 345              	LFE3:
+ 346              		.globl	_vCoRoutineSchedule
+ 347              		.def	_vCoRoutineSchedule;	.scl	2;	.type	32;	.endef
+ 348              	_vCoRoutineSchedule:
+ 349              	LFB4:
+ 350              		.cfi_startproc
+ 351 0389 55       		pushl	%ebp
+ 352              		.cfi_def_cfa_offset 8
+ 353              		.cfi_offset 5, -8
+ 354 038a 89E5     		movl	%esp, %ebp
+ 355              		.cfi_def_cfa_register 5
+ 356 038c 83EC28   		subl	$40, %esp
+ 357 038f E8000000 		call	_sPortGetCurrentCPU
+ 357      00
+ 358 0394 8945F4   		movl	%eax, -12(%ebp)
+ 359 0397 8B45F4   		movl	-12(%ebp), %eax
+ 360 039a 890424   		movl	%eax, (%esp)
+ 361 039d E8E3FDFF 		call	_prvCheckPendingReadyList
+ 361      FF
+ 362 03a2 8B45F4   		movl	-12(%ebp), %eax
+ 363 03a5 890424   		movl	%eax, (%esp)
+ 364 03a8 E890FEFF 		call	_prvCheckDelayedList
+ 364      FF
+ 365 03ad EB1A     		jmp	L32
+ 366              	L35:
+ 367 03af A18C0000 		movl	_uxTopCoRoutineReadyPriority, %eax
+ 367      00
+ 368 03b4 85C0     		testl	%eax, %eax
+ 369 03b6 0F849E00 		je	L37
+ 369      0000
+ 370              	L33:
+ 371 03bc A18C0000 		movl	_uxTopCoRoutineReadyPriority, %eax
+ 371      00
+ 372 03c1 83E801   		subl	$1, %eax
+ 373 03c4 A38C0000 		movl	%eax, _uxTopCoRoutineReadyPriority
+ 373      00
+ 374              	L32:
+ 375 03c9 8B158C00 		movl	_uxTopCoRoutineReadyPriority, %edx
+ 375      0000
+ 376 03cf 89D0     		movl	%edx, %eax
+ 377 03d1 C1E002   		sall	$2, %eax
+ 378 03d4 01D0     		addl	%edx, %eax
+ 379 03d6 C1E002   		sall	$2, %eax
+ 380 03d9 05200000 		addl	$_pxReadyCoRoutineLists, %eax
+ 380      00
+ 381 03de 8B00     		movl	(%eax), %eax
+ 382 03e0 85C0     		testl	%eax, %eax
+ 383 03e2 74CB     		je	L35
+ 384 03e4 8B158C00 		movl	_uxTopCoRoutineReadyPriority, %edx
+ 384      0000
+ 385 03ea 89D0     		movl	%edx, %eax
+ 386 03ec C1E002   		sall	$2, %eax
+ 387 03ef 01D0     		addl	%edx, %eax
+ 388 03f1 C1E002   		sall	$2, %eax
+ 389 03f4 05200000 		addl	$_pxReadyCoRoutineLists, %eax
+ 389      00
+ 390 03f9 8945F0   		movl	%eax, -16(%ebp)
+ 391 03fc 8B45F0   		movl	-16(%ebp), %eax
+ 392 03ff 8B4004   		movl	4(%eax), %eax
+ 393 0402 8B5004   		movl	4(%eax), %edx
+ 394 0405 8B45F0   		movl	-16(%ebp), %eax
+ 395 0408 895004   		movl	%edx, 4(%eax)
+ 396 040b 8B45F0   		movl	-16(%ebp), %eax
+ 397 040e 8B4004   		movl	4(%eax), %eax
+ 398 0411 8B55F0   		movl	-16(%ebp), %edx
+ 399 0414 83C208   		addl	$8, %edx
+ 400 0417 39D0     		cmpl	%edx, %eax
+ 401 0419 750F     		jne	L36
+ 402 041b 8B45F0   		movl	-16(%ebp), %eax
+ 403 041e 8B4004   		movl	4(%eax), %eax
+ 404 0421 8B5004   		movl	4(%eax), %edx
+ 405 0424 8B45F0   		movl	-16(%ebp), %eax
+ 406 0427 895004   		movl	%edx, 4(%eax)
+ 407              	L36:
+ 408 042a 8B45F0   		movl	-16(%ebp), %eax
+ 409 042d 8B4004   		movl	4(%eax), %eax
+ 410 0430 8B400C   		movl	12(%eax), %eax
+ 411 0433 A3000000 		movl	%eax, _pxCurrentCoRoutine
+ 411      00
+ 412 0438 A1000000 		movl	_pxCurrentCoRoutine, %eax
+ 412      00
+ 413 043d 8B00     		movl	(%eax), %eax
+ 414 043f 8B150000 		movl	_pxCurrentCoRoutine, %edx
+ 414      0000
+ 415 0445 8B4A30   		movl	48(%edx), %ecx
+ 416 0448 8B150000 		movl	_pxCurrentCoRoutine, %edx
+ 416      0000
+ 417 044e 894C2404 		movl	%ecx, 4(%esp)
+ 418 0452 891424   		movl	%edx, (%esp)
+ 419 0455 FFD0     		call	*%eax
+ 420 0457 90       		nop
+ 421 0458 EB01     		jmp	L31
+ 422              	L37:
+ 423 045a 90       		nop
+ 424              	L31:
+ 425 045b C9       		leave
+ 426              		.cfi_restore 5
+ 427              		.cfi_def_cfa 4, 4
+ 428 045c C3       		ret
+ 429              		.cfi_endproc
+ 430              	LFE4:
+ 431              		.def	_prvInitialiseCoRoutineLists;	.scl	3;	.type	32;	.endef
+ 432              	_prvInitialiseCoRoutineLists:
+ 433              	LFB5:
+ 434              		.cfi_startproc
+ 435 045d 55       		pushl	%ebp
+ 436              		.cfi_def_cfa_offset 8
+ 437              		.cfi_offset 5, -8
+ 438 045e 89E5     		movl	%esp, %ebp
+ 439              		.cfi_def_cfa_register 5
+ 440 0460 83EC28   		subl	$40, %esp
+ 441 0463 C745F400 		movl	$0, -12(%ebp)
+ 441      000000
+ 442 046a EB1E     		jmp	L39
+ 443              	L40:
+ 444 046c 8B55F4   		movl	-12(%ebp), %edx
+ 445 046f 89D0     		movl	%edx, %eax
+ 446 0471 C1E002   		sall	$2, %eax
+ 447 0474 01D0     		addl	%edx, %eax
+ 448 0476 C1E002   		sall	$2, %eax
+ 449 0479 05200000 		addl	$_pxReadyCoRoutineLists, %eax
+ 449      00
+ 450 047e 890424   		movl	%eax, (%esp)
+ 451 0481 E8000000 		call	_vListInitialise
+ 451      00
+ 452 0486 8345F401 		addl	$1, -12(%ebp)
+ 453              	L39:
+ 454 048a 837DF401 		cmpl	$1, -12(%ebp)
+ 455 048e 76DC     		jbe	L40
+ 456 0490 C7042448 		movl	$_xDelayedCoRoutineList1, (%esp)
+ 456      000000
+ 457 0497 E8000000 		call	_vListInitialise
+ 457      00
+ 458 049c C704245C 		movl	$_xDelayedCoRoutineList2, (%esp)
+ 458      000000
+ 459 04a3 E8000000 		call	_vListInitialise
+ 459      00
+ 460 04a8 C7042478 		movl	$_xPendingReadyCoRoutineList, (%esp)
+ 460      000000
+ 461 04af E8000000 		call	_vListInitialise
+ 461      00
+ 462 04b4 C7057000 		movl	$_xDelayedCoRoutineList1, _pxDelayedCoRoutineList
+ 462      00004800 
+ 462      0000
+ 463 04be C7057400 		movl	$_xDelayedCoRoutineList2, _pxOverflowDelayedCoRoutineList
+ 463      00005C00 
+ 463      0000
+ 464 04c8 C9       		leave
+ 465              		.cfi_restore 5
+ 466              		.cfi_def_cfa 4, 4
+ 467 04c9 C3       		ret
+ 468              		.cfi_endproc
+ 469              	LFE5:
+ 470              		.globl	_xCoRoutineRemoveFromEventList
+ 471              		.def	_xCoRoutineRemoveFromEventList;	.scl	2;	.type	32;	.endef
+ 472              	_xCoRoutineRemoveFromEventList:
+ 473              	LFB6:
+ 474              		.cfi_startproc
+ 475 04ca 55       		pushl	%ebp
+ 476              		.cfi_def_cfa_offset 8
+ 477              		.cfi_offset 5, -8
+ 478 04cb 89E5     		movl	%esp, %ebp
+ 479              		.cfi_def_cfa_register 5
+ 480 04cd 83EC28   		subl	$40, %esp
+ 481 04d0 8B4508   		movl	8(%ebp), %eax
+ 482 04d3 8B00     		movl	(%eax), %eax
+ 483 04d5 85C0     		testl	%eax, %eax
+ 484 04d7 740B     		je	L42
+ 485 04d9 8B4508   		movl	8(%ebp), %eax
+ 486 04dc 8B400C   		movl	12(%eax), %eax
+ 487 04df 8B400C   		movl	12(%eax), %eax
+ 488 04e2 EB05     		jmp	L43
+ 489              	L42:
+ 490 04e4 B8000000 		movl	$0, %eax
+ 490      00
+ 491              	L43:
+ 492 04e9 8945F0   		movl	%eax, -16(%ebp)
+ 493 04ec 8B45F0   		movl	-16(%ebp), %eax
+ 494 04ef 83C018   		addl	$24, %eax
+ 495 04f2 890424   		movl	%eax, (%esp)
+ 496 04f5 E8000000 		call	_vListRemove
+ 496      00
+ 497 04fa 8B45F0   		movl	-16(%ebp), %eax
+ 498 04fd 83C018   		addl	$24, %eax
+ 499 0500 89442404 		movl	%eax, 4(%esp)
+ 500 0504 C7042478 		movl	$_xPendingReadyCoRoutineList, (%esp)
+ 500      000000
+ 501 050b E8000000 		call	_vListInsertEnd
+ 501      00
+ 502 0510 8B45F0   		movl	-16(%ebp), %eax
+ 503 0513 8B502C   		movl	44(%eax), %edx
+ 504 0516 A1000000 		movl	_pxCurrentCoRoutine, %eax
+ 504      00
+ 505 051b 8B402C   		movl	44(%eax), %eax
+ 506 051e 39C2     		cmpl	%eax, %edx
+ 507 0520 7209     		jb	L44
+ 508 0522 C745F401 		movl	$1, -12(%ebp)
+ 508      000000
+ 509 0529 EB07     		jmp	L45
+ 510              	L44:
+ 511 052b C745F400 		movl	$0, -12(%ebp)
+ 511      000000
+ 512              	L45:
+ 513 0532 8B45F4   		movl	-12(%ebp), %eax
+ 514 0535 C9       		leave
+ 515              		.cfi_restore 5
+ 516              		.cfi_def_cfa 4, 4
+ 517 0536 C3       		ret
+ 518              		.cfi_endproc
+ 519              	LFE6:
+ 520              		.def	_pvPortMalloc;	.scl	2;	.type	32;	.endef
+ 521              		.def	_vListInitialiseItem;	.scl	2;	.type	32;	.endef
+ 522              		.def	_vListInsertEnd;	.scl	2;	.type	32;	.endef
+ 523              		.def	_vListRemove;	.scl	2;	.type	32;	.endef
+ 524              		.def	_vListInsert;	.scl	2;	.type	32;	.endef
+ 525              		.def	_vTaskLockTake;	.scl	2;	.type	32;	.endef
+ 526              		.def	_vTaskLockGive;	.scl	2;	.type	32;	.endef
+ 527              		.def	_xTaskGetTickCount;	.scl	2;	.type	32;	.endef
+ 528              		.def	_sPortGetCurrentCPU;	.scl	2;	.type	32;	.endef
+ 529 0537 90       		.def	_vListInitialise;	.scl	2;	.type	32;	.endef
+DEFINED SYMBOLS
+                            *ABS*:00000000 croutine.c
+     /tmp/ccHbnWiC.s:2      .bss:00000020 _pxReadyCoRoutineLists
+     /tmp/ccHbnWiC.s:3      .bss:00000048 _xDelayedCoRoutineList1
+     /tmp/ccHbnWiC.s:4      .bss:0000005c _xDelayedCoRoutineList2
+     /tmp/ccHbnWiC.s:5      .bss:00000070 _pxDelayedCoRoutineList
+     /tmp/ccHbnWiC.s:6      .bss:00000074 _pxOverflowDelayedCoRoutineList
+     /tmp/ccHbnWiC.s:7      .bss:00000078 _xPendingReadyCoRoutineList
+     /tmp/ccHbnWiC.s:11     .bss:00000000 _pxCurrentCoRoutine
+     /tmp/ccHbnWiC.s:13     .bss:0000008c _uxTopCoRoutineReadyPriority
+     /tmp/ccHbnWiC.s:14     .bss:00000090 _xCoRoutineTickCount
+     /tmp/ccHbnWiC.s:15     .bss:00000094 _xLastTickCount
+     /tmp/ccHbnWiC.s:16     .bss:00000098 _xPassedTicks
+     /tmp/ccHbnWiC.s:20     .text:00000000 _xCoRoutineCreate
+     /tmp/ccHbnWiC.s:110    .text:000000f9 _vCoRoutineAddToDelayedList
+     /tmp/ccHbnWiC.s:164    .text:00000185 _prvCheckPendingReadyList
+     /tmp/ccHbnWiC.s:233    .text:0000023d _prvCheckDelayedList
+     /tmp/ccHbnWiC.s:348    .text:00000389 _vCoRoutineSchedule
+     /tmp/ccHbnWiC.s:432    .text:0000045d _prvInitialiseCoRoutineLists
+     /tmp/ccHbnWiC.s:472    .text:000004ca _xCoRoutineRemoveFromEventList
+
+UNDEFINED SYMBOLS
+_pvPortMalloc
+_vListInitialiseItem
+_vListInsertEnd
+_vListRemove
+_vListInsert
+_vTaskLockTake
+_vTaskLockGive
+_xTaskGetTickCount
+_sPortGetCurrentCPU
+_vListInitialise

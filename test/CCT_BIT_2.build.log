@@ -1,0 +1,157 @@
+17:25:27 **** Clean-only build of configuration VPB1x(VP B1x Board) for project CCT_BIT_2 ****
+make clean BOARD=vpb1x.msd BITFLAG=MAKE_CUTE BTYPE=VME RELARGS=RELEASE STARTUPFLAG=USE_BOARD_SWITCHES 
+cygwin warning:
+  MS-DOS style path detected: C:\CCT_BIT_2
+  Preferred POSIX equivalent is: /cygdrive/c/CCT_BIT_2
+  CYGWIN environment variable option "nodosfilewarning" turns off this warning.
+  Consult the user's guide for more details about POSIX paths:
+    http://cygwin.com/cygwin-ug-net/using.html#using-pathnames
+
+(cd board/vpb1x.msd; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/board/vpb1x.msd'
+rm -f *.o
+rm -f ./bin/*.out
+rm -f ./bin/*.bin
+rm -f ./bin/*.map
+rm -f ./bin/*.a
+rm -f ./bin/*.o
+rm -f ./bin/*.lz
+rm -f ./bin/symbols.txt
+rm -f ./bin/symbols.sym
+rm -f ./bin/partial.txt
+rm -f ./bin/symtbl.*
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/board/vpb1x.msd'
+(cd blib; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/blib'
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/blib'
+(cd clib; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/clib'
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/clib'
+(cd conslib; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/conslib'
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/conslib'
+(cd ibit; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/ibit'
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/ibit'
+(cd mth; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/mth'
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/mth'
+(cd kernel; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/kernel'
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/kernel'
+(cd loader; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/loader'
+(cd ../; cd lzlib; make clean)
+make[2]: Entering directory `/cygdrive/c/CCT_BIT_2/lzlib'
+rm -f *.o
+rm -f *.a
+make[2]: Leaving directory `/cygdrive/c/CCT_BIT_2/lzlib'
+rm -f *.o
+rm -f *.bin
+rm -f *.out
+rm -f *.map;
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/loader'
+(cd pbit; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/pbit'
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/pbit'
+(cd sth; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/sth'
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/sth'
+(cd tests; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/tests'
+makefile:211: make.dep: No such file or directory
+gcc -E -M -I../include -I../board/vpb1x.msd -I../FreeRTOS/Demo/Common/include -I../FreeRTOS/Source/include -I../FreeRTOS/Demo/CUTE -DGCC_CUTE pass.c fail.c random.c serial.c eth.c ide.c ram.c usb.c tempsensor.c keybd.c siotests.c pcitests.c ledtest.c NVMemTest.c audioTest.c videoTest.c RTCTests.c PITTests.c SCRTests.c ipmi.c watchDogtests.c LDT-PITtests.c SpeedSteptests.c XMM_MMXtests.c fpuTests.c SMBUS.c interrupt.c fwh.c sii3124.c can.c smp.c mirrorflash.c tsi148.c spiFwh.c vmeTests.c fpNMI.c mouse.c scsi.c spieepromtest.c enxmc8619.c gpioTests.c spiMRAMTest.c tpm_tests.c xmRs1Test.c xmRs2Test.c ahciTest.c adcr6.c srioTests.c audioTest2.c plx8733.c enxmc8619gpio.c lsimpt.c eth2.c enpmc.c enpmcgpio.c cctInfo.c >make.dep
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/tests'
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/tests'
+rm -f *.o
+rm -f *.a
+rm make.dep
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/tests'
+(cd arch; cd vme; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/arch/vme'
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/arch/vme'
+(cd arch; cd cpci; make clean)	
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/arch/cpci'
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/arch/cpci'
+(cd arch; cd vpx; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/arch/vpx'
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/arch/vpx'
+(cd arch; cd srio; make clean)	
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/arch/srio'
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/arch/srio'
+(cd xlib; cd interconnect; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/xlib/interconnect'
+rm -f *.o
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/xlib/interconnect'
+(cd xlib; cd sm3; make clean)	
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/xlib/sm3'
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/xlib/sm3'
+(cd xlib; cd idx; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/xlib/idx'
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/xlib/idx'
+(cd FreeRTOS/Demo/CUTE; make clean; rm -rf *.o)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/FreeRTOS/Demo/CUTE'
+touch Makefile
+rm -rf ../../Source/croutine.o ../../Source/tasks.o ../../Source/queue.o ../../Source/list.o ../../Source/portable/MemMang/heap_2.o ../../Source/portable/GCC/CUTE/port.o ../../Source/portable/GCC/CUTE/portcmn.o
+rm -rf ../../Source/croutine.o.lst ../../Source/tasks.o.lst ../../Source/queue.o.lst ../../Source/list.o.lst ../../Source/portable/MemMang/heap_2.o.lst ../../Source/portable/GCC/CUTE/port.o.lst ../../Source/portable/GCC/CUTE/portcmn.o.lst 
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/FreeRTOS/Demo/CUTE'
+(cd comm; cd serial; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/comm/serial'
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/comm/serial'
+(cd vgalib; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/vgalib'
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/vgalib'
+(cd debug; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/debug'
+rm -f *.o
+rm -f *.a
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/debug'
+(cd lwip-1.4.0; make clean)
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/lwip-1.4.0'
+makefile:80: .depend: No such file or directory
+gcc -c -I./src/include -I./src/include/ipv4 -I./ports/include -I./lwIP_Apps -I../FreeRTOS/Demo/Common/include -I../FreeRTOS/Source/include -I../FreeRTOS/Demo/CUTE -I../include -I../board/vpb1x.msd -DIPv4 -DGCC_CUTE -Wall  -MM src/core/mem.c src/core/memp.c src/core/netif.c src/core/pbuf.c src/core/stats.c src/core/sys.c src/core/tcp.c src/core/tcp_in.c src/core/raw.c src/core/tcp_out.c src/core/udp.c src/core/init.c src/core/def.c src/core/timers.c src/core/dhcp.c src/core/ipv4/icmp.c src/core/ipv4/ip.c src/core/ipv4/inet.c src/core/ipv4/ip_addr.c src/core/ipv4/inet_chksum.c src/core/ipv4/ip_frag.c src/api/api_lib.c src/api/api_msg.c src/api/tcpip.c src/api/err.c src/api/sockets.c src/api/netbuf.c src/api/netdb.c src/netif/etharp.c ports/sys_arch.c ports/netif/gei_netif.c lwIP_Apps/apps/SmClient/smClient.c lwIP_Apps/lwIP_Apps.c lwIP_Apps/apps/CommandServer/CommandServer.c lwIP_Apps/utils/CommandInterpreter.c lwIP_Apps/apps/ProducerConsumer/tcpCliSvr.c > .depend
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/lwip-1.4.0'
+make[1]: Entering directory `/cygdrive/c/CCT_BIT_2/lwip-1.4.0'
+rm -f *.o
+rm -f *.o.lst
+rm -f *.a
+rm -f .depend
+make[1]: Leaving directory `/cygdrive/c/CCT_BIT_2/lwip-1.4.0'
+
+17:25:35 Build Finished (took 7s.265ms)
+

@@ -1135,21 +1135,21 @@
  925 08c2 9090     		.def	_memset;	.scl	2;	.type	32;	.endef
 DEFINED SYMBOLS
                             *ABS*:00000000 port.c
-     /tmp/cc8pnpEp.s:2      .bss:00000000 _cpuStatus
-     /tmp/cc8pnpEp.s:5      .data:00000000 _loapicBase
-     /tmp/cc8pnpEp.s:10     .text:00000000 _sPortGetCurrentCPU
-     /tmp/cc8pnpEp.s:48     .text:00000046 _vPortYieldCPU
-     /tmp/cc8pnpEp.s:102    .text:000000c3 _vPortSetContextSwitching
-     /tmp/cc8pnpEp.s:137    .text:00000108 _prvGenApTick
-     /tmp/cc8pnpEp.s:175    .text:00000160 _prvPreemptiveTick
-     /tmp/cc8pnpEp.s:306    .text:00000269 _prvYieldProcessor
-     /tmp/cc8pnpEp.s:440    .text:00000384 _vPortEndScheduler
-     /tmp/cc8pnpEp.s:483    .text:000003f8 _prvLoapicTimerConfig
-     /tmp/cc8pnpEp.s:555    .text:000004d3 _prvLoapicIntrConfig
-     /tmp/cc8pnpEp.s:601    .text:0000052f _prvLoapicGetClkFreq
-     /tmp/cc8pnpEp.s:708    .text:000006b5 _xPortStartAPScheduling
-     /tmp/cc8pnpEp.s:774    .text:00000741 _xPortStartScheduler
-     /tmp/cc8pnpEp.s:876    .text:00000872 _vPortDataInit
+     /tmp/ccDadkrb.s:2      .bss:00000000 _cpuStatus
+     /tmp/ccDadkrb.s:5      .data:00000000 _loapicBase
+     /tmp/ccDadkrb.s:10     .text:00000000 _sPortGetCurrentCPU
+     /tmp/ccDadkrb.s:48     .text:00000046 _vPortYieldCPU
+     /tmp/ccDadkrb.s:102    .text:000000c3 _vPortSetContextSwitching
+     /tmp/ccDadkrb.s:137    .text:00000108 _prvGenApTick
+     /tmp/ccDadkrb.s:175    .text:00000160 _prvPreemptiveTick
+     /tmp/ccDadkrb.s:306    .text:00000269 _prvYieldProcessor
+     /tmp/ccDadkrb.s:440    .text:00000384 _vPortEndScheduler
+     /tmp/ccDadkrb.s:483    .text:000003f8 _prvLoapicTimerConfig
+     /tmp/ccDadkrb.s:555    .text:000004d3 _prvLoapicIntrConfig
+     /tmp/ccDadkrb.s:601    .text:0000052f _prvLoapicGetClkFreq
+     /tmp/ccDadkrb.s:708    .text:000006b5 _xPortStartAPScheduling
+     /tmp/ccDadkrb.s:774    .text:00000741 _xPortStartScheduler
+     /tmp/ccDadkrb.s:876    .text:00000872 _vPortDataInit
 
 UNDEFINED SYMBOLS
 _abApicId

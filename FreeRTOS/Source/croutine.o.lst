@@ -645,24 +645,24 @@
  529 0537 90       		.def	_vListInitialise;	.scl	2;	.type	32;	.endef
 DEFINED SYMBOLS
                             *ABS*:00000000 croutine.c
-     /tmp/ccHbnWiC.s:2      .bss:00000020 _pxReadyCoRoutineLists
-     /tmp/ccHbnWiC.s:3      .bss:00000048 _xDelayedCoRoutineList1
-     /tmp/ccHbnWiC.s:4      .bss:0000005c _xDelayedCoRoutineList2
-     /tmp/ccHbnWiC.s:5      .bss:00000070 _pxDelayedCoRoutineList
-     /tmp/ccHbnWiC.s:6      .bss:00000074 _pxOverflowDelayedCoRoutineList
-     /tmp/ccHbnWiC.s:7      .bss:00000078 _xPendingReadyCoRoutineList
-     /tmp/ccHbnWiC.s:11     .bss:00000000 _pxCurrentCoRoutine
-     /tmp/ccHbnWiC.s:13     .bss:0000008c _uxTopCoRoutineReadyPriority
-     /tmp/ccHbnWiC.s:14     .bss:00000090 _xCoRoutineTickCount
-     /tmp/ccHbnWiC.s:15     .bss:00000094 _xLastTickCount
-     /tmp/ccHbnWiC.s:16     .bss:00000098 _xPassedTicks
-     /tmp/ccHbnWiC.s:20     .text:00000000 _xCoRoutineCreate
-     /tmp/ccHbnWiC.s:110    .text:000000f9 _vCoRoutineAddToDelayedList
-     /tmp/ccHbnWiC.s:164    .text:00000185 _prvCheckPendingReadyList
-     /tmp/ccHbnWiC.s:233    .text:0000023d _prvCheckDelayedList
-     /tmp/ccHbnWiC.s:348    .text:00000389 _vCoRoutineSchedule
-     /tmp/ccHbnWiC.s:432    .text:0000045d _prvInitialiseCoRoutineLists
-     /tmp/ccHbnWiC.s:472    .text:000004ca _xCoRoutineRemoveFromEventList
+     /tmp/ccRvpizF.s:2      .bss:00000020 _pxReadyCoRoutineLists
+     /tmp/ccRvpizF.s:3      .bss:00000048 _xDelayedCoRoutineList1
+     /tmp/ccRvpizF.s:4      .bss:0000005c _xDelayedCoRoutineList2
+     /tmp/ccRvpizF.s:5      .bss:00000070 _pxDelayedCoRoutineList
+     /tmp/ccRvpizF.s:6      .bss:00000074 _pxOverflowDelayedCoRoutineList
+     /tmp/ccRvpizF.s:7      .bss:00000078 _xPendingReadyCoRoutineList
+     /tmp/ccRvpizF.s:11     .bss:00000000 _pxCurrentCoRoutine
+     /tmp/ccRvpizF.s:13     .bss:0000008c _uxTopCoRoutineReadyPriority
+     /tmp/ccRvpizF.s:14     .bss:00000090 _xCoRoutineTickCount
+     /tmp/ccRvpizF.s:15     .bss:00000094 _xLastTickCount
+     /tmp/ccRvpizF.s:16     .bss:00000098 _xPassedTicks
+     /tmp/ccRvpizF.s:20     .text:00000000 _xCoRoutineCreate
+     /tmp/ccRvpizF.s:110    .text:000000f9 _vCoRoutineAddToDelayedList
+     /tmp/ccRvpizF.s:164    .text:00000185 _prvCheckPendingReadyList
+     /tmp/ccRvpizF.s:233    .text:0000023d _prvCheckDelayedList
+     /tmp/ccRvpizF.s:348    .text:00000389 _vCoRoutineSchedule
+     /tmp/ccRvpizF.s:432    .text:0000045d _prvInitialiseCoRoutineLists
+     /tmp/ccRvpizF.s:472    .text:000004ca _xCoRoutineRemoveFromEventList
 
 UNDEFINED SYMBOLS
 _pvPortMalloc

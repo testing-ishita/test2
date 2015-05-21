@@ -1,0 +1,60 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ram              0x00300000         0x00100000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00400000                __image_base__ = 0x400000
+                0x00000000                __dll__ = 0x0
+                0x00400000                ___ImageBase = 0x400000
+                0x00001000                __section_alignment__ = 0x1000
+                0x00000200                __file_alignment__ = 0x200
+                0x00000004                __major_os_version__ = 0x4
+                0x00000000                __minor_os_version__ = 0x0
+                0x00000001                __major_image_version__ = 0x1
+                0x00000000                __minor_image_version__ = 0x0
+                0x00000004                __major_subsystem_version__ = 0x4
+                0x00000000                __minor_subsystem_version__ = 0x0
+                0x00000003                __subsystem__ = 0x3
+                0x00200000                __size_of_stack_reserve__ = 0x200000
+                0x00001000                __size_of_stack_commit__ = 0x1000
+                0x00100000                __size_of_heap_reserve__ = 0x100000
+                0x00001000                __size_of_heap_commit__ = 0x1000
+                0x00000000                __loader_flags__ = 0x0
+                0x00000000                __dll_characteristics__ = 0x0
+
+.text           0x00300000      0x200
+ *(.text)
+ .text          0x00300000      0x1ec ../../loader/comp_loader.o
+                0x00300000                s2_signature
+                0x0030000c                comp_entry
+                0x003000b8                LZ_Uncompress
+                0x003001ae                LZ_UncompressImage
+
+.rdata
+ *(.rdata)
+
+.eh_frame       0x00301000      0x200
+ .eh_frame      0x00301000       0x78 ../../loader/comp_loader.o
+
+.data           0x00301080    0x37200
+ *(.data)
+ .data          0x00301080       0x20 ../../loader/comp_loader.o
+                0x00301080                dStartupFlags
+                0x00301084                dApEntry
+                0x00301090                stack_start
+ .data          0x003010a0    0x371b2 ./bin/compress.o
+                0x003010a0                binary___bin_compress_lz_start
+                0x00338252                binary___bin_compress_lz_end
+                0x00338252                __bss_start = .
+
+.bss            0x00338254        0x0
+ *(.bss)
+ .bss           0x00338254        0x0 ../../loader/comp_loader.o
+                0x00338254                __bss_stop = .
+LOAD ../../loader/comp_loader.o
+LOAD ./bin/compress.o
+OUTPUT(./bin/compress.out pei-i386)

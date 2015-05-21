@@ -212,10 +212,10 @@
  208 0187 90       	LFE4:
 DEFINED SYMBOLS
                             *ABS*:00000000 list.c
-     /tmp/ccxpfpy8.s:5      .text:00000000 _vListInitialise
-     /tmp/ccxpfpy8.s:37     .text:0000003c _vListInitialiseItem
-     /tmp/ccxpfpy8.s:55     .text:0000004b _vListInsertEnd
-     /tmp/ccxpfpy8.s:101    .text:000000a8 _vListInsert
-     /tmp/ccxpfpy8.s:165    .text:0000012a _vListRemove
+     /tmp/ccpTCleZ.s:5      .text:00000000 _vListInitialise
+     /tmp/ccpTCleZ.s:37     .text:0000003c _vListInitialiseItem
+     /tmp/ccpTCleZ.s:55     .text:0000004b _vListInsertEnd
+     /tmp/ccpTCleZ.s:101    .text:000000a8 _vListInsert
+     /tmp/ccpTCleZ.s:165    .text:0000012a _vListRemove
 
 NO UNDEFINED SYMBOLS

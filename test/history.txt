@@ -1,0 +1,100 @@
+********************************************************************************
+*
+* Filename:	 history.txt
+*
+* Description:	BIT/CUTE Product History.
+*
+* $Revision: 1.5 $
+*
+* $Date: 2014-02-14 12:00:32 $
+*
+* $Source: /home/cvs/cvsroot/CCT_BIT_2/history.txt,v $
+*
+* Copyright 2013-2014 Concurrent Technologies, Plc.
+* 
+********************************************************************************
+
+Product History
+---------------
+
+Created CUTE Version 2  4/09/13
+
+1. New source repository (CCT_BIT_2) created in CVS.
+
+2. Various system stability improvements added.
+
+3. LWIP network stack and Ethernet driver for Intel Gigabit devices added.
+
+4. Board specific configuration options added.
+
+5. Enhancements for system debugging added.
+
+6. Initial tidy up of original CUTE/BIT source files, removing build warnings.  
+
+
+CUTE 2.01.01-rc01  27/9/13
+
+1. Added new network Soak Master Client.
+
+2. Added support for the new Universal Soak Master.
+
+3. Removed obsolete HAL code and library.
+
+4. Added support for the new version format.
+
+5. Further tidy up of original CUTE/BIT source files, including adding file and
+   function headers when found missing.
+
+6. Added board service to retrieve the slot ID. Modified the Soak Master Client
+   and STH to assign the board address based slot ID, when handling a slave 
+   information request from the Universal Soak Master.     
+
+
+CUTE 2.01.01-rc02  8/10/13
+
+1. Updates for Cygwin 1.7.25 GCC 4.7.3-1, fixed various compiler warnings. 
+
+2. Revised USM_BOARDADDR_SLOTID_MASK and USM_BOARDADDR_INST_MASK defines.
+   Added USM_BOARDADDR_INST_SHIFT define.
+   
+  
+CUTE 2.01.01-rc03  14/10/13
+
+1. Added SRIO support and AM 94x/x1x board.
+
+
+CUTE 2.01.01-rc04  20/01/14
+   
+1. Added support for VX 81x/09x board.   
+
+
+CUTE 2.01.02  14/02/14
+
+1. Added timeout to the SPS status request in tsi721_init() to prevent an infinite 
+   loop during startup when the request fails.
+   
+2. Forced debug mode on to allow reporting of initial startup messages to aid
+   test department and diagnostics.
+   
+3. Added extra check of Soak Master IP address in SM client and connection retry 
+   if found to be zero. Added Soak Master IP address and connection retry count
+   to SM client statistics.
+   
+4. Fixed Ethernet test function used to find the given instance of a 825xx device. 
+   If the found instance was indicated to be skipped, it was previously also 
+   skipping the remaining device instances of a multifunction device. 
+   
+5. Fixed reporting of Ethernet MAC addresses, on AM 94x/x1x board, for devices 
+   not connected to the network stack.
+   
+6. Added debug log commands to telnet client.   
+   
+7. Modified IPMI sensor threshold test to report failure only for Upper Critical
+   and Upper Non Recoverable conditions. 
+   
+8. Added build option for AM 945 variant to workaround IPMI firmware bug that 
+   reports negative temperatures as high positive values on sensor 2. When this 
+   build option is selected, sensor 2 is compared with sensor 1 and a test failure 
+   is not indicated if sensor 2 is reported by the IPMI firmware as a higher value.
+
+   
