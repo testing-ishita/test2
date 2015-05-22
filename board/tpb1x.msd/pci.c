@@ -549,7 +549,7 @@ UINT32 brdGetPCIDB(void *ptr)
 {
 	*((pci_DB**)ptr) = &brdPCIDB;
       
-
+	ishita
 	return E__OK;
 }
 
