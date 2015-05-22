@@ -548,7 +548,7 @@ pci_DB  brdPCIDB = { 0x00, brdChkPXMC, brdChkSatellite, brdChkPeripheral, pciDev
 UINT32 brdGetPCIDB(void *ptr)
 {
 	*((pci_DB**)ptr) = &brdPCIDB;
-      ishita
+     
 	
 	return E__OK;
 }
